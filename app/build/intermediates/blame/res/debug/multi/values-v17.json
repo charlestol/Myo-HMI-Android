@@ -1,0 +1,3590 @@
+[
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 223
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 451
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 228,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 451
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 456,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 456,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 759
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 614,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 764,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 931
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 936,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1159
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 936,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1164,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1401
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1164,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1406,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1572
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1406,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1577,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1746
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1577,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1751,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1915
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1751,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1915
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1920,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2188
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1920,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2193,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2388
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2193,
+                        "endLine": 41,
+                        "endColumn": 12,
+                        "endOffset": 2388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2393,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2592
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2393,
+                        "endLine": 45,
+                        "endColumn": 12,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2597,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\values-v17\\values-v17.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endLine": 49,
+                        "endColumn": 12,
+                        "endOffset": 2921
+                    }
+                }
+            }
+        ]
+    }
+]

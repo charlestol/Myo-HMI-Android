@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity" >
+
+    <!--<Button
+        android:id="@+id/button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_gesture"
+        android:layout_centerHorizontal="true"
+        android:text="ADD Gesture" />-->
+
+
+
+    <!--<Button
+        android:id="@+id/bt_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Gestures"
+        android:layout_above="@+id/listView"
+        android:layout_centerHorizontal="true" />
+-->
+
+    <EditText
+        android:id="@+id/add_gesture_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="Type New gesture" />
+
+    <ImageButton
+        android:id="@+id/im_add"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/im_delete"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_add" />
+
+
+    <ImageButton
+        android:id="@+id/im_delete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/delete_icon_extra"
+        android:layout_alignBottom="@+id/im_clear"
+        android:layout_toStartOf="@+id/im_clear"
+        android:layout_marginEnd="18dp" />
+
+    <ImageButton
+        android:id="@+id/im_clear"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/clear_icon_extra"
+        android:layout_alignTop="@+id/add_gesture_text"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/gesture_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_gesture_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:text="Gesture List"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/borderLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c4c0c0"
+        android:layout_below="@+id/gesture_title" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/borderLine"
+        android:layout_centerHorizontal="true"></ListView>
+
+
+    <TextView
+        android:id="@+id/live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listView"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="20dp"
+        android:text="Live Box"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="140dp"
+        android:layout_below="@+id/live"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:background="#c4c0c0"
+        android:id="@+id/view"/>
+
+    <Button
+        android:id="@+id/bt_train"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none|horizontal|vertical"
+        android:text="Train"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBottom="@+id/or_text"
+        android:layout_toStartOf="@+id/or_text" />
+
+    <TextView
+        android:id="@+id/gesture_detected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="40sp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/or_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textSize="40sp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/bt_load"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none|horizontal|vertical"
+        android:text="Load"
+        android:layout_alignBottom="@+id/or_text"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/or_text" />
+
+
+</RelativeLayout>

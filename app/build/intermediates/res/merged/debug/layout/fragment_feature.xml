@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="PARAMETERS"
+        android:textColor="@color/colorMidnight"
+        android:textSize="30sp" />
+
+    <View
+        android:id="@+id/line_title"
+        android:layout_width="200dp"
+        android:layout_height="3dp"
+        android:background="@color/colorOrinalline"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title"
+        />
+
+
+    <TextView
+        android:id="@+id/Features_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_title"
+        android:layout_marginEnd="38dp"
+        android:layout_marginTop="26dp"
+        android:layout_toStartOf="@+id/line_title"
+        android:textColor="@color/colorGunmetal"
+        android:textSize="20sp"
+        android:text="Features" />
+
+    <View
+        android:id="@+id/line_Features"
+        android:layout_width="110dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="65dp"
+        android:background="@color/colorOrinalline"
+        android:layout_below="@+id/Features_title"
+        />
+
+    <TextView
+        android:id="@+id/Classifier_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Features_title"
+        android:layout_marginStart="40dp"
+        android:layout_toEndOf="@+id/line_title"
+        android:textSize="20sp"
+        android:textColor="@color/colorGunmetal"
+        android:text="Classifier" />
+
+    <View
+        android:id="@+id/line_Classifier"
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:background="@color/colorOrinalline"
+        android:layout_toEndOf="@+id/line_Features"
+        android:layout_below="@+id/Classifier_title"
+        android:layout_marginStart="260dp"
+        />
+
+
+    <!--Features List View-->
+    <ListView
+        android:id="@id/listView"
+        android:layout_width="300dp"
+        android:layout_height="310dp"
+        android:layout_below="@+id/line_Features"
+        android:layout_marginTop="30dp" />
+
+    <!--Classifier List View-->
+    <ListView
+        android:id="@id/listView1"
+        android:layout_width="300dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/listView"
+        android:layout_marginStart="18dp"
+        android:layout_below="@id/line_Classifier" />
+
+
+    <com.github.mikephil.charting.charts.RadarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/listView1"
+        />
+
+
+
+
+</RelativeLayout>

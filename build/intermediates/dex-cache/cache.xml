@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\Downloads\MyoHMI_Android\app\libs\commons-lang3-3.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9d28a6b23650e8a7e9063c04588ace6cf7012c17">
+        <dex dex="C:\Users\Alex\Downloads\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\commons-lang3-3.6_db43b79d8efb73ae2c724a715be5fcd191cef1c7.jar" />
+    </item>
+
+</items>
