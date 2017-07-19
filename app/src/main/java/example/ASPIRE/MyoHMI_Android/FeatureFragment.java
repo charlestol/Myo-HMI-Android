@@ -53,14 +53,11 @@ public class FeatureFragment extends Fragment {
         listView_Features = (ListView) v.findViewById(R.id.listView);
         listview_Classifier = (ListView) v.findViewById(R.id.listView1);
 
-
         listView_Features.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-
         final List<String> FeaturesArrayList = new ArrayList<String>(Arrays.asList(features));
         final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifier));
-
 
         ArrayAdapter<String> adapter_features = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_multiple_choice, FeaturesArrayList);
@@ -91,7 +88,6 @@ public class FeatureFragment extends Fragment {
 
             // selected item
             String Classifier_selectedItem = ((TextView) view).getText().toString();
-
 
             Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
         });

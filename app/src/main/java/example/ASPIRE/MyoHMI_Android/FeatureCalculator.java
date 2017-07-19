@@ -227,7 +227,7 @@ public class FeatureCalculator {
     }
 
     public static void pushClassifier(DataVector inFeatemg){
-        prediction = classifier.predict(inFeatemg, 0);
+        prediction = classifier.predict(inFeatemg);
 //        inFeatemg.printDataVector("Predict Vector");
         if(liveView != null){
             classAct.runOnUiThread(new Runnable() {

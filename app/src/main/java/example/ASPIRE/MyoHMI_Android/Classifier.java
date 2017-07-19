@@ -26,6 +26,8 @@ public class Classifier {
     int[] classes;
     int[] testclasses = new int[3];
 
+    static int choice=0;
+
     public int prediction;
     public int classSize;
 
@@ -65,7 +67,7 @@ public class Classifier {
         }
     }
 
-    public int predict(DataVector Features, int choice) {
+    public int predict(DataVector Features) {
         featVector(Features);
         //depending on choice, predict using classifier
         switch(choice) {
@@ -127,5 +129,9 @@ public class Classifier {
         net.learn(trainVectorP, classes);
     }
 
+    public void setChoice(int newChoice){
+        choice = newChoice;
+        Log.d("Changed classifier to: ", String.valueOf(choice));
+    }
 
 }

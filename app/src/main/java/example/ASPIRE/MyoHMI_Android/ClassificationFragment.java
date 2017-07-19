@@ -135,7 +135,6 @@ public class ClassificationFragment extends Fragment {
             // selected item
             String selectedItem = ((TextView) view).getText().toString();
 
-
             if (selectedItems.contains(selectedItem)) {
                 selectedItems.remove(selectedItem); //remove deselected item from the list of selected items
             } else {
@@ -182,7 +181,6 @@ public class ClassificationFragment extends Fragment {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 String selItems = "";
                 while(selectedItems.size() > 0){
@@ -285,24 +283,11 @@ public class ClassificationFragment extends Fragment {
                     liveView.setText("");
                     fcalc.Train();
                     fcalc.setClassify(true);
+
+                    saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                 }
             }
         };
         mHandler.post(r1);
-
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                trainData = fcalc.getSamplesClassifier();
-
-                for(int i=0;i<trainData.size();i++) {
-                    DataVector data = trainData.get(i);
-                    double trunc = i/100;
-        //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                    Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                }
-            }
-        });
-//        trainButton.setVisibility(View.VISIBLE);
     }
 }

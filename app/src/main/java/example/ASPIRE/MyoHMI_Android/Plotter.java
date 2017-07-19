@@ -53,9 +53,6 @@ public class Plotter extends Activity{
     int[][] dataList1_b = new int[8][50];
 
     private int nowGraphIndex = 3;
-//    private int[] emgDatas = new int[8];
-//    //private int[] emgData2 = new int[8];
-//    private int[] sumEmgDatas = new int[8];
 
     private int w,x,y,z;
     private double pitch, roll, yaw;
@@ -174,7 +171,7 @@ public class Plotter extends Activity{
 
             roll = Math.atan(2*(x*w + z*y)/(2*(x^2+y^2)-1));
 
-            Log.d("roll", String.valueOf(roll));
+//            Log.d("roll", String.valueOf(roll));
 
 //            Log.d("IMU: ", Arrays.toString(data));
 
