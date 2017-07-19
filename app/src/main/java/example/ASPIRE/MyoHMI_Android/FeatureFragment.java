@@ -30,7 +30,6 @@ public class FeatureFragment extends Fragment {
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
 
-
     String[] classifier = new String[]{
             "LDA",
             "QDA",
@@ -69,7 +68,6 @@ public class FeatureFragment extends Fragment {
         ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
 
-
         listView_Features.setAdapter(adapter_features);
         listview_Classifier.setAdapter(adapter_classifier);
 
@@ -98,15 +96,9 @@ public class FeatureFragment extends Fragment {
             Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
         });
 
-
-
-
-
-
         mChart = (RadarChart) v.findViewById(R.id.chart);
         mChart.setNoDataText("This is the chart with no data!");
         plotter = new Plotter(mChart);//must pass chart from this fragment
-
 
         return v;
     }

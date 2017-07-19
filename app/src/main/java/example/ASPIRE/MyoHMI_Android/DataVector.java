@@ -75,5 +75,4 @@ public class DataVector{
 //            Log.d(TAG, " : " + Arrays.toString(this.data.toArray()) + " - " + s);
         Log.d(tag, Arrays.toString(this.data.toArray()) + " - " + s);
     }
-
 }

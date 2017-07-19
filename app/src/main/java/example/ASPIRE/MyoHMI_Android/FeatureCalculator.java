@@ -70,7 +70,9 @@ public class FeatureCalculator {
         return  train;
     }
 
-    public FeatureCalculator(){}
+    public ArrayList<DataVector> getSamplesClassifier(){return samplesClassifier;}
+
+//    public FeatureCalculator(){}
 
     public static Context context;
     private static View view;
@@ -171,7 +173,6 @@ public class FeatureCalculator {
                 featemg.setMatrixValue(1, sensor, featemg.getMatrixValue(1, sensor) + (float)Math.abs(Delta_2));
             }
 
-
             /*
             featemg[0][sensor] = featemg[0][sensor] / winsize;//MAV of One sensor
             featemg[1][sensor] = featemg[1][sensor] / winsize;
@@ -219,14 +220,14 @@ public class FeatureCalculator {
     public void pushClassifyTrainer(DataVector inFeatemg){
 //        saveToFile.save(inFeatemg);
         samplesClassifier.add(inFeatemg);
-        classes.add(currentClass);//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        classes.add(currentClass);
 //        Log.d("classes: ", Arrays.toString());
 //        inFeatemg.printDataVector("In Classify Trainer");
         Log.d(TAG, String.valueOf(samplesClassifier.size()));
     }
 
     public static void pushClassifier(DataVector inFeatemg){
-        prediction = classifier.predict(inFeatemg);
+        prediction = classifier.predict(inFeatemg, 0);
 //        inFeatemg.printDataVector("Predict Vector");
         if(liveView != null){
             classAct.runOnUiThread(new Runnable() {

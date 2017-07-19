@@ -1,200 +1,3 @@
-//package example.ASPIRE.MyoHMI_Android;
-//
-//import android.app.Activity;
-//
-//
-//import android.os.AsyncTask;
-//import android.os.Bundle;
-//import android.os.CountDownTimer;
-//import android.os.Handler;
-//import android.os.SystemClock;
-//import android.service.notification.Condition;
-//import android.support.v4.app.Fragment;
-//import android.support.v4.app.FragmentActivity;
-//import android.util.Log;
-//import android.view.Gravity;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.AdapterView;
-//import android.widget.ArrayAdapter;
-//import android.widget.Button;
-//import android.os.CountDownTimer;
-//import android.widget.CheckBox;
-//import android.widget.EditText;
-//import android.widget.ListView;
-//import android.widget.TextSwitcher;
-//import android.widget.TextView;
-//import android.widget.Toast;
-//import android.widget.ViewSwitcher;
-//
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//import java.util.concurrent.locks.ReentrantLock;
-//
-///**
-// * Created by User on 2/28/2017.
-// */
-//
-//public class ClassificationFragment extends Fragment {
-//
-//    private MyoGattCallback mMyoCallback;
-//
-//    private static final String TAG = "Tab2Fragment";
-//
-//    private Button btnTEST;
-//
-//    private FeatureCalculator fcalc;
-//
-//    private TextView countView;
-//
-//    private int numSamples = 100;
-//
-//    private int numGestures = 3;
-//
-//    private int gestureCounter = 0;
-//
-//    private int count = 4;
-//
-//    private Handler mHandler = new Handler();
-//
-//    public Classifier classifier = new Classifier();
-//
-//    private Map<String, Integer> gestureNames = new HashMap<String, Integer>();
-//
-//    private TextView liveView;
-//
-//    private List<String> ListElementsArrayList;
-//
-//    ListView listview;
-//    Button Addbutton;
-//    EditText GetValue;
-//    Button showButton;
-//
-//    //create an ArrayList object to store selected items
-//    ArrayList<String> selectedItems = new ArrayList<String>();
-//
-//    String[] ListElements = new String[] {
-//            "Fist",
-//            "Point",
-//            "Open Hand"
-//    };
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//
-//        final View v = inflater.inflate(R.layout.fragment_classification, container, false);
-//        assert v != null;
-//
-//        listview = (ListView)v.findViewById(R.id.listView);
-//        Addbutton = (Button)v.findViewById(R.id.button);
-//        GetValue = (EditText)v.findViewById(R.id.add_gesture);
-//        showButton = (Button)v.findViewById(R.id.btShow);
-//
-//        liveView = (TextView)v.findViewById(R.id.textView3);
-//
-//        fcalc = new FeatureCalculator(v, getActivity());
-//
-////        liveView = (TextSwitcher) v.findViewById(R.id.textSwitcher);
-////        liveView.setFactory(new ViewSwitcher.ViewFactory() {
-////            public View makeView() {
-////                TextView t = new TextView(getActivity());
-////                t.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
-////                t.setTextSize(36);
-////                t.setText("Gesture");
-////                return t;
-////            }
-////        });
-//
-//        listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-//        ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-//                (getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
-//
-//        listview.setAdapter(adapter);
-//
-//        //set OnItemClickListener
-//        listview.setOnItemClickListener((parent, view, position, id) -> {
-//
-//            // selected item
-//            String selectedItem = ((TextView) view).getText().toString();
-//            if(selectedItems.contains(selectedItem))
-//
-//                selectedItems.remove(selectedItem); //remove deselected item from the list of selected items
-//            else
-//                selectedItems.add(selectedItem); //add selected item to the list of selected items
-//
-//        });
-//
-//        showButton.setOnClickListener(v1 -> {
-//
-//            String selItems="";
-//            for(String item:selectedItems){
-//                if(selItems=="")
-//                    selItems=item;
-//                else
-//                    selItems+="/"+item;
-//            }
-//            Toast.makeText(getActivity(), selItems, Toast.LENGTH_LONG).show();
-//
-//        });
-//
-//        Addbutton.setOnClickListener(v12 -> {
-//
-//            ListElementsArrayList.add(GetValue.getText().toString());
-//
-//            adapter.notifyDataSetChanged();
-//        });
-//
-//        View trainButton = v.findViewById(R.id.train);
-//        trainButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v){
-//                onClickTrain(v);
-//            }
-//        });
-//
-//        return v;
-//    }
-//
-//    public void onClickTrain(View v) {
-//
-//        fcalc.sendClasses(ListElementsArrayList);
-//
-//        final Runnable r1 = new Runnable() {
-////        final Runnable r1 = getActivity().runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                if ((count != 0) && (gestureCounter != ListElementsArrayList.size())) {
-//                    mHandler.postDelayed(this, 1000);
-//                    count--;
-//                    liveView.setText("Do " + ListElementsArrayList.get(gestureCounter) + " in " + String.valueOf(count));
-//                    if(count==0){liveView.setText("Hold " + ListElementsArrayList.get(gestureCounter));}
-//                }
-//                else if(gestureCounter != ListElementsArrayList.size()){
-//                    count=4;
-//                    mHandler.postDelayed(this, 1000);
-//                    fcalc.setTrain(true);
-//                    while(fcalc.getTrain()){
-//                        //wait till trainig is done
-//                    }
-//                    gestureCounter++;
-//                }
-//                else{
-//                    liveView.setText("");
-//                    fcalc.Train();
-//                    fcalc.setClassify(true);
-//                }
-//            }
-//        };
-//        mHandler.postDelayed(r1, 1000);
-//
-//    }
-//}
-
 package example.ASPIRE.MyoHMI_Android;
 
         import android.annotation.SuppressLint;
@@ -256,6 +59,9 @@ public class ClassificationFragment extends Fragment {
 
     private List<String> Copy_of_selectedItemsList;
 
+    private SaveData saver  = new SaveData();
+
+    private ArrayList<DataVector> trainData;
 
     private int count = 4;
 
@@ -276,8 +82,6 @@ public class ClassificationFragment extends Fragment {
     Button loadButton;
 
     ListView listview;
-
-
 
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
@@ -300,6 +104,8 @@ public class ClassificationFragment extends Fragment {
 
         assert v != null;
 
+        final Runnable r1, r2;
+
         fcalc = new FeatureCalculator(v, getActivity());
 
         or_text = (TextView) v.findViewById(R.id.or_text);
@@ -316,11 +122,6 @@ public class ClassificationFragment extends Fragment {
         listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
-
-
-
-
-
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
@@ -374,9 +175,6 @@ public class ClassificationFragment extends Fragment {
                 });
                 builder.show();
 
-
-
-
             }
         });
 
@@ -398,7 +196,6 @@ public class ClassificationFragment extends Fragment {
                             adapter.remove(item);
 
                         }
-
                         selItems += "/" + item ;
                     }
 
@@ -465,21 +262,19 @@ public class ClassificationFragment extends Fragment {
         trainButton.setVisibility(View.GONE);
         loadButton.setVisibility(View.GONE);
 
-        fcalc.sendClasses(ListElementsArrayList);
+        fcalc.sendClasses(selectedItems);
 
         final Runnable r1 = new Runnable() {
-            //        final Runnable r1 = getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if ((count != 0) && (gestureCounter != ListElementsArrayList.size())) {
+                if ((--count != -1) && (gestureCounter != selectedItems.size())) {
                     mHandler.postDelayed(this, 1000);
-                    count--;
-                    liveView.setText("Do " + ListElementsArrayList.get(gestureCounter) + " in " + String.valueOf(count));
-                    if(count==0){liveView.setText("Hold " + ListElementsArrayList.get(gestureCounter));}
+                    liveView.setText("Do " + selectedItems.get(gestureCounter) + " in " + String.valueOf(count));
+                    if(count==0){liveView.setText("Hold " + selectedItems.get(gestureCounter));}
                 }
-                else if(gestureCounter != ListElementsArrayList.size()){
-                    count=4;
-                    mHandler.postDelayed(this, 1000);
+                else if(gestureCounter != selectedItems.size()){
+                    count=4;//3 seconds + 1
+                    mHandler.post(this);
                     fcalc.setTrain(true);
                     while(fcalc.getTrain()){
                         //wait till trainig is done
@@ -493,8 +288,21 @@ public class ClassificationFragment extends Fragment {
                 }
             }
         };
-        mHandler.postDelayed(r1, 1000);
+        mHandler.post(r1);
 
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                trainData = fcalc.getSamplesClassifier();
+
+                for(int i=0;i<trainData.size();i++) {
+                    DataVector data = trainData.get(i);
+                    double trunc = i/100;
+        //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                    Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                }
+            }
+        });
 //        trainButton.setVisibility(View.VISIBLE);
     }
 }
