@@ -1,32 +1,46 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import android.app.Application;
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Environment;
-import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Charles on 7/12/17.
  */
 
-public class SaveData {
+public class SaveData extends Activity{
+
+    private static final int MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE = 1;
+
+    private Context context;
 
     String FileName;
-    Calendar c = Calendar.getInstance();
+
+    public SaveData(Context context){
+        this.context = context;
+        checkWriteExternalStoragePermission();//move to initial upload file button
+    }
 
     public void addData(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
+
         String state;
         state = Environment.getExternalStorageState();
+
+        String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
 
         if(Environment.MEDIA_MOUNTED.equals(state)){
             File Root = Environment.getExternalStorageDirectory();
@@ -35,7 +49,7 @@ public class SaveData {
                 Dir.mkdir();
             }
 
-            FileName  = "File" + ".txt";
+            FileName  = date + ".txt";
 
             File file = new File(Dir, FileName);
 
@@ -48,7 +62,7 @@ public class SaveData {
                     double trunc = i/100;
                     //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                     osw.append(selectedItems.get((int)trunc) + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                    osw.append("    ");
+                    osw.append("\n");
                     Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                 }
                 osw.flush();
@@ -59,12 +73,37 @@ public class SaveData {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
         else {
             Log.d("EXTERNAL STRG","No SD card found");
-
         }
-
     }
+
+    public void checkWriteExternalStoragePermission() {
+        ContextCompat.checkSelfPermission(context,      Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+
+            case MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(context, "Write Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+                return;
+
+            }
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
+
 }

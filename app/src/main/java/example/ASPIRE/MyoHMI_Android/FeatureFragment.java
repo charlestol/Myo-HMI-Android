@@ -2,6 +2,7 @@ package example.ASPIRE.MyoHMI_Android;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,24 +28,32 @@ public class FeatureFragment extends Fragment {
     ListView listview_Classifier;
     ListView listView_Features;
 
+    Classifier classifier = new Classifier();
+
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
 
-    String[] classifier = new String[]{
+
+    String[] classifierNames = new String[]{
             "LDA",
             "QDA",
             "SVM",
             "Logistic Regression",
-            "Decision"
+            "Decision Tree",
+            "Neural Net"
     };
 
-    String[] features = new String[]{
+    String[] featureNames = new String[]{
             "MAV",
             "WAV",
             "TURNS",
             "Zeros",
             "SMAV"
     };
+
+    /**Charles 7/18**/
+    private static boolean[] featSelected = new boolean[]{true,true,true,true,true};
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_feature, container, false);
@@ -53,11 +62,14 @@ public class FeatureFragment extends Fragment {
         listView_Features = (ListView) v.findViewById(R.id.listView);
         listview_Classifier = (ListView) v.findViewById(R.id.listView1);
 
+
         listView_Features.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        final List<String> FeaturesArrayList = new ArrayList<String>(Arrays.asList(features));
-        final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifier));
+
+        final List<String> FeaturesArrayList = new ArrayList<String>(Arrays.asList(featureNames));
+        final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifierNames));
+
 
         ArrayAdapter<String> adapter_features = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_multiple_choice, FeaturesArrayList);
@@ -65,7 +77,13 @@ public class FeatureFragment extends Fragment {
         ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
 
+
         listView_Features.setAdapter(adapter_features);
+        for(int i = 0; i < 5; i++) {
+            listView_Features.setItemChecked(i, true);
+            selectedItems.add(i, adapter_features.getItem(i));
+        }
+
         listview_Classifier.setAdapter(adapter_classifier);
 
         //set OnItemClickListener
@@ -75,9 +93,15 @@ public class FeatureFragment extends Fragment {
             String Features_selectedItem = ((TextView) view).getText().toString();
 
             if (selectedItems.contains(Features_selectedItem)) {
+                featureManager(Features_selectedItem, false);
                 selectedItems.remove(Features_selectedItem); //remove deselected item from the list of selected items
+                classifier.numFeatures--;
+                //  Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             } else {
+                featureManager(Features_selectedItem, true);
                 selectedItems.add(Features_selectedItem); //add selected item to the list of selected items
+                classifier.numFeatures++;
+                // Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             }
 
             Toast.makeText(getActivity(), "selected: " + selectedItems, Toast.LENGTH_SHORT).show();
@@ -86,7 +110,8 @@ public class FeatureFragment extends Fragment {
         //set OnItemClickListener
         listview_Classifier.setOnItemClickListener((parent, view, position, id) -> {
 
-            // selected item
+            classifier.setChoice(position);
+
             String Classifier_selectedItem = ((TextView) view).getText().toString();
 
             Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
@@ -99,5 +124,23 @@ public class FeatureFragment extends Fragment {
         return v;
     }
 
+    /**Charles 7/18**/
+    private void featureManager(String inFeature, boolean selected) {
+        int index = 0;
+        for(int i = 0; i < 5; i++) {
+            if(inFeature == featureNames[i]) {
+                index = i;
+            }
+        }
 
+        featSelected[index] = selected;
+    }
+
+    public String[] getFeatureNames() {
+        return featureNames;
+    }
+
+    public static boolean[] getFeatSelected() {
+        return featSelected;
+    }
 }

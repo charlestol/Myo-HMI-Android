@@ -7,14 +7,17 @@ import smile.classification.SVM;
 import smile.classification.LogisticRegression;*/
 import smile.classification.*;
 import smile.math.kernel.LinearKernel;
+
+import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by Alex on 7/3/2017.
  */
 
-public class Classifier {
-    int numFeatures = 5;
+public class Classifier{
+    static int numFeatures = 5;
     double[][] trainVectorP;
     LDA lda;
     QDA qda;
@@ -25,6 +28,9 @@ public class Classifier {
     double[] features;
     int[] classes;
     int[] testclasses = new int[3];
+    static Activity activity;
+
+    private boolean trained = false;
 
     static int choice=0;
 
@@ -34,30 +40,53 @@ public class Classifier {
     //classifier trained booleans (just 1 for now to test
     boolean trainedQDA;
 
+    public Classifier(Activity activity){
+        this.activity = activity;
+    }
+
     public Classifier(){
 
     }
 
-    public void Train(ArrayList<DataVector> trainVector, ArrayList<Integer> Classes){
+    public void Train(ArrayList<DataVector> trainVector, ArrayList<Integer> Classes) {
         classSize = Classes.size();
         classes = new int[classSize];
-        trainVectorP = new double[trainVector.size()][numFeatures*8];
-        for(int i=0;i<trainVector.size();i++){
-            for(int j=0;j<numFeatures*8;j++){
-                trainVectorP[i][j] = trainVector.get(i).getValue(j).doubleValue();
+        trainVectorP = new double[trainVector.size()][numFeatures * 8];
+        for (int i = 0; i < trainVector.size(); i++) {
+            for (int j = 0; j < numFeatures * 8; j++) {
+                trainVectorP[i][j] = trainVector.get(i).getValue(j).doubleValue();//invalid index 8 size is 8
             }
         }
 
-        for(int j=0;j<Classes.size();j++){
+        for (int j = 0; j < Classes.size(); j++) {
             classes[j] = Classes.get(j);
         }
-//        classes = ArrayUtils.toPrimitive((Integer[])Classes.toArray());
-        long time1;
-        long time2;
 
-        //for testing purposes
-        trainLDA();
-
+//        if (trainVector.size() > 0) {
+            trained = true;
+            switch (choice) {
+                case 0:
+                    trainLDA();
+                    break;
+                case 1:
+                    trainQDA();
+                    break;
+                case 2:
+                    trainSVM();
+                    break;
+                case 3:
+                    trainLogit();
+                    break;
+                case 4:
+                    trainTree();
+                    break;
+                case 5:
+                    trainNet();
+                    break;
+            }
+//        } else{
+//            Toast.makeText(activity, "No Gestures Selected", Toast.LENGTH_SHORT);
+//        }
     }
 
     public void featVector(DataVector Features) {
@@ -98,7 +127,8 @@ public class Classifier {
     -probably still have to add a boolean, *see QDA (not tested yet)
     */
     public void trainLDA() {
-        lda = new LDA(trainVectorP, classes, 0);
+        //if selected gestures is not zero
+            lda = new LDA(trainVectorP, classes, 0);
     }
 
     public void trainQDA() {
@@ -131,7 +161,28 @@ public class Classifier {
 
     public void setChoice(int newChoice){
         choice = newChoice;
-        Log.d("Changed classifier to: ", String.valueOf(choice));
-    }
 
+        if(trained){//must re train if the a new lda is chosen.. NEED feature that checks if one has already been trained so it doesnt train the same one twice!!!
+            switch(choice) {
+                case 0:
+                    trainLDA();
+                    break;
+                case 1:
+                    trainQDA();
+                    break;
+                case 2:
+                    trainSVM();
+                    break;
+                case 3:
+                    trainLogit();
+                    break;
+                case 4:
+                    trainTree();
+                    break;
+                case 5:
+                    trainNet();
+                    break;
+            }
+        }
+    }
 }

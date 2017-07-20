@@ -1,6 +1,6 @@
 package example.ASPIRE.MyoHMI_Android;
 
-        import android.annotation.SuppressLint;
+import android.annotation.SuppressLint;
         import android.app.Activity;
 
 
@@ -59,7 +59,7 @@ public class ClassificationFragment extends Fragment {
 
     private List<String> Copy_of_selectedItemsList;
 
-    private SaveData saver  = new SaveData();
+    private SaveData saver;
 
     private ArrayList<DataVector> trainData;
 
@@ -72,6 +72,8 @@ public class ClassificationFragment extends Fragment {
     private TextView liveView;
 
     private TextView or_text;
+
+    private Classifier classifier;//for making toast on this activity
 
     EditText GetValue;
     ImageButton addButton;
@@ -107,6 +109,8 @@ public class ClassificationFragment extends Fragment {
         final Runnable r1, r2;
 
         fcalc = new FeatureCalculator(v, getActivity());
+        classifier = new Classifier(getActivity());
+        saver  = new SaveData(this.getContext());
 
         or_text = (TextView) v.findViewById(R.id.or_text);
         liveView = (TextView)v.findViewById(R.id.gesture_detected);
@@ -188,11 +192,9 @@ public class ClassificationFragment extends Fragment {
                         String item = selectedItems.get(i);
 
                         for (int x = 0; x <= item.length(); ++x) {
-
                             selectedItems.remove(item); //remove deselected item from the list of selected items
                             listview.setItemChecked(x, false);
                             adapter.remove(item);
-
                         }
                         selItems += "/" + item ;
                     }
@@ -282,9 +284,11 @@ public class ClassificationFragment extends Fragment {
                 else{
                     liveView.setText("");
                     fcalc.Train();
-                    fcalc.setClassify(true);
 
                     saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+
+                    fcalc.setClassify(true);
+
                 }
             }
         };
