@@ -33,20 +33,19 @@ public class FeatureFragment extends Fragment {
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
 
-
     String[] classifierNames = new String[]{
             "LDA",
             "QDA",
             "SVM",
             "Logistic Regression",
-            "Decision Tree",
-            "Neural Net"
+            "Decision Tree"
+//            "Neural Net"
     };
 
     String[] featureNames = new String[]{
             "MAV",
             "WAV",
-            "TURNS",
+            "Turns",
             "Zeros",
             "SMAV"
     };
@@ -85,7 +84,7 @@ public class FeatureFragment extends Fragment {
         }
 
         listview_Classifier.setAdapter(adapter_classifier);
-
+        listview_Classifier.setItemChecked(0,true);
         //set OnItemClickListener
         listView_Features.setOnItemClickListener((parent, view, position, id) -> {
 
@@ -104,7 +103,9 @@ public class FeatureFragment extends Fragment {
                 // Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             }
 
-            Toast.makeText(getActivity(), "selected: " + selectedItems, Toast.LENGTH_SHORT).show();
+            plotter.setFeatures(featSelected);
+
+//            Toast.makeText(getActivity(), "selected: " + selectedItems, Toast.LENGTH_SHORT).show();
         });
 
         //set OnItemClickListener

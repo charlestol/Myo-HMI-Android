@@ -12,6 +12,7 @@ import com.echo.holographlibrary.LinePoint;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.RadarData;
@@ -54,6 +55,10 @@ public class Plotter extends Activity{
 
     private int nowGraphIndex = 3;
 
+    private ArrayList<Float> f0, f1, f2, f3, f4;
+
+    private static boolean[] featuresSelected = new boolean[]{true,true,true,true,true};
+
     private int w,x,y,z;
     private double pitch, roll, yaw;
 
@@ -70,6 +75,8 @@ public class Plotter extends Activity{
         mChart.setWebLineWidthInner(1f);
         mChart.setWebColorInner(Color.LTGRAY);
         mChart.setWebAlpha(100);
+//        mChart.getLegend().setTextSize(20f);
+        mChart.getLegend().setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
 
         XAxis xAxis = mChart.getXAxis();
         //xAxis.setTypeface(mTfLight);
@@ -186,33 +193,93 @@ public class Plotter extends Activity{
         }
     }
 
-    public static void pushFeaturePlotter(ArrayList<Float> featData) {
+    public void pushFeaturePlotter(twoDimArray featureData) {
         if(mChart != null && currentTab==1) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-//                    Log.d("In: ", "Radar Graph");
+
+                    f0 = featureData.getInnerArray(0);
+                    f1 = featureData.getInnerArray(1);
+                    f2 = featureData.getInnerArray(2);
+                    f3 = featureData.getInnerArray(3);
+                    f4 = featureData.getInnerArray(4);
+
+                    ArrayList<RadarEntry> entries0 = new ArrayList<RadarEntry>();
                     ArrayList<RadarEntry> entries1 = new ArrayList<RadarEntry>();
-                    for (int i = 0; i < featData.size(); i++) {//only takes first 8 need to allow it to take second 8
-                        entries1.add(new RadarEntry(featData.get(i) * 200));
+                    ArrayList<RadarEntry> entries2 = new ArrayList<RadarEntry>();
+                    ArrayList<RadarEntry> entries3 = new ArrayList<RadarEntry>();
+                    ArrayList<RadarEntry> entries4 = new ArrayList<RadarEntry>();
+
+                    for (int i = 0; i < 8; i++) {
+                        entries0.add(new RadarEntry(f0.get(i)*200));
+                        entries1.add(new RadarEntry(f1.get(i)*200));
+                        entries2.add(new RadarEntry(f2.get(i)*200));
+                        entries3.add(new RadarEntry(f3.get(i)*200));
+                        entries4.add(new RadarEntry(f4.get(i)*200));
+
+//                        Log.d("asdfadsf", String.valueOf(f3.get(i)));
                     }
 
-                    RadarDataSet set1 = new RadarDataSet(entries1, "EMG Data");
                     ArrayList<IRadarDataSet> sets = new ArrayList<IRadarDataSet>();
-                    set1.setColor(Color.rgb(78, 118, 118));
-                    set1.setFillColor(Color.rgb(123, 174, 157));
+
+                    RadarDataSet set0 = new RadarDataSet(entries0, "MAV");
+                    set0.setColor(Color.rgb(123, 174, 157));
+                    set0.setFillColor(Color.rgb(78, 118, 118));
+                    set0.setDrawFilled(true);
+                    set0.setFillAlpha(180);
+                    set0.setLineWidth(2f);
+
+                    RadarDataSet set1 = new RadarDataSet(entries1, "WAV");
+                    set1.setColor(Color.rgb(241, 148, 138));
+                    set1.setFillColor(Color.rgb(205, 97, 85));
                     set1.setDrawFilled(true);
                     set1.setFillAlpha(180);
                     set1.setLineWidth(2f);
-                    sets.add(set1);
+
+                    RadarDataSet set2 = new RadarDataSet(entries2, "Turns");
+                    set2.setColor(Color.rgb(175, 122, 197));
+                    set2.setFillColor(Color.rgb(165, 105, 189));
+                    set2.setDrawFilled(true);
+                    set2.setFillAlpha(180);
+                    set2.setLineWidth(2f);
+
+                    RadarDataSet set3 = new RadarDataSet(entries3, "Zeros");
+                    set3.setColor(Color.rgb(125, 206, 160));
+                    set3.setFillColor(Color.rgb(171, 235, 198));
+                    set3.setDrawFilled(true);
+                    set3.setFillAlpha(180);
+                    set3.setLineWidth(2f);
+
+                    RadarDataSet set4 = new RadarDataSet(entries4, "SMAV");
+                    set4.setColor(Color.rgb(39, 55, 70));
+                    set4.setFillColor(Color.rgb(93, 109, 126));
+                    set4.setDrawFilled(true);
+                    set4.setFillAlpha(180);
+                    set4.setLineWidth(2f);
+
+                    if(featuresSelected[0])
+                        sets.add(set0);
+                    if(featuresSelected[1])
+                        sets.add(set1);
+                    if(featuresSelected[2])
+                        sets.add(set2);
+                    if(featuresSelected[3])
+                        sets.add(set3);
+                    if(featuresSelected[4])
+                        sets.add(set4);
+
                     //                        set1.setDrawHighlightCircleEnabled(true);
                     //                        set1.setDrawHighlightIndicators(false);
-                    RadarData data = new RadarData(sets);
-                    data.setValueTextSize(8f);
-                    data.setDrawValues(false);
-                    mChart.setData(data);
-                    mChart.notifyDataSetChanged();
-                    mChart.invalidate();
+
+                    if(!sets.isEmpty()) {
+                        RadarData data = new RadarData(sets);
+                        data.setValueTextSize(18f);
+                        data.setDrawValues(false);
+                        mChart.setData(data);
+                        mChart.notifyDataSetChanged();
+                        mChart.invalidate();
+                    }
                 }
             });
         }
@@ -225,5 +292,9 @@ public class Plotter extends Activity{
 
     public void setCurrentTab(int tab){
         currentTab = tab;
+    }
+
+    public void setFeatures(boolean[] features){
+        featuresSelected = features;
     }
 }

@@ -215,7 +215,7 @@ public class FeatureCalculator {
                 Log.d(TAG, "Feature 3 " + featemg.getInnerArray(3).toString());
                 Log.d(TAG, "Feature 4 " + featemg.getInnerArray(4).toString());
                 */
-                plotter.pushFeaturePlotter(featemg.getInnerArray(2));
+                plotter.pushFeaturePlotter(featemg);
             }
         }
         //unlock();

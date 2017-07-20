@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jul 20 14:36:40 PDT 2017
+#Thu Jul 20 16:07:22 PDT 2017
 20.base=C\:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=C\:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 493.base=C\:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\resources-debug.ap_
