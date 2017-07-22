@@ -1,12 +1,11 @@
 package example.ASPIRE.MyoHMI_Android;
-import org.apache.commons.lang3.ArrayUtils;
 import java.util.ArrayList;
-/*import smile.classification.LDA;
-import smile.classification.QDA;
-import smile.classification.SVM;
-import smile.classification.LogisticRegression;*/
+import java.util.Arrays;
+
 import smile.classification.*;
 import smile.math.kernel.LinearKernel;
+import smile.validation.CrossValidation;
+import smile.math.Math;
 
 import android.app.Activity;
 import android.util.Log;
@@ -29,6 +28,11 @@ public class Classifier{
     int[] classes;
     int[] testclasses = new int[3];
     static Activity activity;
+    int [] trainClasses = new int [240];
+
+    int samples = 100;
+    double [][] trainVectorCV;
+    LDA model;
 
     private boolean trained = false;
 
@@ -184,5 +188,140 @@ public class Classifier{
                     break;
             }
         }
+    }
+
+    ArrayList<Float> crossAccuracy(ArrayList<DataVector> data, int nClass, int parts){
+        //Example values seen in comments using 3 gestures for 100 samples each and dividing all(300) into 5 parts
+        int correct = 0;
+        int total = 0;
+        ArrayList<Float> cM = new ArrayList<>();
+        int [][] confMatrix = new int[nClass][nClass];
+
+
+        //Separates feature vectors according to the gesture being done
+        ArrayList<ArrayList<DataVector >> separateData = new ArrayList<>();
+
+        for(int classIndex = 0; classIndex < nClass; classIndex++){
+            ArrayList<DataVector> temp = new ArrayList<>();
+            for(int i = 0; i < data.size(); i++){
+                if(classIndex == data.get(i).getFlag()){
+                    temp.add(data.get(i));
+                }
+            }
+            separateData.add(temp);
+        }
+
+        //separateData matrix changes to sepData ARRAY
+        DataVector [] sepData = new DataVector[separateData.size() * separateData.get(0).size()];
+        for(int i = 0; i < separateData.size(); i++){
+            int value = i * separateData.get(i).size();
+            for(int j = 0; j < separateData.get(i).size(); j++){
+                sepData[value] = separateData.get(i).get(j);
+                value++;
+            }
+        }
+
+        CrossValidation cv = new CrossValidation(data.size()/nClass, parts);
+
+        for(int kfold = 0; kfold < parts; kfold++){
+
+            DataVector [] train = new DataVector[((nClass * samples) / parts) * (parts - 1)]; //240
+
+            // 3 x 80
+            DataVector [][] auxMatrix = new DataVector[nClass][(samples/parts) * (parts -1)];
+            for(int classes = 1; classes <= nClass; classes++){
+                DataVector [] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples , samples * classes);
+                DataVector [] train2 = Math.slice(aux, cv.train[kfold]);
+                int it = 0;
+                for(int col = 0; col < auxMatrix[classes-1].length; col++){
+                    auxMatrix[classes-1][col] = train2[it];
+                    it++;
+                }
+            }
+
+            //Putting values from the matrix into the array
+            for(int i = 0; i < auxMatrix.length; i++){
+                int value = i * auxMatrix[i].length;
+                for(int j = 0; j < auxMatrix[i].length; j++){
+                    train[value] = auxMatrix[i][j];
+                    value++;
+                }
+            }
+
+            //------------------TRAINING PHASE--------------------
+            //TrainVector 240 x 40
+            trainVectorCV = new double[train.length][train[0].getVectorData().size()];
+
+            for(int x = 0; x < train.length; x++){
+                Log.d("DSfdfd", String.valueOf(x));//stops at 168
+                for(int y = 0; y < train[x].getLength(); y++){
+                    trainVectorCV[x][y] = train[x].getValue(y).doubleValue();
+                }
+            }
+
+            //classes has to be 80 of 0, 80 of 1, etc...
+            for(int i = 0; i < nClass; i++){
+                int index = i * (nClass * cv.test.length);
+                for(int j = 0; j < (nClass * cv.test.length); j++){
+                    trainClasses[index] = i;
+                    index++;
+                }
+            }
+
+            model = new LDA (trainVectorCV,trainClasses,0);
+
+            //------------------TESTING PHASE--------------------
+            DataVector [] test = new DataVector[nClass * cv.test.length]; // 60
+            DataVector [][] auxMatrixTest = new DataVector[nClass][cv.test.length]; //3 x 20
+
+            for(int classes = 1; classes <= nClass; classes++){
+                DataVector [] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples , samples * classes);
+                DataVector [] test2 = Math.slice(aux, cv.test[kfold]);
+                int it2 = 0;
+                for(int col = 0; col < auxMatrixTest[classes-1].length; col++){
+                    auxMatrixTest[classes-1][col] = test2[it2];
+                    it2++;
+                }
+            }
+
+            //Putting values from the matrix into the array
+            for(int i = 0; i < auxMatrixTest.length; i++){
+                int value = i * auxMatrixTest[i].length;
+                for(int j = 0; j < auxMatrixTest[i].length; j++){
+                    test[value] = auxMatrixTest[i][j];
+                    value++;
+                }
+            }
+
+            //Test is a 60 x 40 an array of dataVectors
+            for(int i = 0; i < test.length; i++){
+                int index4 = 0;
+                double [] dataVectorPredict = new double[test[0].getVectorData().size()]; //40
+
+                for(int j = 0;j < test[0].getLength();j++){
+                    dataVectorPredict[index4] = test[i].getValue(j).doubleValue();
+                    index4++;
+                }
+
+                total++;
+                int pred = model.predict(dataVectorPredict);
+                confMatrix[(int)test[i].getFlag()][(int) pred]++;
+                if(test[i].getFlag() == pred){
+                    correct++;
+                }
+            }
+        }
+
+        cM.add(0, (float) correct / (float) total);
+        for(int i = 0; i < nClass; i++){
+            for(int j = 0; j < nClass; j++){
+                cM.add(1 + j + i*nClass, samples * nClass * (float)confMatrix[i][j]/ total);
+            }
+        }
+        //Just to display results
+        for(int x = 0; x < cM.size(); x++){
+            Log.d("Cross Validation: ", String.valueOf(cM.get(x)));
+        }
+        return cM;
     }
 }

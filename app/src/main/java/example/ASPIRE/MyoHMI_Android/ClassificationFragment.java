@@ -243,16 +243,12 @@ public class ClassificationFragment extends Fragment {
             }
         });
 
-
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-
                 Toast.makeText(getActivity(), "DOES NOTHING YET :(", Toast.LENGTH_SHORT).show();
-
             }
         });
-
         return v;
     }
 
@@ -261,7 +257,6 @@ public class ClassificationFragment extends Fragment {
         or_text.setVisibility(View.GONE);
         trainButton.setVisibility(View.GONE);
         loadButton.setVisibility(View.GONE);
-
         fcalc.sendClasses(selectedItems);
 
         final Runnable r1 = new Runnable() {
@@ -295,3 +290,29 @@ public class ClassificationFragment extends Fragment {
         mHandler.post(r1);
     }
 }
+
+//    public void onClickTrain(View v) {
+//        fcalc.sendClasses(selectedItems);
+//
+//        final Runnable r1 = new Runnable() {
+//            @Override
+//            public void run() {
+//                if (selectedItems.size() > 0) {
+//                    or_text.setVisibility(View.GONE);
+//                    trainButton.setVisibility(View.GONE);
+//                    loadButton.setVisibility(View.GONE);
+//
+//                    if ((--count != -1) && (gestureCounter != selectedItems.size())) {
+//                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+//                    }
+//                }
+//                else
+//                {
+//                    Toast.makeText(getActivity(), "No gestures selected!", Toast.LENGTH_SHORT).show();
+//
+//                }
+//
+//            }
+//        };
+//        mHandler.post(r1);
+//    }

@@ -32,6 +32,7 @@ public class DataVector{
         this.flag = flag;
         this.length = length;
         this.timestamp = System.currentTimeMillis();
+        this.data = new ArrayList<>();
         if(length > 0){
             for(int i=0;i<length;i++){
                 this.data.add(i, data.get(i));
@@ -66,6 +67,8 @@ public class DataVector{
     public void setTimestamp(long ts){
         this.timestamp = ts;
     }
+
+    public void setFlag(int inFlag){ this.flag = inFlag;}
 
     public void printDataVector(String tag){
         String s = String.valueOf(timestamp);

@@ -215,7 +215,7 @@ public class Plotter extends Activity{
                         entries0.add(new RadarEntry(f0.get(i)*200));
                         entries1.add(new RadarEntry(f1.get(i)*200));
                         entries2.add(new RadarEntry(f2.get(i)*200));
-                        entries3.add(new RadarEntry(f3.get(i)*200));
+                        entries3.add(new RadarEntry(f3.get(i)*170));
                         entries4.add(new RadarEntry(f4.get(i)*200));
 
 //                        Log.d("asdfadsf", String.valueOf(f3.get(i)));

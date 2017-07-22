@@ -264,6 +264,10 @@ public class FeatureCalculator {
             samplebuf.remove(samplebuf.size() - 1);
         //Log.d("ibuf, winnext", Integer.toString(ibuf) + " , " + Integer.toString(winnext));
         //process window if next window is reached
+        if(getTrain()) {
+            aux.setFlag(currentClass);
+        }
+
         if (ibuf == winnext)//start calculating
         {
             lastCall = winnext;
@@ -288,8 +292,10 @@ public class FeatureCalculator {
         ibuf = ++ibuf & (bufsize - 1);//make buffer circular
     }
 
-    public static void Train() {
+    public static void Train(){
         classifier.Train(samplesClassifier, classes);
+        //Kattia: Testing CrossValidation
+//        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier,3,5);
     }
 
     private DataVector buildDataVector()//ignoring grid and imu for now, assuming all features are selected

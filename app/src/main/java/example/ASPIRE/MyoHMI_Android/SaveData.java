@@ -61,7 +61,7 @@ public class SaveData extends Activity{
                     DataVector data = trainData.get(i);
                     double trunc = i/100;
                     //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                    osw.append(selectedItems.get((int)trunc) + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                    osw.append((int)trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                     osw.append("\n");
                     Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                 }
