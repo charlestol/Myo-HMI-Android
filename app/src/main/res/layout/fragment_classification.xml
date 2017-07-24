@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
 
     tools:context=".MainActivity" >
 
@@ -23,6 +24,19 @@
         android:layout_above="@+id/listView"
         android:layout_centerHorizontal="true" />
 -->
+    <ImageButton
+        android:id="@+id/im_upload"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        android:src="@drawable/cloud_upload"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="50dp"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/add_gesture_text"
@@ -32,7 +46,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:ems="10"
-        android:hint="Type New Gesture" />
+        android:hint="Type New gesture" />
 
     <ImageButton
         android:id="@+id/im_add"
@@ -163,6 +177,16 @@
         android:layout_alignBottom="@+id/or_text"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/or_text" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:visibility="invisible"
+        android:layout_below="@+id/gesture_detected"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

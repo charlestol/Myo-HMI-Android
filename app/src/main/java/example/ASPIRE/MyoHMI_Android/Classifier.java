@@ -197,7 +197,6 @@ public class Classifier{
         ArrayList<Float> cM = new ArrayList<>();
         int [][] confMatrix = new int[nClass][nClass];
 
-
         //Separates feature vectors according to the gesture being done
         ArrayList<ArrayList<DataVector >> separateData = new ArrayList<>();
 

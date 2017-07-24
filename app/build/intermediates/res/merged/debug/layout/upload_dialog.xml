@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:text="Upload Files?"
+        android:textColor="@color/colorMidnight"
+        android:textSize="36sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/bt_cancel" />
+    <View
+        android:layout_width="250dp"
+        android:layout_below="@+id/title"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNight"
+        android:id="@+id/view"/>
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where do you want to upload the files?"
+        android:textColor="@color/colorMidnight"
+        android:textSize="22sp"
+        android:layout_below="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_marginTop="39dp" />
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="169dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/bt_sdcard"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SDCARD"
+
+        android:layout_alignBaseline="@+id/bt_cloud"
+        android:layout_alignBottom="@+id/bt_cloud"
+        android:layout_toStartOf="@id/bt_cloud"
+        android:layout_marginEnd="20dp" />
+
+    <Button
+        android:id="@+id/bt_cloud"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cloud"
+        android:layout_alignBaseline="@+id/bt_both"
+        android:layout_alignBottom="@+id/bt_both"
+        android:layout_toStartOf="@id/bt_both"
+        android:layout_marginEnd="20dp" />
+
+    <Button
+        android:id="@+id/bt_both"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Both"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginEnd="20dp"
+        android:layout_alignBaseline="@+id/bt_cancel"
+        android:layout_alignBottom="@+id/bt_cancel"
+        android:layout_alignParentEnd="true" />
+
+
+
+</RelativeLayout>
+
+
+
