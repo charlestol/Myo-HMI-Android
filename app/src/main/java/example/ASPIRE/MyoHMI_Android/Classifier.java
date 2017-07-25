@@ -8,6 +8,7 @@ import smile.validation.CrossValidation;
 import smile.math.Math;
 
 import android.app.Activity;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -15,7 +16,8 @@ import android.widget.Toast;
  * Created by Alex on 7/3/2017.
  */
 
-public class Classifier{
+public class Classifier {
+    private String TAG = "Classifier";
     static int numFeatures = 5;
     double[][] trainVectorP;
     LDA lda;
@@ -32,7 +34,12 @@ public class Classifier{
 
     int samples = 100;
     double [][] trainVectorCV;
-    LDA model;
+    LDA LDACV;
+    QDA QDACV;
+    SVM SVMCV;
+    LogisticRegression LOGITCV;
+    DecisionTree TREECV;
+    NeuralNetwork NETCV;
 
     private boolean trained = false;
 
@@ -121,6 +128,32 @@ public class Classifier{
                 break;
             case 5:
                 prediction = net.predict(features);
+                break;
+        }
+        return prediction;
+    }
+
+    public int predictTest(DataVector Features) {
+        featVector(Features);
+        //depending on choice, predict using classifier
+        switch(choice) {
+            case 0:
+                prediction = LDACV.predict(features);
+                break;
+            case 1:
+                prediction = QDACV.predict(features);
+                break;
+            case 2:
+                prediction = SVMCV.predict(features);
+                break;
+            case 3:
+                prediction = LOGITCV.predict(features);
+                break;
+            case 4:
+                prediction = TREECV.predict(features);
+                break;
+            case 5:
+                prediction = NETCV.predict(features);
                 break;
         }
         return prediction;
@@ -225,12 +258,12 @@ public class Classifier{
         for(int kfold = 0; kfold < parts; kfold++){
 
             DataVector [] train = new DataVector[((nClass * samples) / parts) * (parts - 1)]; //240
-
+            DataVector [] train2 = new DataVector[((nClass * 100) / parts) * (parts - 1)];
             // 3 x 80
             DataVector [][] auxMatrix = new DataVector[nClass][(samples/parts) * (parts -1)];
             for(int classes = 1; classes <= nClass; classes++){
                 DataVector [] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples , samples * classes);
-                DataVector [] train2 = Math.slice(aux, cv.train[kfold]);
+                train2 = Math.slice(aux, cv.train[kfold]);
                 int it = 0;
                 for(int col = 0; col < auxMatrix[classes-1].length; col++){
                     auxMatrix[classes-1][col] = train2[it];
@@ -243,7 +276,7 @@ public class Classifier{
                 int value = i * auxMatrix[i].length;
                 for(int j = 0; j < auxMatrix[i].length; j++){
                     train[value] = auxMatrix[i][j];
-                    value++;
+                    ++value;
                 }
             }
 
@@ -252,7 +285,6 @@ public class Classifier{
             trainVectorCV = new double[train.length][train[0].getVectorData().size()];
 
             for(int x = 0; x < train.length; x++){
-                Log.d("DSfdfd", String.valueOf(x));//stops at 168
                 for(int y = 0; y < train[x].getLength(); y++){
                     trainVectorCV[x][y] = train[x].getValue(y).doubleValue();
                 }
@@ -260,22 +292,49 @@ public class Classifier{
 
             //classes has to be 80 of 0, 80 of 1, etc...
             for(int i = 0; i < nClass; i++){
-                int index = i * (nClass * cv.test.length);
-                for(int j = 0; j < (nClass * cv.test.length); j++){
+                int index = i * ((samples / parts) * (parts - 1));
+                for(int j = 0; j < ((samples / parts) * (parts - 1)); j++){
                     trainClasses[index] = i;
                     index++;
                 }
             }
 
-            model = new LDA (trainVectorCV,trainClasses,0);
+            //SWITCH FOR ALL NEW INSTANCES OF CLASSIFIER MODELS
+            //model = new LDA (trainVectorCV,trainClasses,0);
+
+            switch(choice) {
+                case 0:
+                    LDACV = new LDA (trainVectorCV,trainClasses,0);
+                    break;
+                case 1:
+                    QDACV = new QDA (trainVectorCV,trainClasses,0);
+                    break;
+                case 2: //NOT working
+                    SVMCV = new SVM<>(new LinearKernel(), 10.0, classSize + 1, SVM.Multiclass.ONE_VS_ALL);
+                    SVMCV.learn(trainVectorCV, trainClasses);
+                    SVMCV.learn(trainVectorCV, trainClasses);
+                    SVMCV.finish();
+                    break;
+                case 3:
+                    LOGITCV = new LogisticRegression(trainVectorCV, trainClasses);
+                    break;
+                case 4:
+                    TREECV = new DecisionTree(trainVectorCV, trainClasses, 350);
+                    break;
+                case 5: //Can't be selected in the app
+                    NETCV = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, 40, 30, classSize + 1);
+                    NETCV.learn(trainVectorCV, trainClasses);
+            }
+
 
             //------------------TESTING PHASE--------------------
-            DataVector [] test = new DataVector[nClass * cv.test.length]; // 60
-            DataVector [][] auxMatrixTest = new DataVector[nClass][cv.test.length]; //3 x 20
+            DataVector [] test = new DataVector[nClass * (samples / parts)]; // 60
+            DataVector [] test2 = new DataVector[((nClass * 100) / parts) * (parts - 1)];
+            DataVector [][] auxMatrixTest = new DataVector[nClass][samples / parts]; //3 x 20
 
             for(int classes = 1; classes <= nClass; classes++){
                 DataVector [] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples , samples * classes);
-                DataVector [] test2 = Math.slice(aux, cv.test[kfold]);
+                test2 = Math.slice(aux, cv.test[kfold]);
                 int it2 = 0;
                 for(int col = 0; col < auxMatrixTest[classes-1].length; col++){
                     auxMatrixTest[classes-1][col] = test2[it2];
@@ -288,22 +347,24 @@ public class Classifier{
                 int value = i * auxMatrixTest[i].length;
                 for(int j = 0; j < auxMatrixTest[i].length; j++){
                     test[value] = auxMatrixTest[i][j];
-                    value++;
+                    ++value;
                 }
             }
 
             //Test is a 60 x 40 an array of dataVectors
             for(int i = 0; i < test.length; i++){
+                /*
                 int index4 = 0;
                 double [] dataVectorPredict = new double[test[0].getVectorData().size()]; //40
 
                 for(int j = 0;j < test[0].getLength();j++){
                     dataVectorPredict[index4] = test[i].getValue(j).doubleValue();
                     index4++;
-                }
+                }*/
 
                 total++;
-                int pred = model.predict(dataVectorPredict);
+                int pred = predictTest(test[i]);
+
                 confMatrix[(int)test[i].getFlag()][(int) pred]++;
                 if(test[i].getFlag() == pred){
                     correct++;
