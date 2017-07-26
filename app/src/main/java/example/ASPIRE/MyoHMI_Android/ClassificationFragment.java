@@ -68,6 +68,7 @@ public class ClassificationFragment extends Fragment {
     private TextView liveView;
     private TextView or_text;
     private Classifier classifier;//for making toast on this activity
+    private CloudUpload cloudUpload;
 
     EditText GetValue;
     ImageButton addButton;
@@ -101,6 +102,7 @@ public class ClassificationFragment extends Fragment {
         fcalc = new FeatureCalculator(v, getActivity());
         classifier = new Classifier(getActivity());
         saver  = new SaveData(this.getContext());
+        cloudUpload = new CloudUpload(getActivity());
 
         or_text = (TextView) v.findViewById(R.id.or_text);
         liveView = (TextView)v.findViewById(R.id.gesture_detected);
@@ -246,8 +248,8 @@ public class ClassificationFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getActivity(), "Saving on Cloud!", Toast.LENGTH_SHORT).show();
+//                        cloudUpload.beginUpload();
                         dialog.dismiss();
-
                     }
                 });
 
@@ -257,7 +259,6 @@ public class ClassificationFragment extends Fragment {
                         saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                         Toast.makeText(getActivity(), "Saving on SDCARD and Cloud!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
                     }
                 });
                 dialog.setView(view);
@@ -318,8 +319,7 @@ public class ClassificationFragment extends Fragment {
 
     public void openFolder(){
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
-                + "/FileManager/");
+        Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/FileManager/");
         intent.setDataAndType(uri, "text/csv");
         startActivity(Intent.createChooser(intent, "Open folder"));
     }

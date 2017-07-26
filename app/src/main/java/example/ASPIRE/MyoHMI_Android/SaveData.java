@@ -30,10 +30,18 @@ public class SaveData extends Activity{
 
     String FileName;
 
+    CloudUpload cloudUpload;
+
     public SaveData(Context context){
         this.context = context;
         checkWriteExternalStoragePermission();//move to initial upload file button
+        cloudUpload = new CloudUpload(context);
     }
+
+//    public File makeFile(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
+//        state = Environment.getExternalStorageState();
+//        String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+//    }
 
     public void addData(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
 
@@ -67,6 +75,8 @@ public class SaveData extends Activity{
                 }
                 osw.flush();
                 osw.close();
+
+                cloudUpload.beginUpload(file);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

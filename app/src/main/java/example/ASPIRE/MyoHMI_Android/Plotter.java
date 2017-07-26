@@ -75,8 +75,17 @@ public class Plotter extends Activity{
         mChart.setWebLineWidthInner(1f);
         mChart.setWebColorInner(Color.LTGRAY);
         mChart.setWebAlpha(100);
-//        mChart.getLegend().setTextSize(20f);
         mChart.getLegend().setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+//        mChart.getLegend().setTextSize(20f);
+
+        mChart.getYAxis().setAxisMaxValue(100f);
+//        ArrayList<IRadarDataSet> sets = new ArrayList<IRadarDataSet>();
+//        ArrayList<RadarEntry> entries4 = new ArrayList<RadarEntry>();
+//        entries4.add(new RadarEntry(60*200));
+//        RadarDataSet set4 = new RadarDataSet(entries4, "SMAV");
+//        sets.add(set4);
+//        RadarData data = new RadarData(sets);
+//        mChart.setData(data);
 
         XAxis xAxis = mChart.getXAxis();
         //xAxis.setTypeface(mTfLight);
