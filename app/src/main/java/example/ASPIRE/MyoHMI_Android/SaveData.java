@@ -38,13 +38,40 @@ public class SaveData extends Activity{
         cloudUpload = new CloudUpload(context);
     }
 
-//    public File makeFile(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
-//        state = Environment.getExternalStorageState();
-//        String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
-//    }
+    public File makeFile(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
+//        String state = Environment.getExternalStorageState();
+        String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+        FileName  = date + ".txt";
+        File file = new File(FileName);
 
-    public void addData(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file, true);
+            OutputStreamWriter osw = new OutputStreamWriter(fileOutputStream);
 
+            for(int i=0;i<trainData.size();i++) {
+                DataVector data = trainData.get(i);
+                double trunc = i/100;
+                //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                osw.append((int)trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                osw.append("\n");
+                Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+            }
+            osw.flush();
+            osw.close();
+
+//                cloudUpload.beginUpload(file);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
+    public File addData(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
+
+        File file = null;
         String state;
         state = Environment.getExternalStorageState();
 
@@ -59,7 +86,7 @@ public class SaveData extends Activity{
 
             FileName  = date + ".txt";
 
-            File file = new File(Dir, FileName);
+            file = new File(Dir, FileName);
 
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file, true);
@@ -76,7 +103,7 @@ public class SaveData extends Activity{
                 osw.flush();
                 osw.close();
 
-                cloudUpload.beginUpload(file);
+//                cloudUpload.beginUpload(file);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -87,6 +114,7 @@ public class SaveData extends Activity{
         else {
             Log.d("EXTERNAL STRG","No SD card found");
         }
+        return file;
     }
 
     public void checkWriteExternalStoragePermission() {

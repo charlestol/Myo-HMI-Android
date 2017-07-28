@@ -118,10 +118,6 @@ public class Plotter extends Activity{
     public void pushPlotter(byte[] data){
 //        setData();
         if (data.length==16 && currentTab==0){//emg=true;
-//            for(int i=0;i<16;i++){//can we do this all at once?
-//                emgDatas[i] = data[0+i];
-////                emgData2[i] = data[7+i];
-//            }
 
             mHandler.post(new Runnable() {
                 @Override

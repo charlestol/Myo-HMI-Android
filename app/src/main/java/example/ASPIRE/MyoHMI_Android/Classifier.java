@@ -30,7 +30,7 @@ public class Classifier {
     int[] classes;
     int[] testclasses = new int[3];
     static Activity activity;
-    int [] trainClasses = new int [240];
+    int [] trainClasses;
 
     int samples = 100;
     double [][] trainVectorCV;
@@ -229,6 +229,7 @@ public class Classifier {
         int total = 0;
         ArrayList<Float> cM = new ArrayList<>();
         int [][] confMatrix = new int[nClass][nClass];
+        trainClasses = new int [((nClass * parts)/parts) * (parts - 1)];
 
         //Separates feature vectors according to the gesture being done
         ArrayList<ArrayList<DataVector >> separateData = new ArrayList<>();

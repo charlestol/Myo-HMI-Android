@@ -68,8 +68,12 @@ public class  CloudUpload {
     Button cloudButton;
     Activity activity;
     Context context;
+
+    public static boolean delete = false;
     // Indicates that no upload is currently selected
     private static final int INDEX_NOT_CHECKED = -1;
+
+    public static File file;
 
     // TAG for logging;
     private static final String TAG = "UploadActivity";
@@ -80,6 +84,10 @@ public class  CloudUpload {
 
     // The TransferUtility is the primary class for managing transfer to S3
     private TransferUtility transferUtility;
+
+    public CloudUpload(){
+
+    }
 
     public CloudUpload(Context context) {
         transferUtility = Util.getTransferUtility(context);
@@ -120,139 +128,53 @@ public class  CloudUpload {
       */
     public void beginUpload(File file) {
 
-//        File file = new File(filePath);
+        this.file = file;
         TransferObserver observer = transferUtility.upload(Credentials.BUCKET_NAME, file.getName(), file);
         TransferState state = observer.getState();
         TransferListener listener = new UploadListener();
-//        observer.setTransferListener(new UploadListener());
-//        Log.d(state.getState(), " Uploaded");
-//        Log.d("Pool ID: ", Credentials.COGNITO_POOL_ID);
-//        Log.d("Pool ID: ", Credentials.COGNITO_POOL_REGION);
-//        Log.d("Pool ID: ", Credentials.BUCKET_REGION);
-//        Log.d(file.getName(), " Uploaded");
-        Log.d("State ", state.name());
 
-//        while(state.name()=="WAITING"){
-//            //wait for it to finish
-//            observer.refresh();
-//            state = observer.getState();
-//            Log.d("State ", state.name());
-//        }
+        observer.setTransferListener(new UploadListener());
+    }
 
-//        if (TransferState.WAITING.equals(observer.getState())
-//                || TransferState.WAITING_FOR_NETWORK.equals(observer.getState())
-//                || TransferState.IN_PROGRESS.equals(observer.getState())) {
-//            observer.setTransferListener(listener);
-//        }
-        /*
-         * Note that usually we set the transfer listener after initializing the
-         * transfer. However it isn't required in this sample app. The flow is
-         * click upload button -> start an activity for image selection
-         * startActivityForResult -> onActivityResult -> beginUpload -> onResume
-         * -> set listeners to in progress transfers.
-         */
-//        observer.setTransferListener(new UploadListener());
+    public void delete(){
+        file.delete();
+    }
+
+    public void setDelete(boolean delete){
+        this.delete = delete;
+    }
+
+    public boolean getDelete(){
+        return delete;
     }
 }
 
 class UploadListener implements TransferListener {
 
+    private CloudUpload cloudUpload = new CloudUpload();
+
     // Simply updates the UI list when notified.
     @Override
     public void onError(int id, Exception e) {
-        Log.e("asdfdsfd", "Error during upload: " + id, e);
+        Log.e("", "Error during upload: " + id, e);
 //        updateList();
     }
 
     @Override
     public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
-        Log.d("asdfdsfd", String.format("onProgressChanged: %d, total: %d, current: %d",
+        Log.d("", String.format("onProgressChanged: %d, total: %d, current: %d",
                 id, bytesTotal, bytesCurrent));
 //        updateList();
     }
 
     @Override
     public void onStateChanged(int id, TransferState newState) {
-        Log.d("asdfdsfd", "onStateChanged: " + id + ", " + newState);
+        Log.d("", "onStateChanged: " + id + ", " + newState);
+        if (newState.name() == "COMPLETED"){
+            Log.d("", String.valueOf(cloudUpload.getDelete()));
+            if (cloudUpload.getDelete())
+                cloudUpload.delete();
+        }
 //        updateList();
     }
 }
-    /*
-     * Gets the file path of the given Uri.
-     */
-//    @SuppressLint("NewApi")
-//    private String getPath(Uri uri) throws URISyntaxException {
-//        final boolean needToCheckUri = Build.VERSION.SDK_INT >= 19;
-//        String selection = null;
-//        String[] selectionArgs = null;
-//        // Uri is different in versions after KITKAT (Android 4.4), we need to
-//        // deal with different Uris.
-//        if (needToCheckUri && DocumentsContract.isDocumentUri(context, uri)) {
-//            if (isExternalStorageDocument(uri)) {
-//                final String docId = DocumentsContract.getDocumentId(uri);
-//                final String[] split = docId.split(":");
-//                return Environment.getExternalStorageDirectory() + "/" + split[1];
-//            } else if (isDownloadsDocument(uri)) {
-//                final String id = DocumentsContract.getDocumentId(uri);
-//                uri = ContentUris.withAppendedId(
-//                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
-//            } else if (isMediaDocument(uri)) {
-//                final String docId = DocumentsContract.getDocumentId(uri);
-//                final String[] split = docId.split(":");
-//                final String type = split[0];
-//                if ("image".equals(type)) {
-//                    uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-//                } else if ("video".equals(type)) {
-//                    uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-//                } else if ("audio".equals(type)) {
-//                    uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-//                }
-//                selection = "_id=?";
-//                selectionArgs = new String[]{
-//                        split[1]
-//                };
-//            }
-//        }
-//        if ("content".equalsIgnoreCase(uri.getScheme())) {
-//            String[] projection = {
-//                    MediaStore.Images.Media.DATA
-//            };
-//            Cursor cursor = null;
-//            try {
-//                cursor = getContentResolver().query(uri, projection, selection, selectionArgs, null);
-//                int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//                if (cursor.moveToFirst()) {
-//                    return cursor.getString(column_index);
-//                }
-//            } catch (Exception e) {
-//            }
-//        } else if ("file".equalsIgnoreCase(uri.getScheme())) {
-//            return uri.getPath();
-//        }
-//        return null;
-//    }
-////
-//    /**
-//     * @param uri The Uri to check.
-//     * @return Whether the Uri authority is ExternalStorageProvider.
-//     */
-//    public static boolean isExternalStorageDocument(Uri uri) {
-//        return "com.android.externalstorage.documents".equals(uri.getAuthority());
-//    }
-//
-//    /**
-//     * @param uri The Uri to check.
-//     * @return Whether the Uri authority is DownloadsProvider.
-//     */
-//    public static boolean isDownloadsDocument(Uri uri) {
-//        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
-//    }
-//
-//    /**
-//     * @param uri The Uri to check.
-//     * @return Whether the Uri authority is MediaProvider.
-//     */
-//    public static boolean isMediaDocument(Uri uri) {
-//        return "com.android.providers.media.documents".equals(uri.getAuthority());
-//    }
-//}

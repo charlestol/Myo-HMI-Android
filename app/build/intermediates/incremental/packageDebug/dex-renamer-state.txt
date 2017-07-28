@@ -1,4 +1,4 @@
-#Wed Jul 26 14:51:33 PDT 2017
+#Thu Jul 27 17:57:22 PDT 2017
 base.0=C\:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

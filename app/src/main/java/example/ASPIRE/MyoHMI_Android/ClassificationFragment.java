@@ -1,55 +1,51 @@
 package example.ASPIRE.MyoHMI_Android;
-
-import android.annotation.SuppressLint;
-        import android.app.Activity;
-
-
-        import android.app.AlertDialog;
-        import android.content.Context;
-        import android.content.DialogInterface;
+import android.app.AlertDialog;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-        import android.os.Bundle;
-        import android.os.CountDownTimer;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
-        import android.os.SystemClock;
-        import android.service.notification.Condition;
-        import android.support.v4.app.Fragment;
-        import android.support.v4.app.FragmentActivity;
-        import android.util.Log;
-        import android.util.LogPrinter;
-        import android.util.SparseBooleanArray;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.view.inputmethod.InputMethodManager;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.Button;
-        import android.os.CountDownTimer;
-        import android.widget.CheckBox;
-        import android.widget.EditText;
-        import android.widget.ImageButton;
-        import android.widget.ListView;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.os.SystemClock;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+import android.service.notification.Condition;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import org.apache.commons.lang3.ArrayUtils;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
-        import java.sql.Time;
-        import java.util.ArrayList;
-        import java.util.Arrays;
-        import java.util.HashMap;
-        import java.util.List;
-        import java.util.Map;
-        import java.util.concurrent.TimeUnit;
-        import java.util.concurrent.locks.ReentrantLock;
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
-        import static android.content.Context.INPUT_METHOD_SERVICE;
-        import static example.ASPIRE.MyoHMI_Android.ListActivity.TAG;
-        import static example.ASPIRE.MyoHMI_Android.R.id.textView;
-        import static example.ASPIRE.MyoHMI_Android.R.layout.countdown;
-        import static java.lang.Character.FORMAT;
 
 /**
  * Created by User on 2/28/2017.
@@ -61,7 +57,7 @@ public class ClassificationFragment extends Fragment {
     private List<String> ListElementsArrayList;
     private List<String> Copy_of_selectedItemsList;
     private SaveData saver;
-    private ArrayList<DataVector> trainData;
+    private static ArrayList<DataVector> trainData;
     private int count = 4;
     private Handler mHandler = new Handler();
     private int gestureCounter = 0;
@@ -85,9 +81,12 @@ public class ClassificationFragment extends Fragment {
     ArrayList<String> selectedItems = new ArrayList<String>();
 
     String[] ListElements = new String[]{
+            "Rest",
             "Fist",
             "Point",
-            "Open Hand"
+            "Open Hand",
+            "Wave Out",
+            "Wave In",
     };
 
     @Override
@@ -104,6 +103,8 @@ public class ClassificationFragment extends Fragment {
         saver  = new SaveData(this.getContext());
         cloudUpload = new CloudUpload(getActivity());
 
+        ContentResolver resolver = getContext().getContentResolver();
+
         or_text = (TextView) v.findViewById(R.id.or_text);
         liveView = (TextView)v.findViewById(R.id.gesture_detected);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
@@ -119,6 +120,7 @@ public class ClassificationFragment extends Fragment {
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
         listview.setAdapter(adapter);
+//        trainData = new ArrayList<DataVector>();
 
         //set OnItemClickListener
         listview.setOnItemClickListener((parent, view, position, id) -> {
@@ -189,12 +191,10 @@ public class ClassificationFragment extends Fragment {
                 }
                 Toast.makeText(getActivity(), "Deleting: " + selItems, Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
-
             }
         });
 
         addButton.setOnClickListener(v12 -> {
-
             try  {
                 InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
@@ -223,6 +223,8 @@ public class ClassificationFragment extends Fragment {
                 cloud = (Button) view.findViewById(R.id.bt_cloud);
                 both = (Button) view.findViewById(R.id.bt_both);
 
+                File file = saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+
                 final AlertDialog dialog = upload_pop.create();
 
                 cancel.setOnClickListener(new View.OnClickListener() {
@@ -230,25 +232,25 @@ public class ClassificationFragment extends Fragment {
                     public void onClick(View view) {
                         Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
+                        file.delete();
                     }
                 });
 
                 sdCard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+//                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                         Toast.makeText(getActivity(), "Saving on SDCARD!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
                     }
                 });
 
                 cloud.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        cloudUpload.beginUpload(file);
+                        cloudUpload.setDelete(true);
                         Toast.makeText(getActivity(), "Saving on Cloud!", Toast.LENGTH_SHORT).show();
-//                        cloudUpload.beginUpload();
                         dialog.dismiss();
                     }
                 });
@@ -256,7 +258,8 @@ public class ClassificationFragment extends Fragment {
                 both.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+                        cloudUpload.setDelete(false);
+                        cloudUpload.beginUpload(file);
                         Toast.makeText(getActivity(), "Saving on SDCARD and Cloud!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
@@ -276,7 +279,7 @@ public class ClassificationFragment extends Fragment {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openFolder();
+                openFolder(view);
             }
         });
         return v;
@@ -317,10 +320,152 @@ public class ClassificationFragment extends Fragment {
         uploadButton.setVisibility(View.VISIBLE);
     }
 
-    public void openFolder(){
+    public void openFolder(View v){
+
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/FileManager/");
-        intent.setDataAndType(uri, "text/csv");
-        startActivity(Intent.createChooser(intent, "Open folder"));
+        intent.setType("*/*");
+        getActivity().startActivityForResult(intent, 2);
+
     }
+
+    public void givePath(Uri data) {
+        trainData = new ArrayList<DataVector>();
+//        Log.d("Load Path: ", getPath(this.getContext(), data));
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(getPath(this.getContext(), data)));
+            String text = null;
+            String[] column;
+            String[] emgData;
+            double[] lineData = new double[40];
+
+            int i = 0;
+            while ((text = reader.readLine()) != null) {
+                column = text.split("\t");
+//                Classes.add(Integer.parseInt(column[0]));
+                emgData = column[1].split(",");
+                for(int j=0;j<emgData.length;j++){
+                    lineData[j] = Double.parseDouble(emgData[j].replaceAll("[^\\d.]", ""));
+//                       System.out.println(String.valueOf(lineData[3]));
+                }
+                Number[] feat_dataObj = ArrayUtils.toObject(lineData);
+                ArrayList<Number> LineData = new ArrayList<Number>(Arrays.asList(feat_dataObj));
+                DataVector dvec = new DataVector(Integer.parseInt(column[0]), lineData.length, LineData);
+                Log.d("Line: ", text);
+                trainData.add(dvec);
+//               System.out.print(String.valueOf(i) + " : ");
+               dvec.printDataVector("Line: ");
+                i++;
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getPath(final Context context, final Uri uri) {
+
+        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+
+        // DocumentProvider
+        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+            // ExternalStorageProvider
+            if (isExternalStorageDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                if ("primary".equalsIgnoreCase(type)) {
+                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+                }
+
+                // TODO handle non-primary volumes
+            }
+            // DownloadsProvider
+            else if (isDownloadsDocument(uri)) {
+
+                final String id = DocumentsContract.getDocumentId(uri);
+                final Uri contentUri = ContentUris.withAppendedId(
+                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+
+                return getDataColumn(context, contentUri, null, null);
+            }
+            // MediaProvider
+            else if (isMediaDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                Uri contentUri = null;
+                if ("image".equals(type)) {
+                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                } else if ("video".equals(type)) {
+                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+                } else if ("audio".equals(type)) {
+                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                }
+
+                final String selection = "_id=?";
+                final String[] selectionArgs = new String[] {
+                        split[1]
+                };
+
+                return getDataColumn(context, contentUri, selection, selectionArgs);
+            }
+        }
+        // MediaStore (and general)
+        else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            return getDataColumn(context, uri, null, null);
+        }
+        // File
+        else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+
+        return null;
+    }
+
+    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
+
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
+
+    public static boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is DownloadsProvider.
+     */
+    public static boolean isDownloadsDocument(Uri uri) {
+        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is MediaProvider.
+     */
+    public static boolean isMediaDocument(Uri uri) {
+        return "com.android.providers.media.documents".equals(uri.getAuthority());
+    }
+
 }

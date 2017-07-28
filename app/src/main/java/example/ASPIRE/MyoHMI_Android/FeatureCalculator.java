@@ -296,7 +296,7 @@ public class FeatureCalculator {
     public static void Train(){
         classifier.Train(samplesClassifier, classes);
         //Kattia: Testing CrossValidation
-//        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier,3,5);
+        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier,gestures.size(),5);
     }
 
     private DataVector buildDataVector()//ignoring grid and imu for now, assuming all features are selected

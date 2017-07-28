@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
     private Button graphButton8;*/
     private boolean click = true;
 
+    public ClassificationFragment classificationFragment;
+
     /***********************Below ADDED BY CHARLES FOR SWIPEABLE TABS***************************/
 
     ViewPager mViewPager;
@@ -96,12 +98,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         mViewPager = (ViewPager) this.findViewById(R.id.view_pager);
+        mViewPager.setOffscreenPageLimit(2);
         final ActionBar bar = this.getSupportActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         EmgFragment emgFragment = new EmgFragment();
         FeatureFragment featureFragment = new FeatureFragment();
-        ClassificationFragment classificationFragment = new ClassificationFragment();
+        classificationFragment = new ClassificationFragment();
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         mTabsAdapter.addTab(bar.newTab().setText("EMG"),
@@ -359,6 +362,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, SCAN_PERIOD);
             mLEScanner.startScan(scanCallback);
+        }
+        else if(requestCode==2 && resultCode==RESULT_OK){
+            classificationFragment.givePath(data.getData());
         }
     }
 
