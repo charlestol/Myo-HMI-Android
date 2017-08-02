@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -35,8 +35,7 @@ dependencies {
     compile 'com.echo:holographlibrary:1.0'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     // https://mvnrepository.com/artifact/com.github.haifengl/smile-core
-    compile 'com.github.haifengl:smile-core:1.0.4'
-    compile files('libs/aws-android-sdk-cognito-2.4.5.jar')
+    compile group: 'com.github.haifengl', name: 'smile-core', version: '1.0.4'
 }
 
 buildscript {

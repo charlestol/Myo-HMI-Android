@@ -43,7 +43,7 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
     private Handler mHandler;
     private BluetoothAdapter mBluetoothAdapter;
     private BluetoothGatt mBluetoothGatt;
-//    private TextView emgDataText;
+    //    private TextView emgDataText;
     private TextView gestureText;
     private BluetoothLeScanner mLEScanner;
 
@@ -57,7 +57,8 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
     private Plotter plotter;
     Activity activity;
 
-    private ScanCallback scanCallback = new ScanCallback() {};
+    private ScanCallback scanCallback = new ScanCallback() {
+    };
 
     private boolean click = false;
 
@@ -68,8 +69,8 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
         assert v != null;
 
 //        emgDataText = (TextView)v.findViewById(R.id.emgDataTextView);
-        gestureText = (TextView)v.findViewById(R.id.gestureTextView);
-        gestureText.setTextColor(Color.rgb(38,38,38));
+        gestureText = (TextView) v.findViewById(R.id.gestureTextView);
+        gestureText.setTextColor(Color.rgb(38, 38, 38));
         graph = (LineGraph) v.findViewById(R.id.holo_graph_view);
 //        mChart = (RadarChart) v.findViewById(R.id.chart1);
 //        mChart.setNoDataText("");
@@ -112,16 +113,16 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
 
         View emgbutton = v.findViewById(R.id.iEMG);
         emgbutton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v){
-            clickedemg(v);
-        }
+            @Override
+            public void onClick(View v) {
+                clickedemg(v);
+            }
         });
 
         View vibbutton = v.findViewById(R.id.iVibrate);
         vibbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 clickedvib(v);
             }
         });
@@ -130,18 +131,18 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v){
+    public void onClick(View v) {
         clickedemg(v);
     }
 
     public void clickedemg(View v) {
-        click=!click;
+        click = !click;
         Log.d("Tag", String.valueOf(click));
         if (click) {
             if (mBluetoothGatt == null || !mMyoCallback.setMyoControlCommand(commandList.sendImuAndEmg())) {
                 Log.d(TAG, "False EMG");
             }
-        } else{
+        } else {
             if (mBluetoothGatt == null
                     || !mMyoCallback.setMyoControlCommand(commandList.sendUnsetData())
                     /*|| !mMyoCallback.setMyoControlCommand(commandList.sendNormalSleep())*/) {
@@ -159,16 +160,16 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
     private ScanCallback mScanCallback = new ScanCallback() {
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
-        BluetoothDevice device = result.getDevice();
-        if (deviceName.equals(device.getName())) {
-            mLEScanner.stopScan(scanCallback);
-            // Trying to connect GATT
+            BluetoothDevice device = result.getDevice();
+            if (deviceName.equals(device.getName())) {
+                mLEScanner.stopScan(scanCallback);
+                // Trying to connect GATT
 
-            plotter = new Plotter(mHandler, graph);
-            mMyoCallback = new MyoGattCallback(mHandler, gestureText, plotter);
-            mBluetoothGatt = device.connectGatt(getActivity(), false, mMyoCallback);
-            mMyoCallback.setBluetoothGatt(mBluetoothGatt);
-        }
+                plotter = new Plotter(mHandler, graph);
+                mMyoCallback = new MyoGattCallback(mHandler, gestureText, plotter);
+                mBluetoothGatt = device.connectGatt(getActivity(), false, mMyoCallback);
+                mMyoCallback.setBluetoothGatt(mBluetoothGatt);
+            }
         }
     };
 
@@ -184,7 +185,7 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
             Bitmap source = v.getDrawingCache();
             Bitmap bmp = Bitmap.createBitmap(source, 0, 0, v.getWidth(), v.getHeight());
             int color = bmp.getPixel((int) event.getX(), (int) event.getY());
-            if(plotter!=null) {
+            if (plotter != null) {
                 if (color == Color.rgb(89, 140, 175)) {
                     Log.d("Clicked on ", "blue");
                     plotter.setEMG(color, 2);
@@ -211,8 +212,7 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
                     plotter.setEMG(Color.rgb(64, 64, 64), 3);
                 }
                 return true;
-            }
-            else{
+            } else {
                 return false;
             }
 

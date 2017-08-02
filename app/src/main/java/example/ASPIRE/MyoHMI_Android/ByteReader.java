@@ -1,21 +1,21 @@
 package example.ASPIRE.MyoHMI_Android;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
  * Created by naoki on 15/04/06.
- * 
+ * <p>
  * This class help you to read the byte line from Myo.
- * But be carefully to byte array size. There is no limitation of get() method, 
+ * But be carefully to byte array size. There is no limitation of get() method,
  * so there is a possibilty of overloading the byte buffer.
- * 
  */
 
 public class ByteReader {
     private byte[] byteData;
     private ByteBuffer bbf;
 
-    public void setByteData(byte[] data){
+    public void setByteData(byte[] data) {
         this.byteData = data;
         this.bbf = ByteBuffer.wrap(this.byteData);
         bbf.order(ByteOrder.LITTLE_ENDIAN);
@@ -29,11 +29,11 @@ public class ByteReader {
         return this.bbf.getShort();
     }
 
-    public byte getByte(){
+    public byte getByte() {
         return this.bbf.get();
     }
 
-    public int getInt(){
+    public int getInt() {
         return this.bbf.getInt();
     }
 

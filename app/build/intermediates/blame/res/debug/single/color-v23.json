@@ -1,439 +1,67 @@
 [
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_default.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\3a037ff03cccfe3e4a8660a13e32e8fd66c65b7b\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\3a037ff03cccfe3e4a8660a13e32e8fd66c65b7b\\output\\res\\color-v23\\design_tint_password_toggle.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\834f4806108bd887f512a27fec03c0ad100b27b0\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\7800b2f656c9023d11a0417edaacd7b9f51d1688\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\7800b2f656c9023d11a0417edaacd7b9f51d1688\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\3a037ff03cccfe3e4a8660a13e32e8fd66c65b7b\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
@@ -444,87 +72,63 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\f368452ec1789d7d0803f93b5cae22c1c0647a66\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\0dfe0bb7c9ed189178c16c16ea332355fc8c4978\\output\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     }
 ]

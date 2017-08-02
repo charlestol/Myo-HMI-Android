@@ -1,6 +1,10 @@
 package example.ASPIRE.MyoHMI_Android;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+
+
 import android.app.AlertDialog;
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,6 +24,8 @@ import android.service.notification.Condition;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.util.LogPrinter;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,25 +33,35 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.os.CountDownTimer;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import org.apache.commons.lang3.ArrayUtils;
+
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
-
+import static example.ASPIRE.MyoHMI_Android.ListActivity.TAG;
+import static example.ASPIRE.MyoHMI_Android.R.id.textView;
+import static example.ASPIRE.MyoHMI_Android.R.layout.countdown;
+import static java.lang.Character.FORMAT;
 
 /**
  * Created by User on 2/28/2017.
@@ -55,38 +71,56 @@ public class ClassificationFragment extends Fragment {
 
     private FeatureCalculator fcalc;
     private List<String> ListElementsArrayList;
+    private List<String> ClassifierArrayList;
     private List<String> Copy_of_selectedItemsList;
     private SaveData saver;
-    private static ArrayList<DataVector> trainData;
+    private ArrayList<DataVector> trainData;
     private int count = 4;
     private Handler mHandler = new Handler();
     private int gestureCounter = 0;
-    private TextView liveView;
+    private TextView liveView, status;
     private TextView or_text;
-    private Classifier classifier;//for making toast on this activity
-    private CloudUpload cloudUpload;
+    //private Classifier classifier;//for making toast on this activity
 
     EditText GetValue;
     ImageButton addButton;
     ImageButton deleteButton;
     ImageButton clearButton;
+    ImageButton uploadButton;
     //Button showButton;
     Button trainButton;
     Button loadButton;
-    ImageButton uploadButton;
-
+    ListView listview_Classifier;
     ListView listview;
+    ProgressBar progressBar;
+
 
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
 
+    Classifier classifier = new Classifier();
+    FeatureCalculator featureCalculator = new FeatureCalculator();
+
     String[] ListElements = new String[]{
             "Rest",
+            "Wave In",
+            "Wave Out",
             "Fist",
             "Point",
             "Open Hand",
-            "Wave Out",
-            "Wave In",
+            "Supination",
+            "Pronation"
+    };
+
+    String[] classifier_options = new String[]{
+            "LDA",
+            "SVM",
+            "Logistic Regression",
+            "Decision Tree",
+            "Neural Net",
+            "KNN",
+            "Adaboost"
+
     };
 
     @Override
@@ -100,27 +134,49 @@ public class ClassificationFragment extends Fragment {
 
         fcalc = new FeatureCalculator(v, getActivity());
         classifier = new Classifier(getActivity());
-        saver  = new SaveData(this.getContext());
-        cloudUpload = new CloudUpload(getActivity());
-
-        ContentResolver resolver = getContext().getContentResolver();
+        saver = new SaveData(this.getContext());
 
         or_text = (TextView) v.findViewById(R.id.or_text);
-        liveView = (TextView)v.findViewById(R.id.gesture_detected);
+        liveView = (TextView) v.findViewById(R.id.gesture_detected);
+        //status = (TextView) v.findViewById(R.id.txt_status);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
         trainButton = (Button) v.findViewById(R.id.bt_train);
         loadButton = (Button) v.findViewById(R.id.bt_load);
-       // showButton = (Button) v.findViewById(R.id.bt_show);
+        // showButton = (Button) v.findViewById(R.id.bt_show);
         addButton = (ImageButton) v.findViewById(R.id.im_add);
         deleteButton = (ImageButton) v.findViewById(R.id.im_delete);
         uploadButton = (ImageButton) v.findViewById(R.id.im_upload);
         clearButton = (ImageButton) v.findViewById(R.id.im_clear);
         listview = (ListView) v.findViewById(R.id.listView);
+        listview_Classifier = (ListView) v.findViewById(R.id.listView1);
+        progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
+
         listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
+        ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifier_options));
+
+
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
+
+        ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
+                (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
+
         listview.setAdapter(adapter);
-//        trainData = new ArrayList<DataVector>();
+        listview_Classifier.setAdapter(adapter_classifier);
+
+
+        //selectes lda
+        listview_Classifier.setItemChecked(0, true);
+
+
+        //Kattia: Change 3 to 8 for experiments so that we don't need to select all gestures each time
+        for (int i = 0; i < 3; i++) {
+            listview.setItemChecked(i, true);
+            selectedItems.add(i, adapter.getItem(i));
+        }
 
         //set OnItemClickListener
         listview.setOnItemClickListener((parent, view, position, id) -> {
@@ -135,6 +191,20 @@ public class ClassificationFragment extends Fragment {
             }
 
             Copy_of_selectedItemsList = new ArrayList<String>(Arrays.asList(selectedItem));
+
+        });
+
+
+        //set OnItemClickListener
+        listview_Classifier.setOnItemClickListener((parent, view, position, id) -> {
+
+            classifier.setChoice(position);
+
+            // selected item
+            String Classifier_selectedItem = ((TextView) view).getText().toString();
+
+            Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
+
 
         });
 
@@ -176,7 +246,7 @@ public class ClassificationFragment extends Fragment {
             public void onClick(View v) {
 
                 String selItems = "";
-                while(selectedItems.size() > 0){
+                while (selectedItems.size() > 0) {
                     for (int i = 0; i < selectedItems.size(); ++i) {
                         String item = selectedItems.get(i);
 
@@ -185,18 +255,20 @@ public class ClassificationFragment extends Fragment {
                             listview.setItemChecked(x, false);
                             adapter.remove(item);
                         }
-                        selItems += "/" + item ;
+                        selItems += "/" + item;
                     }
 
                 }
                 Toast.makeText(getActivity(), "Deleting: " + selItems, Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
+
             }
         });
 
         addButton.setOnClickListener(v12 -> {
-            try  {
-                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(INPUT_METHOD_SERVICE);
+
+            try {
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
             } catch (Exception e) {
 
@@ -209,7 +281,7 @@ public class ClassificationFragment extends Fragment {
 
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Button cancel;
                 Button sdCard;
                 Button cloud;
@@ -223,8 +295,6 @@ public class ClassificationFragment extends Fragment {
                 cloud = (Button) view.findViewById(R.id.bt_cloud);
                 both = (Button) view.findViewById(R.id.bt_both);
 
-                File file = saver.addData(fcalc.getSamplesClassifier(), selectedItems);
-
                 final AlertDialog dialog = upload_pop.create();
 
                 cancel.setOnClickListener(new View.OnClickListener() {
@@ -232,36 +302,36 @@ public class ClassificationFragment extends Fragment {
                     public void onClick(View view) {
                         Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-                        file.delete();
+
                     }
                 });
 
                 sdCard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                         Toast.makeText(getActivity(), "Saving on SDCARD!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
+
                     }
                 });
 
                 cloud.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cloudUpload.beginUpload(file);
-                        cloudUpload.setDelete(true);
                         Toast.makeText(getActivity(), "Saving on Cloud!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
+
                     }
                 });
 
                 both.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cloudUpload.setDelete(false);
-                        cloudUpload.beginUpload(file);
+                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                         Toast.makeText(getActivity(), "Saving on SDCARD and Cloud!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
+
                     }
                 });
                 dialog.setView(view);
@@ -271,7 +341,7 @@ public class ClassificationFragment extends Fragment {
 
         trainButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 onClickTrain(v);
             }
         });
@@ -279,48 +349,62 @@ public class ClassificationFragment extends Fragment {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openFolder(view);
+                openFolder();
             }
         });
         return v;
     }
 
     public void onClickTrain(View v) {
-
-        or_text.setVisibility(View.GONE);
-        trainButton.setVisibility(View.GONE);
-        loadButton.setVisibility(View.GONE);
         fcalc.sendClasses(selectedItems);
 
         final Runnable r1 = new Runnable() {
             @Override
             public void run() {
-                if ((--count != -1) && (gestureCounter != selectedItems.size())) {
-                    mHandler.postDelayed(this, 1000);
-                    liveView.setText("Do " + selectedItems.get(gestureCounter) + " in " + String.valueOf(count));
-                    if(count==0){liveView.setText("Hold " + selectedItems.get(gestureCounter));}
-                }
-                else if(gestureCounter != selectedItems.size()){
-                    count=4;//3 seconds + 1
-                    mHandler.post(this);
-                    fcalc.setTrain(true);
-                    while(fcalc.getTrain()){
-                        //wait till trainig is done
+                if (selectedItems.size() > 1) {
+                    or_text.setVisibility(View.GONE);
+                    trainButton.setVisibility(View.GONE);
+                    loadButton.setVisibility(View.GONE);
+
+                    if ((--count != -1) && (gestureCounter != selectedItems.size())) {
+                        mHandler.postDelayed(this, 1000);
+                        liveView.setText("Do " + selectedItems.get(gestureCounter) + " in " + String.valueOf(count));
+                        progressBar.setVisibility(View.VISIBLE);
+
+                        if (count == 0) {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            liveView.setText("Hold " + selectedItems.get(gestureCounter));
+                            //status.getText(featureCalculator.sampleClassifier);
+                        }
+                    } else if (gestureCounter != selectedItems.size()) {
+                        count = 4;//3 seconds + 1
+                        mHandler.post(this);
+                        fcalc.setTrain(true);
+                        while (fcalc.getTrain()) {
+                            //wait till trainig is done
+                        }
+                        gestureCounter++;
+                    } else {
+                        liveView.setText("");
+                        fcalc.Train();
+                        fcalc.setClassify(true);
+
+
+                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                     }
-                    gestureCounter++;
-                }
-                else{
-                    liveView.setText("");
-                    fcalc.Train();
-                    fcalc.setClassify(true);
+                } else if (selectedItems.size() == 1) {
+                    Toast.makeText(getActivity(), "at least 2 gestures must be selected!", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(getActivity(), "No gestures selected!", Toast.LENGTH_SHORT).show();
+
                 }
             }
         };
         mHandler.post(r1);
-        uploadButton.setVisibility(View.VISIBLE);
     }
 
-    public void openFolder(View v){
+    public void openFolder(){
 
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
@@ -353,7 +437,7 @@ public class ClassificationFragment extends Fragment {
                 Log.d("Line: ", text);
                 trainData.add(dvec);
 //               System.out.print(String.valueOf(i) + " : ");
-               dvec.printDataVector("Line: ");
+                dvec.printDataVector("Line: ");
                 i++;
             }
 
@@ -467,5 +551,4 @@ public class ClassificationFragment extends Fragment {
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
-
 }

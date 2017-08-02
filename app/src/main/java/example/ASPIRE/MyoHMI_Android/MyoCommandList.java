@@ -2,10 +2,9 @@ package example.ASPIRE.MyoHMI_Android;
 
 /**
  * Created by naoki on 15/04/13.
- * 
+ * <p>
  * This class is List of Myo Commands, allowing to
  * [https://github.com/thalmiclabs/myo-bluetooth].
- *
  */
 
 public class MyoCommandList {
@@ -14,10 +13,10 @@ public class MyoCommandList {
     public byte[] sendUnsetData() {
         byte command_data = (byte) 0x01;
         byte payload_data = (byte) 3;
-        byte emg_mode     = (byte) 0x00;
-        byte imu_mode     = (byte) 0x00;
-        byte class_mode   = (byte) 0x00;
-        send_bytes_data   =
+        byte emg_mode = (byte) 0x00;
+        byte imu_mode = (byte) 0x00;
+        byte class_mode = (byte) 0x00;
+        send_bytes_data =
                 new byte[]{command_data, payload_data, emg_mode, imu_mode, class_mode};
 
         return send_bytes_data;
@@ -35,10 +34,10 @@ public class MyoCommandList {
     public byte[] sendEmgOnly() {
         byte command_data = (byte) 0x01;
         byte payload_data = (byte) 3;
-        byte emg_mode     = (byte) 0x02;
-        byte imu_mode     = (byte) 0x00;
-        byte class_mode   = (byte) 0x00;
-        send_bytes_data   =
+        byte emg_mode = (byte) 0x02;
+        byte imu_mode = (byte) 0x00;
+        byte class_mode = (byte) 0x00;
+        send_bytes_data =
                 new byte[]{command_data, payload_data, emg_mode, imu_mode, class_mode};
 
         return send_bytes_data;
@@ -47,10 +46,10 @@ public class MyoCommandList {
     public byte[] sendImuOnly() {
         byte command_data = (byte) 0x01;
         byte payload_data = (byte) 3;
-        byte emg_mode     = (byte) 0x00;
-        byte imu_mode     = (byte) 0x01;
-        byte class_mode   = (byte) 0x00;
-        send_bytes_data   =
+        byte emg_mode = (byte) 0x00;
+        byte imu_mode = (byte) 0x01;
+        byte class_mode = (byte) 0x00;
+        send_bytes_data =
                 new byte[]{command_data, payload_data, emg_mode, imu_mode, class_mode};
 
         return send_bytes_data;
@@ -59,10 +58,10 @@ public class MyoCommandList {
     public byte[] sendImuAndEmg() {
         byte command_data = (byte) 0x01;
         byte payload_data = (byte) 3;
-        byte emg_mode     = (byte) 0x02;
-        byte imu_mode     = (byte) 0x01;
-        byte class_mode   = (byte) 0x00;
-        send_bytes_data   =
+        byte emg_mode = (byte) 0x02;
+        byte imu_mode = (byte) 0x01;
+        byte class_mode = (byte) 0x00;
+        send_bytes_data =
                 new byte[]{command_data, payload_data, emg_mode, imu_mode, class_mode};
 
         return send_bytes_data;

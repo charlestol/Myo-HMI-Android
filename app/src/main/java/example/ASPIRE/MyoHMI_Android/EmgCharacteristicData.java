@@ -4,18 +4,17 @@ import java.util.ArrayList;
 
 /**
  * Created by naoki on 15/04/09.
- *
+ * <p>
  * This class help you to read the raw EMG-data from Myo.
  * One raw byte array has 16 byte data. But Myo sensors are only 8.
  * From [https://github.com/thalmiclabs/myo-bluetooth/],
  * EMG-Data will send
  * ------------------------------------------------------------
- *   int8_t sample1[8];       ///< 1st sample of EMG data.
- *   int8_t sample2[8];       ///< 2nd sample of EMG data.
+ * int8_t sample1[8];       ///< 1st sample of EMG data.
+ * int8_t sample2[8];       ///< 2nd sample of EMG data.
  * ------------------------------------------------------------ .
- *
  */
- 
+
 public class EmgCharacteristicData {
     private ByteReader emgData = new ByteReader();
 
@@ -23,7 +22,7 @@ public class EmgCharacteristicData {
         emgData.setByteData(byteData);
     }
 
-    public EmgCharacteristicData(ByteReader byteReader){
+    public EmgCharacteristicData(ByteReader byteReader) {
         emgData = byteReader;
     }
 
@@ -43,7 +42,7 @@ public class EmgCharacteristicData {
             temp_Array.add(temp);
         }
         for (int i_emg8 = 0; i_emg8 < 8; i_emg8++) {
-            if (Math.abs(temp_Array.get(i_emg8)) < Math.abs(temp_Array.get(i_emg8 + 8))){
+            if (Math.abs(temp_Array.get(i_emg8)) < Math.abs(temp_Array.get(i_emg8 + 8))) {
                 emg8Data_max.addElement(Math.abs(temp_Array.get(i_emg8 + 8)));
             } else {
                 emg8Data_max.addElement(Math.abs(temp_Array.get(i_emg8)));

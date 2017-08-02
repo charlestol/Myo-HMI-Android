@@ -33,25 +33,29 @@ public class FeatureFragment extends Fragment {
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
 
-    String[] classifierNames = new String[]{
+    /*String[] classifierNames = new String[]{
             "LDA",
-            "QDA",
             "SVM",
             "Logistic Regression",
-            "Decision Tree"
-//            "Neural Net"
-    };
+            "Decision Tree",
+            "Neural Net",
+            "K-Nearest Neighbor",
+            "AdaBoost"
+    };*/
 
     String[] featureNames = new String[]{
             "MAV",
             "WAV",
             "Turns",
             "Zeros",
-            "SMAV"
+            "SMAV",
+            "AdjUnique"
     };
 
-    /**Charles 7/18**/
-    private static boolean[] featSelected = new boolean[]{true,true,true,true,true};
+    /**
+     * Charles 7/18
+     **/
+    private static boolean[] featSelected = new boolean[]{true, true, true, true, true, true};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,32 +63,32 @@ public class FeatureFragment extends Fragment {
         assert v != null;
 
         listView_Features = (ListView) v.findViewById(R.id.listView);
-        listview_Classifier = (ListView) v.findViewById(R.id.listView1);
+        //listview_Classifier = (ListView) v.findViewById(R.id.listView1);
 
 
         listView_Features.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        //listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
 
         final List<String> FeaturesArrayList = new ArrayList<String>(Arrays.asList(featureNames));
-        final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifierNames));
+        //final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifierNames));
 
 
         ArrayAdapter<String> adapter_features = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_multiple_choice, FeaturesArrayList);
 
-        ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
+        /*ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
 
-
+*/
         listView_Features.setAdapter(adapter_features);
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             listView_Features.setItemChecked(i, true);
             selectedItems.add(i, adapter_features.getItem(i));
         }
 
-        listview_Classifier.setAdapter(adapter_classifier);
-        listview_Classifier.setItemChecked(0,true);
+        //listview_Classifier.setAdapter(adapter_classifier);
+        // listview_Classifier.setItemChecked(0,true);
         //set OnItemClickListener
         listView_Features.setOnItemClickListener((parent, view, position, id) -> {
 
@@ -95,12 +99,12 @@ public class FeatureFragment extends Fragment {
                 featureManager(Features_selectedItem, false);
                 selectedItems.remove(Features_selectedItem); //remove deselected item from the list of selected items
                 classifier.numFeatures--;
-                //  Log.d("NUM FEAT: ", "" + classifier.numFeatures);
+                Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             } else {
                 featureManager(Features_selectedItem, true);
                 selectedItems.add(Features_selectedItem); //add selected item to the list of selected items
                 classifier.numFeatures++;
-                // Log.d("NUM FEAT: ", "" + classifier.numFeatures);
+                Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             }
 
             plotter.setFeatures(featSelected);
@@ -108,7 +112,7 @@ public class FeatureFragment extends Fragment {
 //            Toast.makeText(getActivity(), "selected: " + selectedItems, Toast.LENGTH_SHORT).show();
         });
 
-        //set OnItemClickListener
+        /*//set OnItemClickListener
         listview_Classifier.setOnItemClickListener((parent, view, position, id) -> {
 
             classifier.setChoice(position);
@@ -116,7 +120,7 @@ public class FeatureFragment extends Fragment {
             String Classifier_selectedItem = ((TextView) view).getText().toString();
 
             Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
-        });
+        });*/
 
         mChart = (RadarChart) v.findViewById(R.id.chart);
         mChart.setNoDataText("This is the chart with no data!");
@@ -125,11 +129,13 @@ public class FeatureFragment extends Fragment {
         return v;
     }
 
-    /**Charles 7/18**/
+    /**
+     * Charles 7/18
+     **/
     private void featureManager(String inFeature, boolean selected) {
         int index = 0;
-        for(int i = 0; i < 5; i++) {
-            if(inFeature == featureNames[i]) {
+        for (int i = 0; i < 6; i++) {
+            if (inFeature == featureNames[i]) {
                 index = i;
             }
         }

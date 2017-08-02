@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,7 +23,7 @@ import java.util.Date;
  * Created by Charles on 7/12/17.
  */
 
-public class SaveData extends Activity{
+public class SaveData extends Activity {
 
     private static final int MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE = 1;
 
@@ -30,95 +31,56 @@ public class SaveData extends Activity{
 
     String FileName;
 
-    CloudUpload cloudUpload;
-
-    public SaveData(Context context){
+    public SaveData(Context context) {
         this.context = context;
         checkWriteExternalStoragePermission();//move to initial upload file button
-        cloudUpload = new CloudUpload(context);
     }
 
-    public File makeFile(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
-//        String state = Environment.getExternalStorageState();
-        String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
-        FileName  = date + ".txt";
-        File file = new File(FileName);
+    public void addData(ArrayList<DataVector> trainData, ArrayList<String> selectedItems) {
 
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(file, true);
-            OutputStreamWriter osw = new OutputStreamWriter(fileOutputStream);
-
-            for(int i=0;i<trainData.size();i++) {
-                DataVector data = trainData.get(i);
-                double trunc = i/100;
-                //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                osw.append((int)trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                osw.append("\n");
-                Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-            }
-            osw.flush();
-            osw.close();
-
-//                cloudUpload.beginUpload(file);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return file;
-    }
-
-    public File addData(ArrayList<DataVector> trainData, ArrayList<String> selectedItems){
-
-        File file = null;
         String state;
         state = Environment.getExternalStorageState();
 
         String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
 
-        if(Environment.MEDIA_MOUNTED.equals(state)){
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
             File Root = Environment.getExternalStorageDirectory();
             File Dir = new File(Root.getAbsolutePath() + "/MyoAppFile");
-            if(!Dir.exists()){
+            if (!Dir.exists()) {
                 Dir.mkdir();
             }
 
-            FileName  = date + ".txt";
+            FileName = date + ".txt";
 
-            file = new File(Dir, FileName);
+            File file = new File(Dir, FileName);
 
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file, true);
                 OutputStreamWriter osw = new OutputStreamWriter(fileOutputStream);
 
-                for(int i=0;i<trainData.size();i++) {
+                for (int i = 0; i < trainData.size(); i++) {
                     DataVector data = trainData.get(i);
-                    double trunc = i/100;
+                    double trunc = i / 100;
                     //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                    osw.append((int)trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                    osw.append((int) trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                     osw.append("\n");
-                    Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                    Log.d("To be saved: ", selectedItems.get((int) trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                 }
                 osw.flush();
                 osw.close();
-
-//                cloudUpload.beginUpload(file);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else {
+            Log.d("EXTERNAL STRG", "No SD card found");
         }
-        else {
-            Log.d("EXTERNAL STRG","No SD card found");
-        }
-        return file;
     }
 
     public void checkWriteExternalStoragePermission() {
-        ContextCompat.checkSelfPermission(context,      Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((Activity) context,
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},

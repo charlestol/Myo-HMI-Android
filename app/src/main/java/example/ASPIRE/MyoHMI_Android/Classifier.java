@@ -1,4 +1,5 @@
 package example.ASPIRE.MyoHMI_Android;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -8,9 +9,11 @@ import smile.validation.CrossValidation;
 import smile.math.Math;
 
 import android.app.Activity;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
+
 
 /**
  * Created by Alex on 7/3/2017.
@@ -18,48 +21,68 @@ import android.widget.Toast;
 
 public class Classifier {
     private String TAG = "Classifier";
-    static int numFeatures = 5;
-    double[][] trainVectorP;
-    LDA lda;
-    QDA qda;
-    SVM svm;
-    LogisticRegression logit;
-    DecisionTree tree;
-    NeuralNetwork net;
+
+    static int numFeatures = 6;
+    static double[][] trainVectorP;
+    static LDA lda;
+    static SVM svm;
+    static LogisticRegression logit;
+    static DecisionTree tree;
+    static NeuralNetwork net;
+    static KNN knn;
+    static AdaBoost forest;
+
+    int previousPrediction = 1;
     double[] features;
-    int[] classes;
+    static int[] classes;
     int[] testclasses = new int[3];
     static Activity activity;
-    int [] trainClasses;
+    int[] trainClasses;
 
     int samples = 100;
-    double [][] trainVectorCV;
+
+    double[][] trainVectorCV;
     LDA LDACV;
-    QDA QDACV;
     SVM SVMCV;
     LogisticRegression LOGITCV;
     DecisionTree TREECV;
-    NeuralNetwork NETCV;
+    static NeuralNetwork NETCV;
+    static KNN KNNCV;
+    static AdaBoost forestCV;
 
-    private boolean trained = false;
+    private static boolean trained = false;
 
-    static int choice=0;
+    static int choice = 0;
+    static int choice2;
 
-    public int prediction;
-    public int classSize;
+    private int prediction;
+    static private int classSize;
 
-    //classifier trained booleans (just 1 for now to test
-    boolean trainedQDA;
+    //classifier trained booleans (just 1 for now to test)
+    boolean trainedLDA;
+    boolean trainedSVM;
+    boolean trainedLOGIT;
+    boolean trainedTREE;
+    boolean trainedNET;
+    boolean trainedKNN;
+    boolean trainedFOREST;
 
-    public Classifier(Activity activity){
+    static boolean trained2 = false;
+
+    static FeatureCalculator fcalc2 = new FeatureCalculator();
+
+
+
+    public Classifier(Activity activity) {
         this.activity = activity;
     }
 
-    public Classifier(){
+    public Classifier() {
 
     }
 
     public void Train(ArrayList<DataVector> trainVector, ArrayList<Integer> Classes) {
+
         classSize = Classes.size();
         classes = new int[classSize];
         trainVectorP = new double[trainVector.size()][numFeatures * 8];
@@ -73,87 +96,183 @@ public class Classifier {
             classes[j] = Classes.get(j);
         }
 
+
 //        if (trainVector.size() > 0) {
-            trained = true;
-            switch (choice) {
-                case 0:
-                    trainLDA();
-                    break;
-                case 1:
-                    trainQDA();
-                    break;
-                case 2:
-                    trainSVM();
-                    break;
-                case 3:
-                    trainLogit();
-                    break;
-                case 4:
-                    trainTree();
-                    break;
-                case 5:
-                    trainNet();
-                    break;
-            }
+        trained = true;
+        trained2 = true;
+        switch (choice) {
+            case 0:
+                trainLDA();
+                break;
+            case 1:
+                trainSVM();
+                break;
+            case 2:
+                trainLogit();
+                break;
+            case 3:
+                trainTree();
+                break;
+            case 4:
+                trainNet();
+                break;
+            case 5:
+                trainKNN();
+                break;
+            case 6:
+                trainAdaBoost();
+                break;
+        }
 //        } else{
 //            Toast.makeText(activity, "No Gestures Selected", Toast.LENGTH_SHORT);
 //        }
+/*
+        trainLDA();
+        //trainQDA();
+        //trainSVM();
+        trainLogit();
+        trainTree();
+        trainNet();
+        trainKNN();
+        trainAdaBoost();
+**/
+    }
+
+    public void setChoice(int newChoice) {
+        trained2 = false;
+
+        if (trained) {//must re train if the a new lda is chosen.. NEED feature that checks if one has already been trained so it doesnt train the same one twice!!!
+            //Log.d("ok well", "at least I made it here");
+            //if(newChoice == 0) { trainLDA(); }
+            //if(newChoice == 1) { trainSVM(); }
+            //if(newChoice == 2) { trainLogit(); }
+
+            switch (newChoice) {
+                case 0:
+                    trainLDA();
+                    Log.d(TAG, "Cross Validation LDA choice: ");
+                    ArrayList<Float> tempLDA = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+                case 1:
+                    trainSVM();
+                    Log.d(TAG, "Cross Validation SVM choice: ");
+                    ArrayList<Float> tempSVM = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+                case 2:
+                    trainLogit();
+                    Log.d(TAG, "Cross Validation Logit choice: ");
+                    ArrayList<Float> tempLogit = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+                case 3:
+                    trainTree();
+                    Log.d(TAG, "Cross Validation Tree choice: ");
+                    ArrayList<Float> tempTree = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+                case 4:
+                    trainNet();
+                    Log.d(TAG, "Cross Validation Net choice: ");
+                    ArrayList<Float> tempNet = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+                case 5:
+                    trainKNN();
+                    Log.d(TAG, "Cross Validation KNN choice: ");
+                    ArrayList<Float> tempKNN = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+                case 6:
+                    trainAdaBoost();
+                    Log.d(TAG, "Cross Validation Forest choice: ");
+                    ArrayList<Float> tempForrest = crossAccuracy(fcalc2.getSamplesClassifier(), fcalc2.getGesturesSize(), 5);
+                    break;
+            }
+        }
+        choice = newChoice;
+        trained2 = true;
     }
 
     public void featVector(DataVector Features) {
         features = new double[Features.getLength()];
-        for(int i=0;i<Features.getLength();i++){
-            features[i]=Features.getValue(i).doubleValue();
+        for (int i = 0; i < Features.getLength(); i++) {
+            features[i] = Features.getValue(i).doubleValue();
         }
     }
 
+    //if flag is turned on (found in newChoice), predict or else return 1000
     public int predict(DataVector Features) {
         featVector(Features);
-        //depending on choice, predict using classifier
-        switch(choice) {
-            case 0:
-                prediction = lda.predict(features);
-                break;
-            case 1:
-                prediction = qda.predict(features);
-                break;
-            case 2:
-                prediction = svm.predict(features);
-                break;
-            case 3:
-                prediction = logit.predict(features);
-                break;
-            case 4:
-                prediction = tree.predict(features);
-                break;
-            case 5:
-                prediction = net.predict(features);
-                break;
+        if (trained2) {
+            switch (choice) {
+                case 0:
+                    Log.d(TAG, "LDA");
+                    prediction = lda.predict(features);
+                    break;
+                case 1:
+                    prediction = svm.predict(features);
+                    Log.d(TAG, "SVM");
+                    if (prediction >= 3) {
+                        prediction = previousPrediction;
+                    }
+                    break;
+                case 2:
+                    Log.d(TAG, "LOGIT");
+                    prediction = logit.predict(features);
+                    //Log.d(TAG, "Logistic Regression");
+                    break;
+                case 3:
+                    Log.d(TAG, "TREE");
+                    prediction = tree.predict(features);
+                    //Log.d(TAG, "Tree");
+                    break;
+                case 4:
+                    Log.d(TAG, "NET");
+                    prediction = net.predict(features);
+                    //Log.d(TAG, "Net");
+                    break;
+                case 5:
+                    Log.d(TAG, "KNN");
+                    prediction = knn.predict(features);
+                    //Log.d(TAG, "KNN");
+                    break;
+                case 6:
+                    Log.d(TAG, "FOREST");
+                    prediction = forest.predict(features);
+                    //Log.d(TAG, "AdaBoost");
+                    break;
+            }
+            Log.d("TIME", String.valueOf(System.currentTimeMillis() - MyoGattCallback.superTimeInitial));
+            return prediction;
         }
-        return prediction;
+        return 1000;
     }
 
     public int predictTest(DataVector Features) {
         featVector(Features);
         //depending on choice, predict using classifier
-        switch(choice) {
+        switch (choice) {
             case 0:
                 prediction = LDACV.predict(features);
                 break;
             case 1:
-                prediction = QDACV.predict(features);
+                prediction = SVMCV.predict(features);
+                if (prediction > 3) {
+                    prediction = previousPrediction;
+                }
                 break;
             case 2:
-                prediction = SVMCV.predict(features);
-                break;
-            case 3:
                 prediction = LOGITCV.predict(features);
                 break;
-            case 4:
+            case 3:
                 prediction = TREECV.predict(features);
                 break;
-            case 5:
+            case 4:
                 prediction = NETCV.predict(features);
+                break;
+            case 5:
+                prediction = KNNCV.predict(features);
+                //KNN
+                break;
+            case 6:
+                prediction = forestCV.predict(features);
+                //Adaboost
                 break;
         }
         return prediction;
@@ -165,79 +284,84 @@ public class Classifier {
     */
     public void trainLDA() {
         //if selected gestures is not zero
+        Toast.makeText(activity, "Training LDA", Toast.LENGTH_SHORT).show();
+        if (!trainedLDA) {
             lda = new LDA(trainVectorP, classes, 0);
-    }
-
-    public void trainQDA() {
-        if(!trainedQDA) {
-            qda = new QDA(trainVectorP, classes, 0);
-            trainedQDA = true;
+            trainedLDA = true;
         }
-        else { return; }
+        choice = 0;
     }
 
     public void trainSVM() {
-        svm = new SVM<>(new LinearKernel(), 10.0, classSize + 1, SVM.Multiclass.ONE_VS_ALL);
-        svm.learn(trainVectorP, classes);
-        svm.learn(trainVectorP, classes);
-        svm.finish();
+        if (!trainedSVM) {
+            Toast.makeText(activity, "Training SVM", Toast.LENGTH_SHORT).show();
+
+            svm = new SVM<>(new LinearKernel(), 10.0, classSize + 1, SVM.Multiclass.ONE_VS_ALL);//classSize + 1
+            svm.learn(trainVectorP, classes);
+            //svm.learn(trainVectorP, classes);
+            svm.finish();
+            trainedSVM = true;
+        }
+        choice = 1;
     }
 
     public void trainLogit() {
-        logit = new LogisticRegression(trainVectorP, classes);
+        if (!trainedLOGIT) {
+            Toast.makeText(activity, "Training Logit", Toast.LENGTH_SHORT).show();
+            Log.d("2", "222");
+            logit = new LogisticRegression(trainVectorP, classes);
+            trainedLOGIT = true;
+        }
+        Log.d("3", "333");
+        choice = 2;
     }
 
     public void trainTree() {
-        tree = new DecisionTree(trainVectorP, classes, 350);//in theory, greater the integer: more accurate but slower | lower the integer: less accurate but faster however, i didn't notice a difference
-    }
-
-    public void trainNet() {
-        net = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, 40, 30, classSize + 1);
-        net.learn(trainVectorP, classes);
-    }
-
-    public void setChoice(int newChoice){
-        choice = newChoice;
-
-        if(trained){//must re train if the a new lda is chosen.. NEED feature that checks if one has already been trained so it doesnt train the same one twice!!!
-            switch(choice) {
-                case 0:
-                    trainLDA();
-                    break;
-                case 1:
-                    trainQDA();
-                    break;
-                case 2:
-                    trainSVM();
-                    break;
-                case 3:
-                    trainLogit();
-                    break;
-                case 4:
-                    trainTree();
-                    break;
-                case 5:
-                    trainNet();
-                    break;
-            }
+        if (!trainedTREE) {
+            tree = new DecisionTree(trainVectorP, classes, 350);//in theory, greater the integer: more accurate but slower | lower the integer: less accurate but faster however, i didn't notice a difference
+            trainedTREE = true;
         }
     }
 
-    ArrayList<Float> crossAccuracy(ArrayList<DataVector> data, int nClass, int parts){
+    public void trainNet() {
+        if (!trainedNET) {
+            net = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, numFeatures * 8, 30, classSize + 1); //100
+            net.learn(trainVectorP, classes);
+            trainedNET = true;
+        }
+    }
+
+    public void trainKNN() {
+        Log.d(TAG, "Made it to KNN");
+        if (!trainedKNN) {
+            knn = KNN.learn(trainVectorP, classes, (int) Math.sqrt((double) classSize));
+            trainedKNN = true;
+        }
+    }
+
+    public void trainAdaBoost() {
+        if (!trainedFOREST) {
+            forest = new AdaBoost(trainVectorP, classes, 100, 64);
+            trainedFOREST = true;
+        }
+    }
+
+
+    ArrayList<Float> crossAccuracy(ArrayList<DataVector> data, int nClass, int parts) {
         //Example values seen in comments using 3 gestures for 100 samples each and dividing all(300) into 5 parts
         int correct = 0;
         int total = 0;
         ArrayList<Float> cM = new ArrayList<>();
-        int [][] confMatrix = new int[nClass][nClass];
-        trainClasses = new int [((nClass * parts)/parts) * (parts - 1)];
+        int[][] confMatrix = new int[nClass][nClass];
+        trainClasses = new int[nClass * 80];
 
         //Separates feature vectors according to the gesture being done
-        ArrayList<ArrayList<DataVector >> separateData = new ArrayList<>();
+        ArrayList<ArrayList<DataVector>> separateData = new ArrayList<>();
 
-        for(int classIndex = 0; classIndex < nClass; classIndex++){
+        for (int classIndex = 0; classIndex < nClass; classIndex++) {
             ArrayList<DataVector> temp = new ArrayList<>();
-            for(int i = 0; i < data.size(); i++){
-                if(classIndex == data.get(i).getFlag()){
+            for (int i = 0; i < data.size(); i++) {
+                if (classIndex == data.get(i).getFlag()) {
                     temp.add(data.get(i));
                 }
             }
@@ -245,37 +369,37 @@ public class Classifier {
         }
 
         //separateData matrix changes to sepData ARRAY
-        DataVector [] sepData = new DataVector[separateData.size() * separateData.get(0).size()];
-        for(int i = 0; i < separateData.size(); i++){
+        DataVector[] sepData = new DataVector[separateData.size() * separateData.get(0).size()];
+        for (int i = 0; i < separateData.size(); i++) {
             int value = i * separateData.get(i).size();
-            for(int j = 0; j < separateData.get(i).size(); j++){
+            for (int j = 0; j < separateData.get(i).size(); j++) {
                 sepData[value] = separateData.get(i).get(j);
                 value++;
             }
         }
 
-        CrossValidation cv = new CrossValidation(data.size()/nClass, parts);
+        CrossValidation cv = new CrossValidation(data.size() / nClass, parts);
 
-        for(int kfold = 0; kfold < parts; kfold++){
+        for (int kfold = 0; kfold < parts; kfold++) {
 
-            DataVector [] train = new DataVector[((nClass * samples) / parts) * (parts - 1)]; //240
-            DataVector [] train2 = new DataVector[((nClass * 100) / parts) * (parts - 1)];
+            DataVector[] train = new DataVector[((nClass * samples) / parts) * (parts - 1)]; //240
+            DataVector[] train2 = new DataVector[((nClass * 100) / parts) * (parts - 1)];
             // 3 x 80
-            DataVector [][] auxMatrix = new DataVector[nClass][(samples/parts) * (parts -1)];
-            for(int classes = 1; classes <= nClass; classes++){
-                DataVector [] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples , samples * classes);
+            DataVector[][] auxMatrix = new DataVector[nClass][(samples / parts) * (parts - 1)];
+            for (int classes = 1; classes <= nClass; classes++) {
+                DataVector[] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples, samples * classes);
                 train2 = Math.slice(aux, cv.train[kfold]);
                 int it = 0;
-                for(int col = 0; col < auxMatrix[classes-1].length; col++){
-                    auxMatrix[classes-1][col] = train2[it];
+                for (int col = 0; col < auxMatrix[classes - 1].length; col++) {
+                    auxMatrix[classes - 1][col] = train2[it];
                     it++;
                 }
             }
 
             //Putting values from the matrix into the array
-            for(int i = 0; i < auxMatrix.length; i++){
+            for (int i = 0; i < auxMatrix.length; i++) {
                 int value = i * auxMatrix[i].length;
-                for(int j = 0; j < auxMatrix[i].length; j++){
+                for (int j = 0; j < auxMatrix[i].length; j++) {
                     train[value] = auxMatrix[i][j];
                     ++value;
                 }
@@ -285,16 +409,16 @@ public class Classifier {
             //TrainVector 240 x 40
             trainVectorCV = new double[train.length][train[0].getVectorData().size()];
 
-            for(int x = 0; x < train.length; x++){
-                for(int y = 0; y < train[x].getLength(); y++){
+            for (int x = 0; x < train.length; x++) {
+                for (int y = 0; y < train[x].getLength(); y++) {
                     trainVectorCV[x][y] = train[x].getValue(y).doubleValue();
                 }
             }
 
             //classes has to be 80 of 0, 80 of 1, etc...
-            for(int i = 0; i < nClass; i++){
+            for (int i = 0; i < nClass; i++) {
                 int index = i * ((samples / parts) * (parts - 1));
-                for(int j = 0; j < ((samples / parts) * (parts - 1)); j++){
+                for (int j = 0; j < ((samples / parts) * (parts - 1)); j++) {
                     trainClasses[index] = i;
                     index++;
                 }
@@ -303,57 +427,65 @@ public class Classifier {
             //SWITCH FOR ALL NEW INSTANCES OF CLASSIFIER MODELS
             //model = new LDA (trainVectorCV,trainClasses,0);
 
-            switch(choice) {
-                case 0:
-                    LDACV = new LDA (trainVectorCV,trainClasses,0);
+            switch (choice) {
+                case 0: //Works on the app
+                    LDACV = new LDA(trainVectorCV, trainClasses, 0);
                     break;
                 case 1:
-                    QDACV = new QDA (trainVectorCV,trainClasses,0);
-                    break;
-                case 2: //NOT working
-                    SVMCV = new SVM<>(new LinearKernel(), 10.0, classSize + 1, SVM.Multiclass.ONE_VS_ALL);
+                    //TOO SLOW to be used in app
+                    //Making it learn once at least makes it somewhat usable??
+                    SVMCV = new SVM<>(new LinearKernel(), 10.0, nClass + 1, SVM.Multiclass.ONE_VS_ALL); //classSize + 1
                     SVMCV.learn(trainVectorCV, trainClasses);
-                    SVMCV.learn(trainVectorCV, trainClasses);
+                    //SVMCV.learn(trainVectorCV, trainClasses);
                     SVMCV.finish();
                     break;
-                case 3:
+                case 2: //Works on the app
                     LOGITCV = new LogisticRegression(trainVectorCV, trainClasses);
                     break;
-                case 4:
+                case 3: //Works but it's kind of slow when outputing gesture decision
                     TREECV = new DecisionTree(trainVectorCV, trainClasses, 350);
                     break;
-                case 5: //Can't be selected in the app
-                    NETCV = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, 40, 30, classSize + 1);
+                case 4: //Giving low percentages in confusion matrix
+                    NETCV = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, numFeatures * 8, 30, nClass + 1);//trainClasses.length); //80 classSize +1
                     NETCV.learn(trainVectorCV, trainClasses);
+                    break;
+                case 5: //NOT working
+                    KNNCV = KNN.learn(trainVectorCV, trainClasses, (int) Math.sqrt((double) classSize));
+                    //KNN
+                    break;
+                case 6: //Works on the app
+                    forestCV = new AdaBoost(trainVectorCV, trainClasses, 100, 64);
+                    //Adaboost
+                    break;
             }
 
 
             //------------------TESTING PHASE--------------------
-            DataVector [] test = new DataVector[nClass * (samples / parts)]; // 60
-            DataVector [] test2 = new DataVector[((nClass * 100) / parts) * (parts - 1)];
-            DataVector [][] auxMatrixTest = new DataVector[nClass][samples / parts]; //3 x 20
+            DataVector[] test = new DataVector[nClass * (samples / parts)]; // 60
+            DataVector[] test2 = new DataVector[((nClass * 100) / parts) * (parts - 1)];
+            DataVector[][] auxMatrixTest = new DataVector[nClass][samples / parts]; //3 x 20
 
-            for(int classes = 1; classes <= nClass; classes++){
-                DataVector [] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples , samples * classes);
+            for (int classes = 1; classes <= nClass; classes++) {
+                DataVector[] aux = Arrays.copyOfRange(sepData, (classes - 1) * samples, samples * classes);
                 test2 = Math.slice(aux, cv.test[kfold]);
                 int it2 = 0;
-                for(int col = 0; col < auxMatrixTest[classes-1].length; col++){
-                    auxMatrixTest[classes-1][col] = test2[it2];
+                for (int col = 0; col < auxMatrixTest[classes - 1].length; col++) {
+                    auxMatrixTest[classes - 1][col] = test2[it2];
                     it2++;
                 }
             }
 
             //Putting values from the matrix into the array
-            for(int i = 0; i < auxMatrixTest.length; i++){
+            for (int i = 0; i < auxMatrixTest.length; i++) {
                 int value = i * auxMatrixTest[i].length;
-                for(int j = 0; j < auxMatrixTest[i].length; j++){
+                for (int j = 0; j < auxMatrixTest[i].length; j++) {
                     test[value] = auxMatrixTest[i][j];
                     ++value;
                 }
             }
 
-            //Test is a 60 x 40 an array of dataVectors
-            for(int i = 0; i < test.length; i++){
+            //Test is an 60 x 40 array of dataVectors
+            for (int i = 0; i < test.length; i++) {
                 /*
                 int index4 = 0;
                 double [] dataVectorPredict = new double[test[0].getVectorData().size()]; //40
@@ -366,21 +498,21 @@ public class Classifier {
                 total++;
                 int pred = predictTest(test[i]);
 
-                confMatrix[(int)test[i].getFlag()][(int) pred]++;
-                if(test[i].getFlag() == pred){
+                confMatrix[(int) test[i].getFlag()][(int) pred]++;
+                if (test[i].getFlag() == pred) {
                     correct++;
                 }
             }
         }
 
         cM.add(0, (float) correct / (float) total);
-        for(int i = 0; i < nClass; i++){
-            for(int j = 0; j < nClass; j++){
-                cM.add(1 + j + i*nClass, samples * nClass * (float)confMatrix[i][j]/ total);
+        for (int i = 0; i < nClass; i++) {
+            for (int j = 0; j < nClass; j++) {
+                cM.add(1 + j + i * nClass, samples * nClass * (float) confMatrix[i][j] / total);
             }
         }
         //Just to display results
-        for(int x = 0; x < cM.size(); x++){
+        for (int x = 0; x < cM.size(); x++) {
             Log.d("Cross Validation: ", String.valueOf(cM.get(x)));
         }
         return cM;

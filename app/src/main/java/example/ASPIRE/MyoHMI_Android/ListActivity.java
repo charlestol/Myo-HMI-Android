@@ -41,10 +41,14 @@ public class ListActivity extends AppCompatActivity {
 
     public static String TAG = "BluetoothList";
 
-    /** Device Scanning Time (ms) */
+    /**
+     * Device Scanning Time (ms)
+     */
     private static final long SCAN_PERIOD = 5000;
 
-    /** Intent code for requesting Bluetooth enable */
+    /**
+     * Intent code for requesting Bluetooth enable
+     */
     private static final int REQUEST_ENABLE_BT = 1;
 
     private ArrayList<String> deviceNames = new ArrayList<>();
@@ -138,7 +142,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_ENABLE_BT && resultCode == RESULT_OK){
+        if (requestCode == REQUEST_ENABLE_BT && resultCode == RESULT_OK) {
             scanDevice();
         }
     }
@@ -156,7 +160,7 @@ public class ListActivity extends AppCompatActivity {
                 public void run() {
                     mLEScanner.stopScan(mScanCallback);
                     adapter.notifyDataSetChanged();
-                    Toast.makeText(getApplicationContext(), "Stop Device Scan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Scan Stopped", Toast.LENGTH_SHORT).show();
                 }
             }, SCAN_PERIOD);
             mLEScanner.startScan(filters, settings, mScanCallback);
@@ -204,17 +208,17 @@ public class ListActivity extends AppCompatActivity {
     };
 
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
+        @Override
+        public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
+            Log.d("BTScan", "ENTERED onLeScan");
+            runOnUiThread(new Runnable() {
                 @Override
-                public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
-                    Log.d("BTScan", "ENTERED onLeScan");
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Log.i("onLeScan", device.toString());
-                        }
-                    });
+                public void run() {
+                    Log.i("onLeScan", device.toString());
                 }
-            };
+            });
+        }
+    };
 
     private final BluetoothGattCallback gattCallback = new BluetoothGattCallback() {
         @Override

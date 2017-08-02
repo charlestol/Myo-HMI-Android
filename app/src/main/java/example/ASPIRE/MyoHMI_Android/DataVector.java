@@ -1,12 +1,15 @@
 package example.ASPIRE.MyoHMI_Android;
+
 import java.util.Arrays;
 import java.util.ArrayList;
+
 import android.util.Log;
+
 /**
  * Created by angorakat on 6/16/17.
  */
 
-public class DataVector{
+public class DataVector {
     private String TAG = "DataVector";
     private boolean imuOrEmg;
     private int flag = -1;
@@ -20,57 +23,59 @@ public class DataVector{
         this.length = length;
         this.timestamp = timestamp;
         this.data = new ArrayList<>();
-        if(length>0){
-            for(int i=0;i<length;i++){
+        if (length > 0) {
+            for (int i = 0; i < length; i++) {
                 this.data.add(i, data.get(i));
             }
         }
     }
 
-    public DataVector(int flag, int length, ArrayList<Number> data){
+    public DataVector(int flag, int length, ArrayList<Number> data) {
         this.imuOrEmg = false;
         this.flag = flag;
         this.length = length;
         this.timestamp = System.currentTimeMillis();
         this.data = new ArrayList<>();
-        if(length > 0){
-            for(int i=0;i<length;i++){
+        if (length > 0) {
+            for (int i = 0; i < length; i++) {
                 this.data.add(i, data.get(i));
             }
         }
     }
 
-    public Number getValue(int index){
+    public Number getValue(int index) {
         return this.data.get(index);
     }
 
-    public boolean getImOrEmg(){
+    public boolean getImOrEmg() {
         return this.imuOrEmg;
     }
 
-    public int getFlag(){
+    public int getFlag() {
         return this.flag;
     }
 
-    public int getLength(){
+    public int getLength() {
         return this.length;
     }
 
-    public ArrayList<Number> getVectorData(){
+    public ArrayList<Number> getVectorData() {
         return this.data;
     }
 
-    public long getTimestamp(){
+    public long getTimestamp() {
         return this.timestamp;
     }
 
-    public void setTimestamp(long ts){
+    public void setTimestamp(long ts) {
         this.timestamp = ts;
     }
 
-    public void setFlag(int inFlag){ this.flag = inFlag;}
+    public void setFlag(int inFlag) {
+        this.flag = inFlag;
+    }
 
-    public void printDataVector(String tag){
+    public void printDataVector(String tag) {
         String s = String.valueOf(timestamp);
 //        if(imuOrEmg)
 //            Log.d(TAG, "EMG: " + Arrays.toString(this.data.toArray()) + " - " + s);

@@ -22,27 +22,36 @@ import java.util.Queue;
 import java.util.UUID;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.lang3.ArrayUtils;
+
 /**
  * Created by naoki on 15/04/15.
  */
- 
+
 public class MyoGattCallback extends BluetoothGattCallback {
-    /** Service ID */
-    private static final String MYO_CONTROL_ID  = "d5060001-a904-deb9-4748-2c7f4a124842";
+    public static double superTimeInitial;
+    /**
+     * Service ID
+     */
+    private static final String MYO_CONTROL_ID = "d5060001-a904-deb9-4748-2c7f4a124842";
     private static final String MYO_EMG_DATA_ID = "d5060005-a904-deb9-4748-2c7f4a124842";
     private static final String MYO_IMU_DATA_ID = "d5060002-a904-deb9-4748-2c7f4a124842";
-    /** Characteristics ID */
+    /**
+     * Characteristics ID
+     */
     private static final String MYO_INFO_ID = "d5060101-a904-deb9-4748-2c7f4a124842";
     private static final String FIRMWARE_ID = "d5060201-a904-deb9-4748-2c7f4a124842";
-    private static final String COMMAND_ID  = "d5060401-a904-deb9-4748-2c7f4a124842";
+    private static final String COMMAND_ID = "d5060401-a904-deb9-4748-2c7f4a124842";
 
-    private static final String EMG_0_ID    = "d5060105-a904-deb9-4748-2c7f4a124842";
-    private static final String EMG_1_ID    = "d5060205-a904-deb9-4748-2c7f4a124842";
-    private static final String EMG_2_ID    = "d5060305-a904-deb9-4748-2c7f4a124842";
-    private static final String EMG_3_ID    = "d5060405-a904-deb9-4748-2c7f4a124842";
-    private static final String IMU_0_ID    = "d5060402-a904-deb9-4748-2c7f4a124842";
-    /** android Characteristic ID (from Android Samples/BluetoothLeGatt/SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG) */
+    private static final String EMG_0_ID = "d5060105-a904-deb9-4748-2c7f4a124842";
+    private static final String EMG_1_ID = "d5060205-a904-deb9-4748-2c7f4a124842";
+    private static final String EMG_2_ID = "d5060305-a904-deb9-4748-2c7f4a124842";
+    private static final String EMG_3_ID = "d5060405-a904-deb9-4748-2c7f4a124842";
+    private static final String IMU_0_ID = "d5060402-a904-deb9-4748-2c7f4a124842";
+    /**
+     * android Characteristic ID (from Android Samples/BluetoothLeGatt/SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG)
+     */
     private static final String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
 
     private Queue<BluetoothGattDescriptor> descriptorWriteQueue = new LinkedList<BluetoothGattDescriptor>();
@@ -87,7 +96,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
         } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
             // GATT Disconnected
             stopCallback();
-            Log.d(TAG,"Bluetooth Disconnected");
+            Log.d(TAG, "Bluetooth Disconnected");
         }
     }
 
@@ -106,7 +115,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
             BluetoothGattService service_emg = gatt.getService(UUID.fromString(MYO_EMG_DATA_ID));
             BluetoothGattService service_imu = gatt.getService(UUID.fromString(MYO_IMU_DATA_ID));
             if (service_emg == null || service_imu == null) {//should probably break this into another separate checker for IMU service
-                Log.d(TAG,"No Myo Service !!");
+                Log.d(TAG, "No Myo Service !!");
             } else {
                 Log.d(TAG, "Find Myo Data Service !!");
                 // Getting CommandCharacteristic
@@ -124,17 +133,17 @@ public class MyoGattCallback extends BluetoothGattCallback {
                     boolean registered_2 = gatt.setCharacteristicNotification(mCharacteristic_emg2, true);
                     boolean registered_3 = gatt.setCharacteristicNotification(mCharacteristic_emg3, true);
                     boolean iregistered_0 = gatt.setCharacteristicNotification(mCharacteristic_imu0, true);
-                    if (!registered_0||!iregistered_0) {
-                        Log.d(TAG,"EMG-Data Notification FALSE !!");
+                    if (!registered_0 || !iregistered_0) {
+                        Log.d(TAG, "EMG-Data Notification FALSE !!");
                     } else {
-                        Log.d(TAG,"EMG-Data Notification TRUE !!");
+                        Log.d(TAG, "EMG-Data Notification TRUE !!");
                         // Turn ON the Characteristic Notification
                         BluetoothGattDescriptor descriptor_0 = mCharacteristic_emg0.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
                         BluetoothGattDescriptor descriptor_1 = mCharacteristic_emg1.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
                         BluetoothGattDescriptor descriptor_2 = mCharacteristic_emg2.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
                         BluetoothGattDescriptor descriptor_3 = mCharacteristic_emg3.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
                         BluetoothGattDescriptor idescriptor_0 = mCharacteristic_imu0.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
-                        if (descriptor_0 != null || idescriptor_0 != null){
+                        if (descriptor_0 != null || idescriptor_0 != null) {
                             idescriptor_0.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
                             descriptor_0.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
                             descriptor_1.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
@@ -146,9 +155,9 @@ public class MyoGattCallback extends BluetoothGattCallback {
                             descriptorWriteQueue.add(descriptor_2);
                             descriptorWriteQueue.add(descriptor_3);
                             consumeAllGattDescriptors();
-                            Log.d(TAG,"Set descriptor");
+                            Log.d(TAG, "Set descriptor");
                         } else {
-                            Log.d(TAG,"No descriptor");
+                            Log.d(TAG, "No descriptor");
                         }
                     }
                 }
@@ -156,7 +165,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             BluetoothGattService service = gatt.getService(UUID.fromString(MYO_CONTROL_ID));
             if (service == null) {
-                Log.d(TAG,"No Myo Control Service !!");
+                Log.d(TAG, "No Myo Control Service !!");
             } else {
                 Log.d(TAG, "Find Myo Control Service !!");
                 // Get the MyoInfoCharacteristic
@@ -169,7 +178,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
                     readCharacteristicQueue.add(characteristic);
                     //if there is only 1 item in the queue, then read it.  If more than 1, we handle asynchronously in the callback above
                     //GIVE PRECEDENCE to descriptor writes.  They must all finish first.
-                    if((readCharacteristicQueue.size() == 1) && (descriptorWriteQueue.size() == 0)) {
+                    if ((readCharacteristicQueue.size() == 1) && (descriptorWriteQueue.size() == 0)) {
                         mBluetoothGatt.readCharacteristic(characteristic);
                     }
                 }
@@ -184,16 +193,16 @@ public class MyoGattCallback extends BluetoothGattCallback {
         }
     }
 
-    public void writeGattDescriptor(BluetoothGattDescriptor d){
+    public void writeGattDescriptor(BluetoothGattDescriptor d) {
         //put the descriptor into the write queue
         descriptorWriteQueue.add(d);
         //if there is only 1 item in the queue, then write it.  If more than 1, we handle asynchronously in the callback above
-        if(descriptorWriteQueue.size() == 1){
+        if (descriptorWriteQueue.size() == 1) {
             mBluetoothGatt.writeDescriptor(d);
         }
     }
 
-    public void consumeAllGattDescriptors(){
+    public void consumeAllGattDescriptors() {
         mBluetoothGatt.writeDescriptor(descriptorWriteQueue.element());//the rest will happen in callback
     }
 
@@ -201,15 +210,14 @@ public class MyoGattCallback extends BluetoothGattCallback {
     public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
         if (status == BluetoothGatt.GATT_SUCCESS) {
             Log.d(TAG, "Callback: Wrote GATT Descriptor successfully.");
-        }
-        else{
-            Log.d(TAG, "Callback: Error writing GATT Descriptor: "+ status);
+        } else {
+            Log.d(TAG, "Callback: Error writing GATT Descriptor: " + status);
         }
         descriptorWriteQueue.remove();  //pop the item that we just finishing writing
         //if there is more to write, do it!
-        if(descriptorWriteQueue.size() > 0)
+        if (descriptorWriteQueue.size() > 0)
             mBluetoothGatt.writeDescriptor(descriptorWriteQueue.element());
-        else if(readCharacteristicQueue.size() > 0)
+        else if (readCharacteristicQueue.size() > 0)
             mBluetoothGatt.readCharacteristic(readCharacteristicQueue.element());
     }
 
@@ -218,13 +226,12 @@ public class MyoGattCallback extends BluetoothGattCallback {
 //        readCharacteristicQueue.remove();
         if (status == BluetoothGatt.GATT_SUCCESS) {
             mHandler.post(new Runnable() {
-                              @Override
-                              public void run() {
-                                  textView.setText("Myo Ready");
-                              }
-                          });
-        }
-        else{
+                @Override
+                public void run() {
+                    textView.setText("Myo Connected");
+                }
+            });
+        } else {
             Log.d(TAG, "onCharacteristicRead error: " + status);
         }
 
@@ -245,15 +252,16 @@ public class MyoGattCallback extends BluetoothGattCallback {
     final static long NEVER_SLEEP_SEND_TIME = 10000;  // Milli Second
 
     //Return Feature Calculator Object to perform operations on it
-    public FeatureCalculator getFeatCalc(){
+    public FeatureCalculator getFeatCalc() {
         return fcalc;
     }
 
     @Override
     public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
-        if (EMG_0_ID.equals(characteristic.getUuid().toString())||EMG_1_ID.equals(characteristic.getUuid().toString())||EMG_2_ID.equals(characteristic.getUuid().toString())||EMG_3_ID.equals(characteristic.getUuid().toString())) {
+        if (EMG_0_ID.equals(characteristic.getUuid().toString()) || EMG_1_ID.equals(characteristic.getUuid().toString()) || EMG_2_ID.equals(characteristic.getUuid().toString()) || EMG_3_ID.equals(characteristic.getUuid().toString())) {
 
             long systemTime_ms = System.currentTimeMillis();
+            superTimeInitial = systemTime_ms;
             byte[] emg_data = characteristic.getValue();
 
             Number[] emg_dataObj = ArrayUtils.toObject(emg_data);
@@ -272,7 +280,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
                 setMyoControlCommand(commandList.sendUnSleep());
                 last_send_never_sleep_time_ms = systemTime_ms;
             }
-        }else if (IMU_0_ID.equals(characteristic.getUuid().toString())) {
+        } else if (IMU_0_ID.equals(characteristic.getUuid().toString())) {
             long systemTime_ms = System.currentTimeMillis();
             byte[] imu_data = characteristic.getValue();
             plotter.pushPlotter(imu_data);
@@ -287,7 +295,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
     }
 
     public boolean setMyoControlCommand(byte[] command) {
-        if ( mCharacteristic_command != null) {
+        if (mCharacteristic_command != null) {
             mCharacteristic_command.setValue(command);
             int i_prop = mCharacteristic_command.getProperties();
             if (i_prop == BluetoothGattCharacteristic.PROPERTY_WRITE) {

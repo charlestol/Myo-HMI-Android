@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,127 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -168,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -179,103 +59,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

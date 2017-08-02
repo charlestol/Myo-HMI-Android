@@ -1,4 +1,5 @@
 package example.ASPIRE.MyoHMI_Android;
+
 import java.util.*;
 
 import android.app.Activity;
@@ -6,7 +7,12 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import org.w3c.dom.Node;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,14 +21,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.lang.Math.abs;
+
 /**
  * Created by Alex on 6/19/2017.
  */
 
 public class FeatureCalculator {
     private String TAG = "FeatureCalculator";
-    int threshold = 5; //According to Ian using 3 gives better results
-    int nFeatures = 5;
+    int threshold = 3; //According to Ian using 3 gives better results
+    int nFeatures = 6;
     int nIMUFeatures = 3;
     int nSensors = 8;
     private ArrayList<DataVector> samplebuf = new ArrayList<>(128);
@@ -34,12 +41,15 @@ public class FeatureCalculator {
 
     //    private TextView liveView;
     public static Activity classAct;
-    public static TextView liveView;
+    public static TextView liveView, status;
+    public static ProgressBar progressBar;
+    public static ImageButton uploadButton;
     public static int prediction;
 
     int winsize = 40;    //window size
     int winincr = 8;    //separation length between windows
     int winnext = winsize + 1;    //winsize + 2 samples until first feature
+
 
     private Plotter plotter;
 
@@ -47,8 +57,9 @@ public class FeatureCalculator {
      * Charles 7/18
      **/
     FeatureFragment featureFragment = new FeatureFragment();
-    boolean[] featSelected = new boolean[5];
-    int numFeatSelected = 5;
+    boolean[] featSelected = new boolean[nFeatures];
+    zprogress zprogress = new zprogress();
+    int numFeatSelected = 0;
 
     private static Classifier classifier = new Classifier();
     private int currentClass = 0;
@@ -67,9 +78,12 @@ public class FeatureCalculator {
 
     static ArrayList<DataVector> samplesClassifier = new ArrayList<DataVector>();
 
-    public ArrayList<DataVector> getSamplesClassifier(){
+
+    public ArrayList<DataVector> getSamplesClassifier() {
         return samplesClassifier;
     }
+
+    public int getGesturesSize(){return gestures.size();}
 
     public static DataVector aux;//does it have to be public?
 
@@ -96,6 +110,9 @@ public class FeatureCalculator {
         classAct = act;
         view = v;
         liveView = (TextView) view.findViewById(R.id.gesture_detected);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
+        //status = (TextView) view.findViewById(R.id.txt_status);
     }
 
     public FeatureCalculator(Plotter plot) {
@@ -103,16 +120,14 @@ public class FeatureCalculator {
     }
 
     private void featCalc() {
+        ArrayList<ArrayList<Float>> AUMatrix = new ArrayList<>();
         byte signLast;
         byte slopLast;
         int j, k;
         double Delta_2;
-        //ArrayList<Number> sMAV = new ArrayList<Number>(8); //Used to store the values of the MAV from all 8 channels and used by the sMAV feature
-        float[] sMAVS = new float[8];
+        float[] sMAVS = new float[8];//Used to store the values of the MAV from all 8 channels and used by the sMAV feature
         float MMAV = 0;
-        //featemg = new float[nFeatures][nSensors];//already full of zeros
 
-        //twoDimArray featemg = new twoDimArray();
         featemg = new twoDimArray();
         featemg.createMatrix(nFeatures, nSensors);
 
@@ -123,6 +138,7 @@ public class FeatureCalculator {
         for (int sensor = 0; sensor < nSensors; sensor++) {//loop through each EMG pod (8)
             k = (firstCall + bufsize - 1) % bufsize;    //one before window start   // (41 - 40 + 1 = 2) - 1
             j = (k + bufsize - 1) % bufsize;    //        two before ws(firstCall)  // 0
+            ArrayList<Float> tempAU = new ArrayList<>();
 
             signLast = 0;
             slopLast = 0;
@@ -166,15 +182,10 @@ public class FeatureCalculator {
                 }
                 if ((signLast == 9 || signLast == 6)) {
                     featemg.setMatrixValue(2, sensor, featemg.getMatrixValue(2, sensor) + 1);
-                    //featemg[2][sensor]++;
                 }
                 if ((slopLast == 9 || slopLast == 6)) {
                     featemg.setMatrixValue(3, sensor, featemg.getMatrixValue(3, sensor) + 1);
-                    //featemg[3][sensor]++;
                 }
-//                String printstring = String.valueOf(Delta_2);
-//                Log.d("Delta_1: ", printstring);
-                //Check finishes here
 
                 // use <<< or >>> for UNSIGNED shifting in java Note: In C++ is << or >> for unsigned shifting
                 //Changed signLast and slopLast from int to char
@@ -186,6 +197,7 @@ public class FeatureCalculator {
                 //featemg[1][] -> wav
                 featemg.setMatrixValue(0, sensor, featemg.getMatrixValue(0, sensor) + Math.abs(samplebuf.get(k).getVectorData().get(sensor).floatValue()));
                 featemg.setMatrixValue(1, sensor, featemg.getMatrixValue(1, sensor) + (float) Math.abs(Delta_2));
+                tempAU.add(samplebuf.get(k).getVectorData().get(sensor).floatValue());
             }
 
             featemg.setMatrixValue(0, sensor, featemg.getMatrixValue(0, sensor) / winsize);
@@ -200,14 +212,10 @@ public class FeatureCalculator {
 
             if (sensor == (nSensors - 1)) {//don't want to use all
                 for (int l = 0; l < nSensors; l++) {
-                    //featemg[4][l] = (sMAV.get(l).floatValue() / (MMAV/8)) * 25;//Scaling otherwise the value is so small
-                    //featemg.setMatrixValue(4, l, (sMAV.get(l).floatValue() / (MMAV/8)) * 25);
                     featemg.setMatrixValue(4, l, (sMAVS[l] / (MMAV / 8)) * 25);
-                    //it does not display on the EMG graph
                 }
 
                 featemg.setMatrixValue(4, nSensors - 1, MMAV / 8);
-
                 /*
                 Log.d(TAG, "Feature 0 " + featemg.getInnerArray(0).toString());
                 Log.d(TAG, "Feature 1 " + featemg.getInnerArray(1).toString());
@@ -217,8 +225,27 @@ public class FeatureCalculator {
                 */
                 plotter.pushFeaturePlotter(featemg);
             }
+            AUMatrix.add(tempAU);
         }
+
+        for(int sensorIt = 0; sensorIt < nSensors; sensorIt++){
+            int sensorNext = sensorIt + 1;
+            if(sensorNext == 8){ sensorNext = 0;}
+            float tempValue = 0;
+            for(int it = 0; it < winsize; it++){
+                tempValue += Math.abs((AUMatrix.get(sensorIt).get(it).floatValue()/ featemg.getMatrixValue(0,sensorIt)) - (AUMatrix.get(sensorNext).get(it).floatValue()/ featemg.getMatrixValue(0,sensorNext)));
+            }
+            //Feature 5 Adjacency Uniqueness
+            featemg.setMatrixValue(5, sensorIt,(tempValue/winsize) * 25); // multiply by 25 to scale the value of tempValue/winsize
+        }
+
+/*
+        for(int x = 0; x < featemg.getInnerArray(5).size(); x++){
+            Log.d(TAG, String.valueOf(featemg.getMatrixValue(5,x)));
+        }
+        Log.d(TAG, "-----------------------------------------------------------");
         //unlock();
+*/
     }
 
     //Making the 100 x 40 matrix
@@ -228,21 +255,34 @@ public class FeatureCalculator {
         classes.add(currentClass);//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //        Log.d("classes: ", Arrays.toString());
 //        inFeatemg.printDataVector("In Classify Trainer");
+
+
         Log.d(TAG, String.valueOf(samplesClassifier.size()));
+
     }
 
     public static void pushClassifier(DataVector inFeatemg) {
         prediction = classifier.predict(inFeatemg);
-//        inFeatemg.printDataVector("Predict Vector");
+        //inFeatemg.printDataVector("Predict Vector");
         if (liveView != null) {
             classAct.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    liveView.setText(gestures.get(prediction));
+                    if (prediction != 1000) {
+                        liveView.setText(gestures.get(prediction));
+                        progressBar.setVisibility(View.INVISIBLE);
+                        uploadButton.setVisibility(View.VISIBLE);
+                    } else {
+                        liveView.setText("Training Classifier");
+                    }
                 }
             });
         }
-//        Log.d("Prediction: ", String.valueOf(prediction));//prediction
+        //Log.d("Prediction: ", String.valueOf(prediction));//prediction
+    }
+
+    public static void setTextNull() {
+        liveView.setText("Training Classifier");
     }
 
     public void sendClasses(List<String> classes) {
@@ -253,6 +293,7 @@ public class FeatureCalculator {
     public void printClassiferTrainer() {
         for (int i = 0; i < samplesClassifier.size(); i++) {
             samplesClassifier.get(i).printDataVector(TAG);
+
         }
     }
 
@@ -264,7 +305,7 @@ public class FeatureCalculator {
             samplebuf.remove(samplebuf.size() - 1);
         //Log.d("ibuf, winnext", Integer.toString(ibuf) + " , " + Integer.toString(winnext));
         //process window if next window is reached
-        if(getTrain()) {
+        if (getTrain()) {
             aux.setFlag(currentClass);
         }
 
@@ -284,19 +325,20 @@ public class FeatureCalculator {
                 if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
                     setTrain(false);
                     currentClass++;
+
                 }
             } else if (classify) {
                 pushClassifier(aux);
             }
             winnext = (winnext + winincr) % bufsize;
         }
-        ibuf = ++ibuf & (bufsize - 1);//make buffer circular
+        ibuf = ++ibuf & (bufsize - 1); //make buffer circular
     }
 
-    public static void Train(){
+    public static void Train() {
         classifier.Train(samplesClassifier, classes);
         //Kattia: Testing CrossValidation
-        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier,gestures.size(),5);
+        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier, gestures.size(),5);
     }
 
     private DataVector buildDataVector()//ignoring grid and imu for now, assuming all features are selected
@@ -307,16 +349,9 @@ public class FeatureCalculator {
          * Charles 7/18
          **/
         int emgct = numFeatSelected * 8;
-        numFeatSelected = 5; //Resets the number of features selected to 5
+        numFeatSelected = 6; //Resets the number of features selected to 5
 
-
-//        for(int i=0;i<nFeatures;i++){
-//            if (checkEMGGrid[i][j] == true) emgct+=emgct*8; //check if features are selected
-//        }
-
-        //emgct = 40;//5 features, 8 sensors//delete after for loop above is working
-
-        ArrayList<Number> temp = new ArrayList<Number>(emgct);//float* temp = new float[emgct]();
+        ArrayList<Number> temp = new ArrayList<Number>(emgct);
         //lock();
 
         int n = 0;
@@ -324,40 +359,16 @@ public class FeatureCalculator {
 
         for (int i = 0; i < nFeatures; i++) {
             //group features per sensor
-            if(featSelected[i] == true) {
+            if (featSelected[i] == true) {
                 for (int j = 0; j < nSensors; j++) {
-                    //temp[n] = FeatEMG[i][j];
-                    //Log.d(TAG, Float.toString(FeatEMG.getValue2(i, j)));
-                    //temp.add(n, FeatEMG.getValue2(i, j));
-                    //Kattia: change
                     temp.add(n, featemg.getMatrixValue(tempIndex, j));
-                    //temp.add(n, featemg[i][j]);
-                    //Log.d(TAG, Float.toString(Float.valueOf(temp.get(n)));
-                    //Log.d(TAG, temp.get(n).toString());
-                    //  Log.d("TEST EMG", "" + featureFragment.getFeatureNames()[tempIndex] + " : " + temp.get(n));
                     n++;
-
                 }
                 tempIndex++;
-            }
-            else
+            } else
                 tempIndex++;
-            //  Log.d(TAG, "FEATURE BOOL " + featureFragment.getFeatureNames()[i] + " : " + featSelected[i]);
-            // Log.d(TAG, "temp size: " + temp.size());
-
-            //Log.d(TAG, "FEATURES " + featureFragment.getFeatureNames()[i] + " : " + temp.get(i));
-
         }
-
-        //no imu stuff for now
-        //Log.d(TAG, Integer.toString(temp.size()));
-        //unlock();
-        //DataVector dvec = new DataVector(1, emgct, temp);
         DataVector dvec = new DataVector(true, 0, emgct, temp, 0000000);
-        // Log.d(TAG, "test: " + temp.size());
-
-//        dvec.printDataVector("TEST");
-        //temp = null;
         return dvec;
     }
 
@@ -424,27 +435,17 @@ public class FeatureCalculator {
         }
     }
 
-    //Appends 2D arrays
-    public static float[][] append(float[][] a, float[][] b) {
-        float[][] result = new float[a.length + b.length][];
-        System.arraycopy(a, 0, result, 0, a.length);
-        System.arraycopy(b, 0, result, 0, b.length);
-        return result;
-    }
-
     public void printDataVector(double inDouble) {
         double debug = inDouble;
         Log.d("TAG", Double.toString(debug));
     }
-    //public DataVector buildDataVector(){};
-
 
     public void setSelectedFeatures() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             featSelected[i] = featureFragment.getFeatSelected()[i];
             //Log.d(TAG, "Feature bool: " + featSelected[i]);
 
-            if(featSelected[i] == false) {
+            if (featSelected[i] == false) {
                 numFeatSelected--;
             }
         }
@@ -452,30 +453,30 @@ public class FeatureCalculator {
 }
 
 //Two dimensional array class made to help in the implementation of featEMG
-class twoDimArray{
+class twoDimArray {
 
     //matrix is our featEMG matrix
     ArrayList<ArrayList<Float>> matrix = new ArrayList<ArrayList<Float>>();
 
     //Init matrix to the desired dimensions all with 0
     //Note: row refers to nFeatures and columns refers to nSensors
-    public void createMatrix(int numRow, int numCol){
-        for(int i = 0; i < numRow; i++){
+    public void createMatrix(int numRow, int numCol) {
+        for (int i = 0; i < numRow; i++) {
             ArrayList<Float> innerArray = new ArrayList<Float>();
             matrix.add(innerArray);
-            for(int j = 0; j < numCol; j++) {
+            for (int j = 0; j < numCol; j++) {
                 innerArray.add((float) 0);
             }
         }
     }
 
     //Get value at specified row and column
-    public float getMatrixValue(int inRow, int inCol){
+    public float getMatrixValue(int inRow, int inCol) {
         return matrix.get(inRow).get(inCol);
     }
 
     //Set value at specified row and column
-    public void setMatrixValue(int numRow, int numCol, float data){
+    public void setMatrixValue(int numRow, int numCol, float data) {
         ArrayList<Float> temp;
         temp = matrix.get(numRow);
         temp.set(numCol, data);
@@ -483,11 +484,11 @@ class twoDimArray{
     }
 
     //Return specific ROW
-    public ArrayList<Float> getInnerArray(int inRow){
+    public ArrayList<Float> getInnerArray(int inRow) {
         return matrix.get(inRow);
     }
 
-    public void addRow(ArrayList inRow){
+    public void addRow(ArrayList inRow) {
         matrix.add(inRow);
     }
 

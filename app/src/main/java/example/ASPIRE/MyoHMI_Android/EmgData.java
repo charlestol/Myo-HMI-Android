@@ -5,9 +5,8 @@ import java.util.StringTokenizer;
 
 /**
  * Created by naoki on 15/04/09.
- *
  */
- 
+
 public class EmgData {
     private ArrayList<Double> emgData = new ArrayList<>();
 
@@ -15,7 +14,7 @@ public class EmgData {
     }
 
     public EmgData(EmgCharacteristicData characteristicData) {
-        this.emgData = new ArrayList<>( characteristicData.getEmg8Data_abs().getEmgArray() );
+        this.emgData = new ArrayList<>(characteristicData.getEmg8Data_abs().getEmgArray());
     }
 
     public EmgData(ArrayList<Double> emgData) {
@@ -32,7 +31,7 @@ public class EmgData {
 
     public void setLine(String line) {
         ArrayList<Double> data = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer(line , ",");
+        StringTokenizer st = new StringTokenizer(line, ",");
         for (int i_emg_num = 0; i_emg_num < 8; i_emg_num++) {
             data.add(Double.parseDouble(st.nextToken()));
         }
@@ -43,8 +42,8 @@ public class EmgData {
         emgData.add(element);
     }
 
-    public void setElement(int index ,double element) {
-        emgData.set(index,element);
+    public void setElement(int index, double element) {
+        emgData.set(index, element);
     }
 
     public Double getElement(int index) {
@@ -62,7 +61,7 @@ public class EmgData {
     public Double getDistanceFrom(EmgData baseData) {
         Double distance = 0.00;
         for (int i_element = 0; i_element < 8; i_element++) {
-            distance += Math.pow((emgData.get(i_element) - baseData.getElement(i_element)),2.0);
+            distance += Math.pow((emgData.get(i_element) - baseData.getElement(i_element)), 2.0);
         }
         return Math.sqrt(distance);
     }
@@ -75,10 +74,10 @@ public class EmgData {
         return val;
     }
 
-    public Double getNorm(){
+    public Double getNorm() {
         Double norm = 0.00;
         for (int i_element = 0; i_element < 8; i_element++) {
-            norm += Math.pow( emgData.get(i_element) ,2.0);
+            norm += Math.pow(emgData.get(i_element), 2.0);
         }
         return Math.sqrt(norm);
     }

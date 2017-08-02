@@ -29,6 +29,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CheckBox;
+
 import com.echo.holographlibrary.LineGraph;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "BLE_Myo";
 
     public int gestureCounter = 0;
-    private static Plotter plotter= new Plotter();//static may cause issues
+    private static Plotter plotter = new Plotter();//static may cause issues
 
     private ScanCallback scanCallback = new ScanCallback() {
     };
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     private String deviceName;
 
     private LineGraph graph;
-//    private Button graphButton1;
+    //    private Button graphButton1;
    /* private Button graphButton2;
     private Button graphButton3;
     private Button graphButton4;
@@ -83,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
     private Button graphButton8;*/
     private boolean click = true;
 
-    public ClassificationFragment classificationFragment;
-
     /***********************Below ADDED BY CHARLES FOR SWIPEABLE TABS***************************/
 
     ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
+
+    public ClassificationFragment classificationFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,13 +110,13 @@ public class MainActivity extends AppCompatActivity {
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         mTabsAdapter.addTab(bar.newTab().setText("EMG"),
                 EmgFragment.class, null, emgFragment);
-        mTabsAdapter.addTab(bar.newTab().setText("Parameters"),
+        mTabsAdapter.addTab(bar.newTab().setText("Features"),
                 FeatureFragment.class, null, featureFragment);
-        mTabsAdapter.addTab(bar.newTab().setText("Gestures"),
+        mTabsAdapter.addTab(bar.newTab().setText("Classification"),
                 ClassificationFragment.class, null, classificationFragment);
 
         //ready
-      //  graph = (LineGraph) findViewById(R.id.holo_graph_view);
+        //  graph = (LineGraph) findViewById(R.id.holo_graph_view);
 
 
 //        graphButton1 = (Button) findViewById(R.id.btn_emg1);
@@ -216,8 +217,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menu.add(0, MENU_LIST, 0, "Find Myo");
-        menu.add(0, MENU_BYE, 0, "Good Bye");
+        menu.add(0, MENU_LIST, 0, "Connect to Myo");
+        menu.add(0, MENU_BYE, 0, "Disconnect");
         return true;
     }
 
@@ -263,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
         mMyoCallback.getFeatCalc().printClassiferTrainer();
     }
     */
-    public void onClickedcbGesture(View view){
+    public void onClickedcbGesture(View view) {
 
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();

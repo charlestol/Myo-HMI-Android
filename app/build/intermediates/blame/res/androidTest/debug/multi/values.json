@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -59,223 +59,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\a6f7185e3e0711c60ef8655de0fdeeaa0205774d\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\home\\angorakat\\.android\\build-cache\\a6f7185e3e0711c60ef8655de0fdeeaa0205774d\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Ricardos version\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-5\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\Myo-HMI-Android-master7-3\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\Downloads\\06-27-17_Myo\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\chaleerok\\.android\\build-cache\\8faca5d3f8aaad1b5a581f409cd4011cf05b3308\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\Downloads\\MYO-Charles-UPDATE\\Myo-HMI-Android-master\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\C:\\home\\angorakat\\Desktop\\07-03-17\\Myo-HMI-Android-master\\MyoHMI_Android\\C:\\Users\\ricardocolin\\.android\\build-cache\\dd775416504fe9423d2a2e7d90121983084e212a\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\ricardocolin\\Desktop\\Aspires Internship\\7-12-17\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\ricardocolin\\.android\\build-cache\\dd775416504fe9423d2a2e7d90121983084e212a\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\Alex\\Downloads\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
+                    "file": "C:\\home\\angorakat\\.android\\build-cache\\a6f7185e3e0711c60ef8655de0fdeeaa0205774d\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

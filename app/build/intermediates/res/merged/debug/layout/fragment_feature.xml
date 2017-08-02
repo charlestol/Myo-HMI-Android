@@ -1,79 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--Created by Ricardo Colin 07/28/17-->
 
+    <!-- <TextView
+         android:id="@+id/Classifier_title"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="20sp"
+         android:textColor="@color/colorGunmetal"
+         android:text="Classifier"
+         android:layout_alignParentTop="true"
+         android:layout_marginTop="20dp"
+         android:layout_marginStart="100dp"/>
+
+     <View
+         android:id="@+id/line_Classifier"
+         android:layout_width="100dp"
+         android:layout_height="1dp"
+         android:background="@color/colorOrinalline"
+         android:layout_below="@+id/Classifier_title"
+         android:layout_marginStart="90dp"/>
+
+     &lt;!&ndash;Classifier List View&ndash;&gt;
+     <ListView
+         android:id="@id/listView1"
+         android:layout_width="300dp"
+         android:layout_height="310dp"
+         android:layout_marginTop="30dp"
+         android:layout_below="@id/line_Classifier" />-->
 
     <TextView
         android:id="@+id/Features_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:textColor="@color/colorGunmetal"
-        android:textSize="20sp"
-        android:text="Features"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/line_Classifier" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Features"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/line_Features"
-        android:layout_width="110dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="65dp"
-        android:background="@color/colorOrinalline"
-        android:layout_below="@+id/Features_title"
-        />
-
-    <TextView
-        android:id="@+id/Classifier_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="@color/colorGunmetal"
-        android:text="Classifier"
-        android:layout_above="@+id/listView"
-        android:layout_alignEnd="@+id/line_Classifier"
-        android:layout_marginEnd="33dp" />
-
-    <View
-        android:id="@+id/line_Classifier"
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:background="@color/colorOrinalline"
-        android:layout_toEndOf="@+id/line_Features"
-        android:layout_below="@+id/Classifier_title"
-        android:layout_marginStart="260dp"
-        />
-
+        android:layout_width="150dp"
+        android:layout_height="2dp"
+        android:layout_below="@id/Features_title"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorOrinalline" />
 
     <!--Features List View-->
     <ListView
         android:id="@id/listView"
-        android:layout_width="300dp"
-        android:layout_height="310dp"
-        android:layout_below="@+id/line_Features"
-        android:layout_marginTop="30dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_Features"
+        android:layout_centerHorizontal="true" />
 
-    <!--Classifier List View-->
-    <ListView
-        android:id="@id/listView1"
-        android:layout_width="300dp"
-        android:layout_height="310dp"
-        android:layout_marginTop="30dp"
-        android:layout_toEndOf="@+id/listView"
-        android:layout_marginStart="18dp"
-        android:layout_below="@id/line_Classifier" />
+    <!-- <View
+         android:id="@+id/borderLine"
+         android:layout_width="match_parent"
+         android:layout_height="2dp"
 
+
+         android:background="#c4c0c0"
+         android:layout_below="@+id/listView" />-->
 
     <com.github.mikephil.charting.charts.RadarChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/listView1"
-        />
-
-
-
+        android:layout_below="@id/listView" />
 
 </RelativeLayout>
