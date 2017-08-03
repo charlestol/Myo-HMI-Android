@@ -38,7 +38,6 @@
         android:textOff=""
         android:textOn="" />
 
-
     <TextView
         android:id="@+id/gestureTextView"
         android:layout_width="wrap_content"
@@ -48,8 +47,6 @@
         android:layout_marginTop="24dp"
         android:text="Myo Not Connected"
         android:textSize="25dp" />
-
-
 
     <!--<com.github.mikephil.charting.charts.RadarChart-->
     <!--android:id="@+id/chart1"-->
@@ -74,10 +71,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/iVibrate"
-        android:layout_below="@+id/gestureTextView"
-        android:layout_marginTop="120dp"
         android:layout_toStartOf="@+id/iEMG"
-        android:layout_toEndOf="@id/iVibrate"/>
+        android:layout_toEndOf="@id/iVibrate"
+        android:layout_below="@+id/gestureTextView" />
 
     <ImageView
         android:id="@+id/imageView"

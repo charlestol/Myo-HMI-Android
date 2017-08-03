@@ -59,7 +59,7 @@ public class FeatureCalculator {
     FeatureFragment featureFragment = new FeatureFragment();
     boolean[] featSelected = new boolean[nFeatures];
     zprogress zprogress = new zprogress();
-    int numFeatSelected = 0;
+    int numFeatSelected = 6;
 
     private static Classifier classifier = new Classifier();
     private int currentClass = 0;
@@ -88,7 +88,7 @@ public class FeatureCalculator {
 
     public int getGesturesSize(){return gestures.size();}
 
-    public static DataVector aux;//does it have to be public?
+    public static DataVector[] aux;//does it have to be public?
 
     public void setTrain(boolean inTrain) {
         train = inTrain;
@@ -252,15 +252,15 @@ public class FeatureCalculator {
     }
 
     //Making the 100 x 40 matrix
-    public void pushClassifyTrainer(DataVector inFeatemg) {
-        ArrayList<Number> line = new ArrayList<>();
-        for(int i=0;i<6;i++){//for saving ALL feature data not just ones selected
-            featureData.add(new DataVector(0,8,featemg.getInnerArray(i)));
-            DataVector dvec2 = new DataVector(0,8,featemg.getInnerArray(i));
-            dvec2.printDataVector("hey there: " + String.valueOf(i));
-        }
-
-        samplesClassifier.add(inFeatemg);
+    public void pushClassifyTrainer(DataVector[] inFeatemg) {
+//        ArrayList<Number> line = new ArrayList<>();
+//        for(int i=0;i<6;i++){//for saving ALL feature data not just ones selected
+//            featureData.add(new DataVector(0,8,featemg.getInnerArray(i)));
+//            DataVector dvec2 = new DataVector(0,8,featemg.getInnerArray(i));
+//            dvec2.printDataVector("hey there: " + String.valueOf(i));
+//        }
+        featureData.add(inFeatemg[1]);
+        samplesClassifier.add(inFeatemg[0]);
         classes.add(currentClass);
         Log.d(TAG, String.valueOf(samplesClassifier.size()));
     }
@@ -310,7 +310,7 @@ public class FeatureCalculator {
         //Log.d("ibuf, winnext", Integer.toString(ibuf) + " , " + Integer.toString(winnext));
         //process window if next window is reached
         if (getTrain()) {
-            aux.setFlag(currentClass);
+            aux[0].setFlag(currentClass);
         }
 
         if (ibuf == winnext)//start calculating
@@ -319,10 +319,10 @@ public class FeatureCalculator {
             firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
             featCalc();
             aux = buildDataVector();
-            aux.setTimestamp(data.getTimestamp());
+            aux[0].setTimestamp(data.getTimestamp());
 
             if (getTrain()) {
-                aux.setFlag(currentClass);
+                aux[0].setFlag(currentClass);
                 pushClassifyTrainer(aux);
 //                Log.d("Features: ", )
 //                aux.printDataVector("Features: ");
@@ -331,7 +331,7 @@ public class FeatureCalculator {
                     currentClass++;
                 }
             } else if (classify) {
-                pushClassifier(aux);
+                pushClassifier(aux[0]);
             }
             winnext = (winnext + winincr) % bufsize;
         }
@@ -344,7 +344,7 @@ public class FeatureCalculator {
 //        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier, gestures.size(),5);
     }
 
-    private DataVector buildDataVector()//ignoring grid and imu for now, assuming all features are selected
+    private DataVector[] buildDataVector()//ignoring grid and imu for now, assuming all features are selected
     {
         // Count total EMG features to send
 
@@ -355,24 +355,40 @@ public class FeatureCalculator {
         numFeatSelected = 6; //Resets the number of features selected to 5
 
         ArrayList<Number> temp = new ArrayList<Number>(emgct);
+        ArrayList<Number> temp1 = new ArrayList<Number>(emgct);
         //lock();
 
         int n = 0;
+        int k = 0;
         int tempIndex = 0;
+        int temp1Index = 0;
 
         for (int i = 0; i < nFeatures; i++) {
-            //group features per sensor
-            if (featSelected[i] == true) {
-                for (int j = 0; j < nSensors; j++) {
-                    temp.add(n, featemg.getMatrixValue(tempIndex, j));
-                    n++;
+        //group features per sensor
+            for (int j = 0; j < nSensors; j++) {
+
+                if (featSelected[i] == true) {
+                temp.add(n, featemg.getMatrixValue(tempIndex, j));
+                n++;
                 }
-                tempIndex++;
-            } else
-                tempIndex++;
+            }
+            tempIndex++;
         }
+
+        for (int i = 0; i < 6; i++) {
+            //group features per sensor
+            for (int j = 0; j < nSensors; j++) {
+                temp1.add(k, featemg.getMatrixValue(temp1Index, j));
+                k++;
+            }
+            temp1Index++;
+        }
+
         DataVector dvec = new DataVector(true, 0, emgct, temp, 0000000);
-        return dvec;
+        DataVector dvec1 = new DataVector(true, 0, 48, temp1, 0000000);
+        dvec1.printDataVector("Hey there: ");
+        DataVector dvecArr[] = {dvec, dvec1};
+        return dvecArr;
     }
 
     private void setWindowSize(int newWinsize) {

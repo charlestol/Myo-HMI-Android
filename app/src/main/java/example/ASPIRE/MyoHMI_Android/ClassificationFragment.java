@@ -122,7 +122,6 @@ public class ClassificationFragment extends Fragment {
             "Neural Net",
             "KNN",
             "Adaboost"
-
     };
 
     @Override
