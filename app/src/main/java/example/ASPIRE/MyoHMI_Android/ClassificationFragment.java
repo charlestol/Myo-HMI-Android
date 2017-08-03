@@ -45,6 +45,7 @@ import android.widget.Toast;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -80,6 +81,7 @@ public class ClassificationFragment extends Fragment {
     private int gestureCounter = 0;
     private TextView liveView, status;
     private TextView or_text;
+    private CloudUpload cloudUpload;
     //private Classifier classifier;//for making toast on this activity
 
     EditText GetValue;
@@ -157,7 +159,7 @@ public class ClassificationFragment extends Fragment {
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
         ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifier_options));
 
-
+        cloudUpload = new CloudUpload(getActivity());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
 
@@ -279,9 +281,65 @@ public class ClassificationFragment extends Fragment {
             adapter.notifyDataSetChanged();
         });
 
+//        uploadButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Button cancel;
+//                Button sdCard;
+//                Button cloud;
+//                Button both;
+//                AlertDialog.Builder upload_pop = new AlertDialog.Builder(getActivity());
+//
+//                View view = inflater.inflate(R.layout.upload_dialog, container, false);
+//
+//                cancel = (Button) view.findViewById(R.id.bt_cancel);
+//                sdCard = (Button) view.findViewById(R.id.bt_sdcard);
+//                cloud = (Button) view.findViewById(R.id.bt_cloud);
+//                both = (Button) view.findViewById(R.id.bt_both);
+//
+//                final AlertDialog dialog = upload_pop.create();
+//
+//                cancel.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                sdCard.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        saver.addData(fcalc.getFeatureData(), selectedItems);
+//                        Toast.makeText(getActivity(), "Saving on SDCARD!", Toast.LENGTH_SHORT).show();
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                cloud.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Toast.makeText(getActivity(), "Saving on Cloud!", Toast.LENGTH_SHORT).show();
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                both.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        saver.addData(fcalc.getFeatureData(), selectedItems);
+//                        Toast.makeText(getActivity(), "Saving on SDCARD and Cloud!", Toast.LENGTH_SHORT).show();
+//                        dialog.dismiss();
+//                    }
+//                });
+//                dialog.setView(view);
+//                dialog.show();
+//            }
+//        });
+
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 Button cancel;
                 Button sdCard;
                 Button cloud;
@@ -295,6 +353,8 @@ public class ClassificationFragment extends Fragment {
                 cloud = (Button) view.findViewById(R.id.bt_cloud);
                 both = (Button) view.findViewById(R.id.bt_both);
 
+                File file = saver.addData(fcalc.getFeatureData(), selectedItems);
+
                 final AlertDialog dialog = upload_pop.create();
 
                 cancel.setOnClickListener(new View.OnClickListener() {
@@ -302,36 +362,36 @@ public class ClassificationFragment extends Fragment {
                     public void onClick(View view) {
                         Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
+                        file.delete();
                     }
                 });
 
                 sdCard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+//                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                         Toast.makeText(getActivity(), "Saving on SDCARD!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
                     }
                 });
 
                 cloud.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        cloudUpload.beginUpload(file);
+                        cloudUpload.setDelete(true);
                         Toast.makeText(getActivity(), "Saving on Cloud!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
                     }
                 });
 
                 both.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
+                        cloudUpload.setDelete(false);
+                        cloudUpload.beginUpload(file);
                         Toast.makeText(getActivity(), "Saving on SDCARD and Cloud!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-
                     }
                 });
                 dialog.setView(view);
@@ -420,7 +480,7 @@ public class ClassificationFragment extends Fragment {
             String text = null;
             String[] column;
             String[] emgData;
-            double[] lineData = new double[40];
+            double[] lineData = new double[48];
 
             int i = 0;
             while ((text = reader.readLine()) != null) {
@@ -434,12 +494,13 @@ public class ClassificationFragment extends Fragment {
                 Number[] feat_dataObj = ArrayUtils.toObject(lineData);
                 ArrayList<Number> LineData = new ArrayList<Number>(Arrays.asList(feat_dataObj));
                 DataVector dvec = new DataVector(Integer.parseInt(column[0]), lineData.length, LineData);
-                Log.d("Line: ", text);
+//                Log.d("Line: ", text);
                 trainData.add(dvec);
 //               System.out.print(String.valueOf(i) + " : ");
                 dvec.printDataVector("Line: ");
                 i++;
             }
+//            fcalc.Train(trainData,);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

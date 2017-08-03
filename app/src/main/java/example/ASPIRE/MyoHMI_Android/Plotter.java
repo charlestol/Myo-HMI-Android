@@ -56,7 +56,7 @@ public class Plotter extends Activity {
 
     private int nowGraphIndex = 3;
 
-    private ArrayList<Float> f0, f1, f2, f3, f4, f5;
+    private ArrayList<Number> f0, f1, f2, f3, f4, f5;
 
     private static boolean[] featuresSelected = new boolean[]{true, true, true, true, true, true};
 
@@ -218,12 +218,12 @@ public class Plotter extends Activity {
 
                     for (int i = 0; i < 8; i++) {
                         //2000 per division 14 000 in total
-                        entries0.add(new RadarEntry(setMaxValue(f0.get(i) * 200)));
-                        entries1.add(new RadarEntry(setMaxValue(f1.get(i) * 200)));
-                        entries2.add(new RadarEntry(setMaxValue(f2.get(i) * 200)));
-                        entries3.add(new RadarEntry(setMaxValue(f3.get(i) * 170)));
-                        entries4.add(new RadarEntry(setMaxValue(f4.get(i) * 200)));
-                        entries5.add(new RadarEntry(setMaxValue(f5.get(i) * 200)));
+                        entries0.add(new RadarEntry(setMaxValue(f0.get(i).floatValue() * 200)));
+                        entries1.add(new RadarEntry(setMaxValue(f1.get(i).floatValue() * 200)));
+                        entries2.add(new RadarEntry(setMaxValue(f2.get(i).floatValue() * 200)));
+                        entries3.add(new RadarEntry(setMaxValue(f3.get(i).floatValue() * 170)));
+                        entries4.add(new RadarEntry(setMaxValue(f4.get(i).floatValue() * 200)));
+                        entries5.add(new RadarEntry(setMaxValue(f5.get(i).floatValue() * 200)));
 
 //                        Log.d("asdfadsf", String.valueOf(f3.get(i)));
                     }

@@ -13,6 +13,12 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -36,12 +42,12 @@
         <activity
             android:name="example.ASPIRE.MyoHMI_Android.ListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="Connect to Myo Armband"
-            android:parentActivityName="example.ASPIRE.MyoHMI_Android.MainActivity" >
-            <meta-data
-                android:name="android support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+            android:label="@string/title_activity_list" >
         </activity>
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
     </application>
 
 </manifest>

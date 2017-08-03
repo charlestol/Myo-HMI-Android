@@ -50,7 +50,6 @@ public class FeatureCalculator {
     int winincr = 8;    //separation length between windows
     int winnext = winsize + 1;    //winsize + 2 samples until first feature
 
-
     private Plotter plotter;
 
     /**
@@ -69,19 +68,21 @@ public class FeatureCalculator {
 
 //    private FileSaver saveToFile = new FileSaver();
 
-    twoDimArray featemg;
+    static twoDimArray featemg;
 
     int nSamples = 100; //Kattia: Should be set by the user and have interaction in GUI
 
     public static boolean train = false;
+
     public static boolean classify = false;
 
     static ArrayList<DataVector> samplesClassifier = new ArrayList<DataVector>();
 
-
     public ArrayList<DataVector> getSamplesClassifier() {
         return samplesClassifier;
     }
+
+    public ArrayList<DataVector> getFeatureData(){return featemg.getDataVector();}
 
     public int getGesturesSize(){return gestures.size();}
 
@@ -256,9 +257,7 @@ public class FeatureCalculator {
 //        Log.d("classes: ", Arrays.toString());
 //        inFeatemg.printDataVector("In Classify Trainer");
 
-
         Log.d(TAG, String.valueOf(samplesClassifier.size()));
-
     }
 
     public static void pushClassifier(DataVector inFeatemg) {
@@ -338,7 +337,7 @@ public class FeatureCalculator {
     public static void Train() {
         classifier.Train(samplesClassifier, classes);
         //Kattia: Testing CrossValidation
-        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier, gestures.size(),5);
+//        ArrayList<Float> temp = classifier.crossAccuracy(samplesClassifier, gestures.size(),5);
     }
 
     private DataVector buildDataVector()//ignoring grid and imu for now, assuming all features are selected
@@ -456,13 +455,17 @@ public class FeatureCalculator {
 class twoDimArray {
 
     //matrix is our featEMG matrix
-    ArrayList<ArrayList<Float>> matrix = new ArrayList<ArrayList<Float>>();
+    ArrayList<ArrayList<Number>> matrix = new ArrayList<ArrayList<Number>>();
+    int numRow;
+    int numCol;
 
     //Init matrix to the desired dimensions all with 0
     //Note: row refers to nFeatures and columns refers to nSensors
     public void createMatrix(int numRow, int numCol) {
+        this.numRow = numRow;
+        this.numCol = numCol;
         for (int i = 0; i < numRow; i++) {
-            ArrayList<Float> innerArray = new ArrayList<Float>();
+            ArrayList<Number> innerArray = new ArrayList<Number>();
             matrix.add(innerArray);
             for (int j = 0; j < numCol; j++) {
                 innerArray.add((float) 0);
@@ -472,24 +475,31 @@ class twoDimArray {
 
     //Get value at specified row and column
     public float getMatrixValue(int inRow, int inCol) {
-        return matrix.get(inRow).get(inCol);
+        return matrix.get(inRow).get(inCol).floatValue();
     }
 
     //Set value at specified row and column
     public void setMatrixValue(int numRow, int numCol, float data) {
-        ArrayList<Float> temp;
+        ArrayList<Number> temp;
         temp = matrix.get(numRow);
         temp.set(numCol, data);
         matrix.set(numRow, temp);
     }
 
-    //Return specific ROW
-    public ArrayList<Float> getInnerArray(int inRow) {
-        return matrix.get(inRow);
+    public ArrayList<DataVector> getDataVector(){
+        ArrayList<DataVector> data = new ArrayList<>();
+        for (int i=0;i<numRow;i++){
+            ArrayList<Number> row = this.getInnerArray(i);
+            data.add(new DataVector(0,row.size(),row));
+        }
+        return data;
     }
 
+    //Return specific ROW
+    public ArrayList<Number> getInnerArray(int inRow) {
+        return matrix.get(inRow);
+    }
     public void addRow(ArrayList inRow) {
         matrix.add(inRow);
     }
-
 }

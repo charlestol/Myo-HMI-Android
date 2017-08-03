@@ -12,6 +12,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Alex\Desktop\MyoHMI_Android\app\libs\aws-android-sdk-s3-2.4.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d10acf28b7aa9fc180433a9a8d7ebb28a2b5b4ca">
+        <dex dex="C:\Users\Alex\Desktop\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\aws-android-sdk-s3-2.4.5_09745f6c9615e706a6e99b83df297e078224cc8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\Desktop\MyoHMI_Android\app\libs\aws-android-sdk-core-2.4.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fead215ff54bfe6c91c2391d7ba2932963617534">
+        <dex dex="C:\Users\Alex\Desktop\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\aws-android-sdk-core-2.4.5_9e7bf4197bba3ef502de4440158f6be0ef3df59d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\Desktop\MyoHMI_Android\app\libs\aws-android-sdk-cognito-2.4.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b3c50187e0ac9b9a6761b2f8a2cb0f272e9a88d3">
+        <dex dex="C:\Users\Alex\Desktop\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\aws-android-sdk-cognito-2.4.5_684cfaa03050e5ea967259e4a1ec4e886f8b8273.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Alex\Desktop\August 1 WorksEvenBetter\app\libs\commons-lang3-3.6.jar"
         jumboMode="false"
         optimize="true"
