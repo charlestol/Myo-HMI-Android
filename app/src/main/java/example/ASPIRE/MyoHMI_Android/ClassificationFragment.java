@@ -175,7 +175,7 @@ public class ClassificationFragment extends Fragment {
 
 
         //Kattia: Change 3 to 8 for experiments so that we don't need to select all gestures each time
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ListElements.length; i++) {
             listview.setItemChecked(i, true);
             selectedItems.add(i, adapter.getItem(i));
         }
@@ -281,62 +281,6 @@ public class ClassificationFragment extends Fragment {
             adapter.notifyDataSetChanged();
         });
 
-//        uploadButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Button cancel;
-//                Button sdCard;
-//                Button cloud;
-//                Button both;
-//                AlertDialog.Builder upload_pop = new AlertDialog.Builder(getActivity());
-//
-//                View view = inflater.inflate(R.layout.upload_dialog, container, false);
-//
-//                cancel = (Button) view.findViewById(R.id.bt_cancel);
-//                sdCard = (Button) view.findViewById(R.id.bt_sdcard);
-//                cloud = (Button) view.findViewById(R.id.bt_cloud);
-//                both = (Button) view.findViewById(R.id.bt_both);
-//
-//                final AlertDialog dialog = upload_pop.create();
-//
-//                cancel.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
-//                        dialog.dismiss();
-//                    }
-//                });
-//
-//                sdCard.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        saver.addData(fcalc.getFeatureData(), selectedItems);
-//                        Toast.makeText(getActivity(), "Saving on SDCARD!", Toast.LENGTH_SHORT).show();
-//                        dialog.dismiss();
-//                    }
-//                });
-//
-//                cloud.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Toast.makeText(getActivity(), "Saving on Cloud!", Toast.LENGTH_SHORT).show();
-//                        dialog.dismiss();
-//                    }
-//                });
-//
-//                both.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        saver.addData(fcalc.getFeatureData(), selectedItems);
-//                        Toast.makeText(getActivity(), "Saving on SDCARD and Cloud!", Toast.LENGTH_SHORT).show();
-//                        dialog.dismiss();
-//                    }
-//                });
-//                dialog.setView(view);
-//                dialog.show();
-//            }
-//        });
-
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -360,9 +304,9 @@ public class ClassificationFragment extends Fragment {
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        file.delete();
                         Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-                        file.delete();
                     }
                 });
 
@@ -449,8 +393,6 @@ public class ClassificationFragment extends Fragment {
                         fcalc.Train();
                         fcalc.setClassify(true);
 
-
-                        saver.addData(fcalc.getSamplesClassifier(), selectedItems);
                     }
                 } else if (selectedItems.size() == 1) {
                     Toast.makeText(getActivity(), "at least 2 gestures must be selected!", Toast.LENGTH_SHORT).show();

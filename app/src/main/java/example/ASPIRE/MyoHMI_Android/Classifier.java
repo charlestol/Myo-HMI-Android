@@ -202,43 +202,43 @@ public class Classifier {
         if (trained2) {
             switch (choice) {
                 case 0:
-                    Log.d(TAG, "LDA");
+//                    Log.d(TAG, "LDA");
                     prediction = lda.predict(features);
                     break;
                 case 1:
                     prediction = svm.predict(features);
-                    Log.d(TAG, "SVM");
+//                    Log.d(TAG, "SVM");
                     if (prediction >= 3) {
                         prediction = previousPrediction;
                     }
                     break;
                 case 2:
-                    Log.d(TAG, "LOGIT");
+//                    Log.d(TAG, "LOGIT");
                     prediction = logit.predict(features);
                     //Log.d(TAG, "Logistic Regression");
                     break;
                 case 3:
-                    Log.d(TAG, "TREE");
+//                    Log.d(TAG, "TREE");
                     prediction = tree.predict(features);
                     //Log.d(TAG, "Tree");
                     break;
                 case 4:
-                    Log.d(TAG, "NET");
+//                    Log.d(TAG, "NET");
                     prediction = net.predict(features);
                     //Log.d(TAG, "Net");
                     break;
                 case 5:
-                    Log.d(TAG, "KNN");
+//                    Log.d(TAG, "KNN");
                     prediction = knn.predict(features);
                     //Log.d(TAG, "KNN");
                     break;
                 case 6:
-                    Log.d(TAG, "FOREST");
+//                    Log.d(TAG, "FOREST");
                     prediction = forest.predict(features);
                     //Log.d(TAG, "AdaBoost");
                     break;
             }
-            Log.d("TIME", String.valueOf(System.currentTimeMillis() - MyoGattCallback.superTimeInitial));
+//            Log.d("TIME", String.valueOf(System.currentTimeMillis() - MyoGattCallback.superTimeInitial));
             return prediction;
         }
         return 1000;

@@ -2790,7 +2790,7 @@ containing a value of this type.
         public static final int line3=0x7f0d00b0;
         public static final int line_Features=0x7f0d009a;
         public static final int listMode=0x7f0d000f;
-        public static final int listView=0x7f0d008b;
+        public static final int listView=0x7f0d008c;
         public static final int listView1=0x7f0d0075;
         public static final int list_item=0x7f0d0048;
         public static final int live=0x7f0d008d;
@@ -2873,7 +2873,7 @@ containing a value of this type.
         public static final int transition_scene_layoutid_cache=0x7f0d000c;
         public static final int up=0x7f0d000d;
         public static final int useLogo=0x7f0d0018;
-        public static final int verticalLine=0x7f0d008c;
+        public static final int verticalLine=0x7f0d008b;
         public static final int view=0x7f0d008e;
         public static final int view_offset_helper=0x7f0d000e;
         public static final int view_pager=0x7f0d0077;

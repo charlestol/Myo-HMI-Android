@@ -38,6 +38,7 @@ public class FeatureCalculator {
     int bufsize = 128;
     int flag;
     int lastCall, firstCall;
+    int pushCount=0;
 
     //    private TextView liveView;
     public static Activity classAct;
@@ -68,7 +69,7 @@ public class FeatureCalculator {
 
 //    private FileSaver saveToFile = new FileSaver();
 
-    static twoDimArray featemg;
+    public static twoDimArray featemg;
 
     int nSamples = 100; //Kattia: Should be set by the user and have interaction in GUI
 
@@ -77,12 +78,13 @@ public class FeatureCalculator {
     public static boolean classify = false;
 
     static ArrayList<DataVector> samplesClassifier = new ArrayList<DataVector>();
+    static ArrayList<DataVector> featureData = new ArrayList<DataVector>();
 
     public ArrayList<DataVector> getSamplesClassifier() {
         return samplesClassifier;
     }
 
-    public ArrayList<DataVector> getFeatureData(){return featemg.getDataVector();}
+    public ArrayList<DataVector> getFeatureData(){return featureData;}
 
     public int getGesturesSize(){return gestures.size();}
 
@@ -251,12 +253,15 @@ public class FeatureCalculator {
 
     //Making the 100 x 40 matrix
     public void pushClassifyTrainer(DataVector inFeatemg) {
-//        saveToFile.save(inFeatemg);
-        samplesClassifier.add(inFeatemg);
-        classes.add(currentClass);//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//        Log.d("classes: ", Arrays.toString());
-//        inFeatemg.printDataVector("In Classify Trainer");
+        ArrayList<Number> line = new ArrayList<>();
+        for(int i=0;i<6;i++){//for saving ALL feature data not just ones selected
+            featureData.add(new DataVector(0,8,featemg.getInnerArray(i)));
+            DataVector dvec2 = new DataVector(0,8,featemg.getInnerArray(i));
+            dvec2.printDataVector("hey there: " + String.valueOf(i));
+        }
 
+        samplesClassifier.add(inFeatemg);
+        classes.add(currentClass);
         Log.d(TAG, String.valueOf(samplesClassifier.size()));
     }
 
@@ -324,7 +329,6 @@ public class FeatureCalculator {
                 if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
                     setTrain(false);
                     currentClass++;
-
                 }
             } else if (classify) {
                 pushClassifier(aux);

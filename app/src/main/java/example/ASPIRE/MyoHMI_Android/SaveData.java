@@ -59,8 +59,6 @@ public class SaveData extends Activity{
             osw.flush();
             osw.close();
 
-//                cloudUpload.beginUpload(file);
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -98,7 +96,7 @@ public class SaveData extends Activity{
                     //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                     osw.append((int)trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                     osw.append("\n");
-                    Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+//                    Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                 }
                 osw.flush();
                 osw.close();

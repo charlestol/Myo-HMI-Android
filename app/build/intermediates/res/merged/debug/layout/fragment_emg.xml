@@ -49,13 +49,7 @@
         android:text="Myo Not Connected"
         android:textSize="25dp" />
 
-    <com.echo.holographlibrary.LineGraph
-        android:id="@+id/holo_graph_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/iEMG"
-        android:layout_below="@+id/gestureTextView"
-        android:layout_toStartOf="@+id/iEMG" />
+
 
     <!--<com.github.mikephil.charting.charts.RadarChart-->
     <!--android:id="@+id/chart1"-->
@@ -75,15 +69,29 @@
     <!--android:layout_below="@+id/gestureTextView"-->
     <!--app:srcCompat="@mipmap/myocolors"-->
     <!--/>-->
+    <com.echo.holographlibrary.LineGraph
+        android:id="@+id/holo_graph_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/iVibrate"
+        android:layout_below="@+id/gestureTextView"
+        android:layout_marginTop="120dp"
+        android:layout_toStartOf="@+id/iEMG"
+        android:layout_toEndOf="@id/iVibrate"/>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/iVibrate"
+        android:layout_below="@+id/gestureTextView"
+
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/gestureTextView"
+
+
         app:srcCompat="@mipmap/myocolors" />
+
+
 
 </RelativeLayout>

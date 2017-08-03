@@ -87,26 +87,29 @@
         android:scaleType="fitXY"
         android:src="@drawable/clear_icon_extra" />
 
-    <TextView
-        android:id="@+id/gesture_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/im_clear"
-        android:layout_below="@+id/im_add"
-        android:layout_marginEnd="16dp"
-        android:adjustViewBounds="true"
-        android:text="Classifications"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/im_upload"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
         android:layout_below="@+id/im_add"
         android:adjustViewBounds="true"
         android:text="Gesture List"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/gesture_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/textView"
+        android:layout_marginEnd="50dp"
+        android:adjustViewBounds="true"
+        android:text="Classifications"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -114,14 +117,10 @@
         android:id="@+id/borderLine"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/gesture_title"
+        android:layout_below="@+id/textView"
         android:background="#c4c0c0" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:layout_below="@+id/borderLine"></ListView>
+
 
     <View
         android:id="@+id/verticalLine"
@@ -129,17 +128,30 @@
         android:layout_height="245dp"
         android:layout_below="@id/borderLine"
         android:layout_marginStart="9dp"
-        android:layout_toEndOf="@id/listView"
+        android:layout_centerHorizontal="true"
         android:background="#c4c0c0" />
+        <!--android:layout_toEndOf="@id/listView"-->
+
+    <!--gesture List View-->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/verticalLine"
+        android:layout_below="@+id/borderLine"></ListView>
 
     <!--Classifier List View-->
     <ListView
         android:id="@id/listView1"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="250dp"
         android:layout_alignTop="@id/listView"
-        android:layout_marginStart="9dp"
-        android:layout_toEndOf="@+id/verticalLine" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/verticalLine"
+        android:layout_marginStart="9dp"/>
+        <!--android:layout_toEndOf="@+id/verticalLine"-->
+
 
     <TextView
         android:id="@+id/live"

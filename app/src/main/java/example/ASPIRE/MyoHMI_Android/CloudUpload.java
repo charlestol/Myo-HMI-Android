@@ -153,28 +153,24 @@ class UploadListener implements TransferListener {
 
     private CloudUpload cloudUpload = new CloudUpload();
 
-    // Simply updates the UI list when notified.
     @Override
     public void onError(int id, Exception e) {
         Log.e("", "Error during upload: " + id, e);
-//        updateList();
     }
 
     @Override
     public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
         Log.d("", String.format("onProgressChanged: %d, total: %d, current: %d",
                 id, bytesTotal, bytesCurrent));
-//        updateList();
     }
 
     @Override
     public void onStateChanged(int id, TransferState newState) {
         Log.d("", "onStateChanged: " + id + ", " + newState);
         if (newState.name() == "COMPLETED"){
-            Log.d("", String.valueOf(cloudUpload.getDelete()));
+            Log.d("COMPLETED ", String.valueOf(cloudUpload.getDelete()));
             if (cloudUpload.getDelete())
                 cloudUpload.delete();
         }
-//        updateList();
     }
 }
