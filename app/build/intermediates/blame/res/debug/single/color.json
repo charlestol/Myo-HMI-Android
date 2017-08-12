@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\color\\design_error.xml"
     },
     {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",

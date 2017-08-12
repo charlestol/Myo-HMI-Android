@@ -32,31 +32,22 @@
          android:layout_marginTop="30dp"
          android:layout_below="@id/line_Classifier" />-->
 
-    <TextView
-        android:id="@+id/Features_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Features"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <View
-        android:id="@+id/line_Features"
-        android:layout_width="150dp"
-        android:layout_height="2dp"
-        android:layout_below="@id/Features_title"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorOrinalline" />
+    <!--<TextView-->
+        <!--android:id="@+id/Features_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:text="Features"-->
+        <!--android:textSize="30sp"-->
+        <!--android:textStyle="bold" />-->
 
     <!--Features List View-->
     <ListView
         android:id="@id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line_Features"
         android:layout_centerHorizontal="true" />
 
     <!-- <View

@@ -244,6 +244,10 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\classification_fragment.xml",
+        "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout\\classification_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\80516aa3e5fe1a805ed85330da937ba1316c12c4\\output\\res\\layout\\design_navigation_item.xml"
     },

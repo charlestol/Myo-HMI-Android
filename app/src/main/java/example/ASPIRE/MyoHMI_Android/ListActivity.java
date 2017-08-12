@@ -97,6 +97,7 @@ public class ListActivity extends AppCompatActivity {
                 ListView listView = (ListView) parent;
                 String item = (String) listView.getItemAtPosition(position);
                 Toast.makeText(getApplicationContext(), item + " connect", Toast.LENGTH_SHORT).show();
+//                mLEScanner.stopScan(mScanCallback);//added this for the tablet that sucks
                 myoName = item;
 
                 Intent intent;
@@ -245,6 +246,9 @@ public class ListActivity extends AppCompatActivity {
 
             } else {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+//                requestPermissions(new String[]{Manifest.permission.BLUETOOTH}, 1);
+//                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_ADMIN}, 1);
+
             }
         } else {
             Toast.makeText(this, "Location Permission (already) Granted!", Toast.LENGTH_SHORT).show();

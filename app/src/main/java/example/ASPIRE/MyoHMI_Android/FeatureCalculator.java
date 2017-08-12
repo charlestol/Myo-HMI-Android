@@ -355,8 +355,7 @@ public class FeatureCalculator {
         numFeatSelected = 6; //Resets the number of features selected to 5
 
         ArrayList<Number> temp = new ArrayList<Number>(emgct);
-        ArrayList<Number> temp1 = new ArrayList<Number>(emgct);
-        //lock();
+        DataVector dvec1 = null;
 
         int n = 0;
         int k = 0;
@@ -365,28 +364,31 @@ public class FeatureCalculator {
 
         for (int i = 0; i < nFeatures; i++) {
         //group features per sensor
-            for (int j = 0; j < nSensors; j++) {
-
-                if (featSelected[i] == true) {
-                temp.add(n, featemg.getMatrixValue(tempIndex, j));
-                n++;
+            if (featSelected[i] == true) {
+                for (int j = 0; j < nSensors; j++) {
+                    temp.add(n, featemg.getMatrixValue(tempIndex, j));
+                    n++;
                 }
             }
             tempIndex++;
         }
 
-        for (int i = 0; i < 6; i++) {
-            //group features per sensor
-            for (int j = 0; j < nSensors; j++) {
-                temp1.add(k, featemg.getMatrixValue(temp1Index, j));
-                k++;
+        if(getTrain()) {
+            ArrayList<Number> temp1 = new ArrayList<Number>(emgct);
+            for (int i = 0; i < 6; i++) {
+                //group features per sensor
+                for (int j = 0; j < nSensors; j++) {
+                    temp1.add(k, featemg.getMatrixValue(temp1Index, j));
+                    k++;
+                }
+                temp1Index++;
             }
-            temp1Index++;
+            dvec1 = new DataVector(true, 0, 48, temp1, 0000000);
         }
 
         DataVector dvec = new DataVector(true, 0, emgct, temp, 0000000);
-        DataVector dvec1 = new DataVector(true, 0, 48, temp1, 0000000);
-        dvec1.printDataVector("Hey there: ");
+
+//        dvec1.printDataVector("Hey there: ");
         DataVector dvecArr[] = {dvec, dvec1};
         return dvecArr;
     }

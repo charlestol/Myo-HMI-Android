@@ -142,12 +142,12 @@ public class ClassificationFragment extends Fragment {
         //status = (TextView) v.findViewById(R.id.txt_status);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
         trainButton = (Button) v.findViewById(R.id.bt_train);
-        loadButton = (Button) v.findViewById(R.id.bt_load);
+//        loadButton = (Button) v.findViewById(R.id.bt_load);
         // showButton = (Button) v.findViewById(R.id.bt_show);
         addButton = (ImageButton) v.findViewById(R.id.im_add);
         deleteButton = (ImageButton) v.findViewById(R.id.im_delete);
         uploadButton = (ImageButton) v.findViewById(R.id.im_upload);
-        clearButton = (ImageButton) v.findViewById(R.id.im_clear);
+//        clearButton = (ImageButton) v.findViewById(R.id.im_clear);
         listview = (ListView) v.findViewById(R.id.listView);
         listview_Classifier = (ListView) v.findViewById(R.id.listView1);
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
@@ -209,37 +209,37 @@ public class ClassificationFragment extends Fragment {
 
         });
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
-                builder.setTitle("Clear All?");
-                builder.setMessage("Do you want to clear all gestures? ");
-
-                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                });
-                builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        int sizeOfArray = ListElementsArrayList.size();
-
-                        for (int x = 0; x < sizeOfArray; ++x) {
-                            listview.setItemChecked(x, false);
-                        }
-
-                        selectedItems.clear();
-                        adapter.clear();
-                        adapter.notifyDataSetChanged();
-                    }
-                });
-                builder.show();
-
-            }
-        });
+//        clearButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//
+//                builder.setTitle("Clear All?");
+//                builder.setMessage("Do you want to clear all gestures? ");
+//
+//                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//
+//                    }
+//                });
+//                builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        int sizeOfArray = ListElementsArrayList.size();
+//
+//                        for (int x = 0; x < sizeOfArray; ++x) {
+//                            listview.setItemChecked(x, false);
+//                        }
+//
+//                        selectedItems.clear();
+//                        adapter.clear();
+//                        adapter.notifyDataSetChanged();
+//                    }
+//                });
+//                builder.show();
+//
+//            }
+//        });
 
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -349,12 +349,12 @@ public class ClassificationFragment extends Fragment {
             }
         });
 
-        loadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openFolder();
-            }
-        });
+//        loadButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openFolder();
+//            }
+//        });
         return v;
     }
 
@@ -365,9 +365,9 @@ public class ClassificationFragment extends Fragment {
             @Override
             public void run() {
                 if (selectedItems.size() > 1) {
-                    or_text.setVisibility(View.GONE);
+//                    or_text.setVisibility(View.GONE);
                     trainButton.setVisibility(View.GONE);
-                    loadButton.setVisibility(View.GONE);
+//                    loadButton.setVisibility(View.GONE);
 
                     if ((--count != -1) && (gestureCounter != selectedItems.size())) {
                         mHandler.postDelayed(this, 1000);

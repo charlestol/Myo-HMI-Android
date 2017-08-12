@@ -271,6 +271,9 @@ public class MyoGattCallback extends BluetoothGattCallback {
             DataVector dvec1 = new DataVector(true, 1, 8, emg_data_list1, systemTime_ms);
             DataVector dvec2 = new DataVector(true, 2, 8, emg_data_list2, systemTime_ms);
 
+//            dvec1.printDataVector("dvec");
+//            dvec2.printDataVector("dvec");
+
             fcalc.pushFeatureBuffer(dvec1);
             fcalc.pushFeatureBuffer(dvec2);
             plotter.pushPlotter(emg_data);
