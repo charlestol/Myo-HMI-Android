@@ -33,12 +33,13 @@
 
             <View
                 android:id="@+id/view2"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/textView2"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="5dp"
-                android:background="#c4c0c0" />
+                android:layout_marginEnd="5dp"
+                android:background="#000000" />
 
             <ListView
                 android:id="@id/listView1"
@@ -50,14 +51,7 @@
                 />
             <!--android:layout_toEndOf="@+id/verticalLine"-->
 
-            <!--<View-->
-            <!--android:id="@+id/verticalLine"-->
-            <!--android:layout_width="5dp"-->
-            <!--android:layout_height="300dp"-->
-            <!--android:background="#c4c0c0"-->
-            <!--android:layout_below="@id/textView2"-->
-            <!--android:layout_toEndOf="@+id/listView1" />-->
-            <!--&lt;!&ndash;android:layout_toEndOf="@id/listView"&ndash;&gt;-->
+a
 
         </RelativeLayout>
 
@@ -84,7 +78,7 @@
                 android:textColor="#000000"
                 android:layout_marginStart="28dp"
                 android:textSize="17sp"
-                android:textColorHint="#8c8383"
+                android:textColorHint="#000000"
                 />
 
             <View
@@ -94,7 +88,27 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/add_gesture_text"
                 android:layout_marginStart="5dp"
-                android:background="#c4c0c0" />
+                android:background="#000000" />
+
+            <View
+                android:id="@+id/verticalLine1"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_above="@+id/view3"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="5dp"
+                android:background="#000000"
+                />
+
+            <View
+                android:id="@+id/verticalLine"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_above="@+id/view3"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="144dp"
+                android:background="#000000"
+                />
 
             <ListView
                 android:id="@+id/listView"
@@ -130,7 +144,7 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_trash"
                 android:layout_above="@+id/view3"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="1dp"
                 android:layout_marginEnd="21dp"
                 android:layout_alignEnd="@+id/listView" />
 
@@ -163,7 +177,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/live"
             android:layout_marginStart="5dp"
-            android:background="#c4c0c0" />
+            android:background="#000000" />
 
         <Button
             android:id="@+id/bt_train"

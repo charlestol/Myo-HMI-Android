@@ -45,7 +45,6 @@ import static android.R.attr.pivotY;
 public class Plotter extends Activity {
     //boolean emg;
     private static RadarChart mChart;
-    private RadarChart myChart;
     private LineGraph lineGraph;
     private static Handler mHandler;
     private static int currentTab = 0; //current tab from MainActivity
@@ -69,6 +68,8 @@ public class Plotter extends Activity {
     public Plotter(RadarChart chart) {
 
         mChart = chart;
+        mHandler = new Handler();
+
         mChart.setNoDataText("");
         mChart.setBackgroundColor(Color.TRANSPARENT);
         mChart.getDescription().setEnabled(false);
@@ -101,6 +102,81 @@ public class Plotter extends Activity {
         yAxis.setAxisMinimum(0);
         yAxis.setAxisMaximum(128);
         yAxis.setDrawLabels(false);
+
+//        ArrayList<RadarEntry> entries0 = new ArrayList<RadarEntry>();
+//        ArrayList<RadarEntry> entries1 = new ArrayList<RadarEntry>();
+//        ArrayList<RadarEntry> entries2 = new ArrayList<RadarEntry>();
+//        ArrayList<RadarEntry> entries3 = new ArrayList<RadarEntry>();
+//        ArrayList<RadarEntry> entries4 = new ArrayList<RadarEntry>();
+//        ArrayList<RadarEntry> entries5 = new ArrayList<RadarEntry>();
+//
+//        ArrayList<IRadarDataSet> sets = new ArrayList<IRadarDataSet>();
+//
+//        RadarDataSet set0 = new RadarDataSet(entries0, "MAV");
+//        set0.setColor(Color.rgb(123, 174, 157));
+//        set0.setFillColor(Color.rgb(78, 118, 118));
+//        set0.setDrawFilled(true);
+//        set0.setFillAlpha(180);
+//        set0.setLineWidth(2f);
+//
+//        RadarDataSet set1 = new RadarDataSet(entries1, "WAV");
+//        set1.setColor(Color.rgb(241, 148, 138));
+//        set1.setFillColor(Color.rgb(205, 97, 85));
+//        set1.setDrawFilled(true);
+//        set1.setFillAlpha(180);
+//        set1.setLineWidth(2f);
+//
+//        RadarDataSet set2 = new RadarDataSet(entries2, "Turns");
+//        set2.setColor(Color.rgb(175, 122, 197));
+//        set2.setFillColor(Color.rgb(165, 105, 189));
+//        set2.setDrawFilled(true);
+//        set2.setFillAlpha(180);
+//        set2.setLineWidth(2f);
+//
+//        RadarDataSet set3 = new RadarDataSet(entries3, "Zeros");
+//        set3.setColor(Color.rgb(125, 206, 160));
+//        set3.setFillColor(Color.rgb(171, 235, 198));
+//        set3.setDrawFilled(true);
+//        set3.setFillAlpha(180);
+//        set3.setLineWidth(2f);
+//
+//        RadarDataSet set4 = new RadarDataSet(entries4, "SMAV");
+//        set4.setColor(Color.rgb(39, 55, 70));
+//        set4.setFillColor(Color.rgb(93, 109, 126));
+//        set4.setDrawFilled(true);
+//        set4.setFillAlpha(180);
+//        set4.setLineWidth(2f);
+//
+//        RadarDataSet set5 = new RadarDataSet(entries5, "AdjUnique");
+//        set5.setColor(Color.rgb(10, 100, 126)); // 100 50 70
+//        set5.setFillColor(Color.rgb(64, 154, 180));
+//        set5.setDrawFilled(true);
+//        set5.setFillAlpha(180);
+//        set5.setLineWidth(2f);
+//
+//        if (featuresSelected[0])
+//            sets.add(set0);
+//        if (featuresSelected[1])
+//            sets.add(set1);
+//        if (featuresSelected[2])
+//            sets.add(set2);
+//        if (featuresSelected[3])
+//            sets.add(set3);
+//        if (featuresSelected[4])
+//            sets.add(set4);
+//        if (featuresSelected[5])
+//            sets.add(set5);
+//
+//        //                        set1.setDrawHighlightCircleEnabled(true);
+//        //                        set1.setDrawHighlightIndicators(false);
+//
+//        RadarData data = new RadarData(sets);
+//        data.setValueTextSize(18f);
+//        data.setDrawValues(false);
+//        mChart.setData(data);
+//        mChart.notifyDataSetChanged();
+//        mChart.invalidate();
+
     }
 
     public Plotter(Handler handler, LineGraph line) {
@@ -198,6 +274,7 @@ public class Plotter extends Activity {
 
     public void pushFeaturePlotter(twoDimArray featureData) {
         if (mChart != null && currentTab == 1) {
+//        if (mChart != null) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -298,6 +375,9 @@ public class Plotter extends Activity {
                     }
                 }
             });
+            Log.d("wassup ", "whekfdkfjasdfadf");
+        }else if (mChart==null){
+            Log.d("wassup ", "mchart might be null************************************");
         }
     }
 
@@ -311,7 +391,32 @@ public class Plotter extends Activity {
     }
 
     public void setFeatures(boolean[] features) {
+
         featuresSelected = features;
+
+        //if statement for myo connection goes here
+
+        twoDimArray featemg = new twoDimArray();
+        featemg.createMatrix(6, 8);
+
+        this.setCurrentTab(1);
+
+        for(int i=0; i<8; i++){
+            for (int j=0;j<6;j++){
+                featemg.setMatrixValue(j, i, 128);
+            }
+        }
+
+        this.pushFeaturePlotter(featemg);
+
+        for(int i=0; i<8; i++){
+            for (int j=0;j<6;j++){
+                featemg.setMatrixValue(j, i, 0);
+            }
+        }
+
+        this.pushFeaturePlotter(featemg);
+
     }
 
     public float setMaxValue(float inValue){

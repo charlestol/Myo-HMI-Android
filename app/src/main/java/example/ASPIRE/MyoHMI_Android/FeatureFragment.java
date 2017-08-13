@@ -33,16 +33,6 @@ public class FeatureFragment extends Fragment {
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
 
-    /*String[] classifierNames = new String[]{
-            "LDA",
-            "SVM",
-            "Logistic Regression",
-            "Decision Tree",
-            "Neural Net",
-            "K-Nearest Neighbor",
-            "AdaBoost"
-    };*/
-
     String[] featureNames = new String[]{
             "MAV",
             "WAV",
@@ -123,8 +113,30 @@ public class FeatureFragment extends Fragment {
         });*/
 
         mChart = (RadarChart) v.findViewById(R.id.chart);
-        mChart.setNoDataText("This is the chart with no data!");
         plotter = new Plotter(mChart);//must pass chart from this fragment
+
+        twoDimArray featemg = new twoDimArray();
+        featemg.createMatrix(6, 8);
+
+        //set currenttab
+
+        plotter.setCurrentTab(1);
+
+        for(int i=0; i<8; i++){
+            for (int j=0;j<6;j++){
+                featemg.setMatrixValue(j, i, 128);
+            }
+        }
+
+        plotter.pushFeaturePlotter(featemg);
+
+        for(int i=0; i<8; i++){
+            for (int j=0;j<6;j++){
+                featemg.setMatrixValue(j, i, 0);
+            }
+        }
+
+        plotter.pushFeaturePlotter(featemg);
 
         return v;
     }
