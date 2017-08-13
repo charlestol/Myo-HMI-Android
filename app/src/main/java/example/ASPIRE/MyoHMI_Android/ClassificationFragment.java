@@ -90,7 +90,7 @@ public class ClassificationFragment extends Fragment {
     ImageButton clearButton;
     ImageButton uploadButton;
     //Button showButton;
-    Button trainButton;
+    ImageButton trainButton;
     Button loadButton;
     ListView listview_Classifier;
     ListView listview;
@@ -141,7 +141,7 @@ public class ClassificationFragment extends Fragment {
         liveView = (TextView) v.findViewById(R.id.gesture_detected);
         //status = (TextView) v.findViewById(R.id.txt_status);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
-        trainButton = (Button) v.findViewById(R.id.bt_train);
+        trainButton = (ImageButton) v.findViewById(R.id.bt_train);
 //        loadButton = (Button) v.findViewById(R.id.bt_load);
         // showButton = (Button) v.findViewById(R.id.bt_show);
         addButton = (ImageButton) v.findViewById(R.id.im_add);

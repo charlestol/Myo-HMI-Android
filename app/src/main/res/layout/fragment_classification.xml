@@ -64,7 +64,7 @@ a
             <EditText
                 android:id="@+id/add_gesture_text"
                 style="@android:style/Widget.DeviceDefault.EditText"
-                android:layout_width="120dp"
+                android:layout_width="110dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -83,7 +83,7 @@ a
 
             <View
                 android:id="@+id/view3"
-                android:layout_width="140dp"
+                android:layout_width="180dp"
                 android:layout_height="1dp"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/add_gesture_text"
@@ -106,7 +106,7 @@ a
                 android:layout_height="10dp"
                 android:layout_above="@+id/view3"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="144dp"
+                android:layout_marginStart="184dp"
                 android:background="#000000"
                 />
 
@@ -116,9 +116,7 @@ a
                 android:layout_height="350dp"
                 android:layout_below="@+id/add_gesture_text"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                >
-
+                android:layout_marginEnd="5dp">
             </ListView>
 
             <ImageButton
@@ -131,7 +129,7 @@ a
                 android:background="#00000000"
                 android:cropToPadding="false"
                 android:scaleType="fitXY"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="7dp"
                 android:src="@drawable/add_button1" />
 
             <ImageButton
@@ -159,27 +157,17 @@ a
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/linearLayout">
 
-        <TextView
-            android:id="@+id/live"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:adjustViewBounds="true"
-            android:text="Live Box"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/im_upload"
-            android:layout_alignStart="@+id/view" />
-
         <View
             android:id="@+id/view"
-            android:layout_width="140dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/live"
-            android:layout_marginStart="5dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:background="#000000" />
 
-        <Button
+        <ImageButton
             android:id="@+id/bt_train"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
@@ -188,16 +176,18 @@ a
             android:fadingEdge="none|horizontal|vertical"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Train" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_train_button"
+            android:layout_marginTop="130dp" />
 
         <TextView
             android:id="@+id/gesture_detected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/view"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text=""
+            android:layout_marginTop="130dp"
             android:textSize="40sp" />
 
         <ProgressBar
@@ -212,15 +202,17 @@ a
 
         <ImageButton
             android:id="@+id/im_upload"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:adjustViewBounds="true"
             android:background="#00000000"
             android:cropToPadding="false"
             android:scaleType="fitXY"
             android:src="@drawable/cloud_upload"
             android:visibility="invisible"
-            android:layout_alignEnd="@+id/live" />
+            android:layout_alignBottom="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="30dp"/>
 
     </RelativeLayout>
 
