@@ -64,8 +64,7 @@ public class FeatureFragment extends Fragment {
         //final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifierNames));
 
 
-        ArrayAdapter<String> adapter_features = new ArrayAdapter<String>
-                (getActivity(), android.R.layout.simple_list_item_multiple_choice, FeaturesArrayList);
+        ArrayAdapter<String> adapter_features = new ArrayAdapter<String>(getActivity(), R.layout.mytextview, FeaturesArrayList);
 
         /*ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
                 (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
@@ -102,41 +101,10 @@ public class FeatureFragment extends Fragment {
 //            Toast.makeText(getActivity(), "selected: " + selectedItems, Toast.LENGTH_SHORT).show();
         });
 
-        /*//set OnItemClickListener
-        listview_Classifier.setOnItemClickListener((parent, view, position, id) -> {
-
-            classifier.setChoice(position);
-
-            String Classifier_selectedItem = ((TextView) view).getText().toString();
-
-            Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
-        });*/
 
         mChart = (RadarChart) v.findViewById(R.id.chart);
         plotter = new Plotter(mChart);//must pass chart from this fragment
 
-//        twoDimArray featemg = new twoDimArray();
-//        featemg.createMatrix(6, 8);
-
-//        plotter.setCurrentTab(1);
-//
-//        for(int i=0; i<8; i++){
-//            for (int j=0;j<6;j++){
-//                featemg.setMatrixValue(j, i, 128);
-//            }
-//        }
-//
-//        plotter.pushFeaturePlotter(featemg);
-//
-//        for(int i=0; i<8; i++){
-//            for (int j=0;j<6;j++){
-//                featemg.setMatrixValue(j, i, 0);
-//            }
-//        }
-//
-//        plotter.pushFeaturePlotter(featemg);
-
-//        plotter.setCurrentTab(0);
 
         return v;
     }

@@ -138,15 +138,13 @@ public class ClassificationFragment extends Fragment {
 
         or_text = (TextView) v.findViewById(R.id.or_text);
         liveView = (TextView) v.findViewById(R.id.gesture_detected);
-        //status = (TextView) v.findViewById(R.id.txt_status);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
         trainButton = (ImageButton) v.findViewById(R.id.bt_train);
         loadButton = (ImageButton) v.findViewById(R.id.bt_load);
-        // showButton = (Button) v.findViewById(R.id.bt_show);
         addButton = (ImageButton) v.findViewById(R.id.im_add);
         deleteButton = (ImageButton) v.findViewById(R.id.im_delete);
         uploadButton = (ImageButton) v.findViewById(R.id.im_upload);
-//        clearButton = (ImageButton) v.findViewById(R.id.im_clear);
+//        listview = (ListView) v.findViewById(R.id.listView);
         listview = (ListView) v.findViewById(R.id.listView);
         listview_Classifier = (ListView) v.findViewById(R.id.listView1);
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
@@ -159,10 +157,13 @@ public class ClassificationFragment extends Fragment {
 
         cloudUpload = new CloudUpload(getActivity());
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_multiple_choice, ListElementsArrayList);
 
-        ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
-                (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.mytextview, ListElementsArrayList);
+
+//        ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
+
+        ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>(getActivity(), R.layout.myradioview, ClassifierArrayList);
 
         listview.setAdapter(adapter);
         listview_Classifier.setAdapter(adapter_classifier);

@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
@@ -33,13 +34,10 @@ import android.widget.CheckBox;
 import com.echo.holographlibrary.LineGraph;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
-import java.lang.RuntimeException;
-
 import android.bluetooth.le.BluetoothLeScanner;
 import android.bluetooth.le.ScanCallback;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,55 +69,59 @@ public class MainActivity extends AppCompatActivity {
     private MyoGattCallback mMyoCallback;
     private MyoCommandList commandList = new MyoCommandList();
 
-    private String deviceName;
-
-    private LineGraph graph;
-    //    private Button graphButton1;
-   /* private Button graphButton2;
-    private Button graphButton3;
-    private Button graphButton4;
-    private Button graphButton5;
-    private Button graphButton6;
-    private Button graphButton7;
-    private Button graphButton8;*/
-    private boolean click = true;
-
     /***********************Below ADDED BY CHARLES FOR SWIPEABLE TABS***************************/
 
     ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
 
+    TabLayout tabLayout;
     public ClassificationFragment classificationFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
 
+///////////////////////////////////////////////////////////////
+
 
         mViewPager = (ViewPager) this.findViewById(R.id.view_pager);
         mViewPager.setOffscreenPageLimit(2);
-        final ActionBar bar = this.getSupportActionBar();
-        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
+//        final ActionBar bar = this.getSupportActionBar();
+//        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//
         EmgFragment emgFragment = new EmgFragment();
         FeatureFragment featureFragment = new FeatureFragment();
         classificationFragment = new ClassificationFragment();
+//
+//        mTabsAdapter = new TabsAdapter(this, mViewPager);
+//        mTabsAdapter.addTab(bar.newTab().setText("EMG"),
+//                EmgFragment.class, null, emgFragment);
+//        mTabsAdapter.addTab(bar.newTab().setText("Features"),
+//                FeatureFragment.class, null, featureFragment);
+//        mTabsAdapter.addTab(bar.newTab().setText("Classification"),
+//                ClassificationFragment.class, null, classificationFragment);
 
-        mTabsAdapter = new TabsAdapter(this, mViewPager);
-        mTabsAdapter.addTab(bar.newTab().setText("EMG"),
-                EmgFragment.class, null, emgFragment);
-        mTabsAdapter.addTab(bar.newTab().setText("Features"),
-                FeatureFragment.class, null, featureFragment);
-        mTabsAdapter.addTab(bar.newTab().setText("Classification"),
-                ClassificationFragment.class, null, classificationFragment);
+///////////////////////////////////////////////////
 
-        //ready
-        //  graph = (LineGraph) findViewById(R.id.holo_graph_view);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout.Tab EMGTab = tabLayout.newTab();
+        TabLayout.Tab FeatureTab = tabLayout.newTab();
+        TabLayout.Tab ClassificationTab = tabLayout.newTab();
 
+        tabLayout.addTab(EMGTab, 0, true);
+        tabLayout.addTab(FeatureTab, 1, true);
+        tabLayout.addTab(ClassificationTab, 2, true);
 
-//        graphButton1 = (Button) findViewById(R.id.btn_emg1);
+        tabLayout.setupWithViewPager(mViewPager);
+
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        mViewPager.setAdapter(adapter);
+// addOnPageChangeListener event change the tab on slide
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
 
     }
 
