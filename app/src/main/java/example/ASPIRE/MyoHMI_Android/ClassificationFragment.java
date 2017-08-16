@@ -91,11 +91,10 @@ public class ClassificationFragment extends Fragment {
     ImageButton uploadButton;
     //Button showButton;
     ImageButton trainButton;
-    Button loadButton;
+    ImageButton loadButton;
     ListView listview_Classifier;
     ListView listview;
     ProgressBar progressBar;
-
 
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
@@ -142,7 +141,7 @@ public class ClassificationFragment extends Fragment {
         //status = (TextView) v.findViewById(R.id.txt_status);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
         trainButton = (ImageButton) v.findViewById(R.id.bt_train);
-//        loadButton = (Button) v.findViewById(R.id.bt_load);
+        loadButton = (ImageButton) v.findViewById(R.id.bt_load);
         // showButton = (Button) v.findViewById(R.id.bt_show);
         addButton = (ImageButton) v.findViewById(R.id.im_add);
         deleteButton = (ImageButton) v.findViewById(R.id.im_delete);
@@ -349,12 +348,12 @@ public class ClassificationFragment extends Fragment {
             }
         });
 
-//        loadButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openFolder();
-//            }
-//        });
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFolder();
+            }
+        });
         return v;
     }
 

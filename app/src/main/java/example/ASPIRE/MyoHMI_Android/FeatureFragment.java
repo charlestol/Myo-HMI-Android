@@ -115,28 +115,28 @@ public class FeatureFragment extends Fragment {
         mChart = (RadarChart) v.findViewById(R.id.chart);
         plotter = new Plotter(mChart);//must pass chart from this fragment
 
-        twoDimArray featemg = new twoDimArray();
-        featemg.createMatrix(6, 8);
+//        twoDimArray featemg = new twoDimArray();
+//        featemg.createMatrix(6, 8);
 
-        //set currenttab
+//        plotter.setCurrentTab(1);
+//
+//        for(int i=0; i<8; i++){
+//            for (int j=0;j<6;j++){
+//                featemg.setMatrixValue(j, i, 128);
+//            }
+//        }
+//
+//        plotter.pushFeaturePlotter(featemg);
+//
+//        for(int i=0; i<8; i++){
+//            for (int j=0;j<6;j++){
+//                featemg.setMatrixValue(j, i, 0);
+//            }
+//        }
+//
+//        plotter.pushFeaturePlotter(featemg);
 
-        plotter.setCurrentTab(1);
-
-        for(int i=0; i<8; i++){
-            for (int j=0;j<6;j++){
-                featemg.setMatrixValue(j, i, 128);
-            }
-        }
-
-        plotter.pushFeaturePlotter(featemg);
-
-        for(int i=0; i<8; i++){
-            for (int j=0;j<6;j++){
-                featemg.setMatrixValue(j, i, 0);
-            }
-        }
-
-        plotter.pushFeaturePlotter(featemg);
+//        plotter.setCurrentTab(0);
 
         return v;
     }

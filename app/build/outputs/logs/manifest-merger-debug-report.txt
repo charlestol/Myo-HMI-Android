@@ -24,6 +24,7 @@ MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Alex\.
 MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Alex\.android\build-cache\d73ebc4d23457785b12747c29c6b75ef318ebe0d\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Alex\.android\build-cache\c9bc6817813947ba6ccae5758220f301f986babd\output\AndroidManifest.xml:20:5-44
 MERGED from [com.echo:holographlibrary:1.0] C:\Users\Alex\.android\build-cache\9d4e9f9be799506c8215d38b1d857f52484031c9\output\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:percent:22.2.0] C:\Users\Alex\.android\build-cache\1bbd1c4ecafe0f42ab8723572e4be0c88c24354a\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Alex\.android\build-cache\ba38de623a95cf6d31d56457e85d2b09f617adce\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Alex\.android\build-cache\8894b879548765818078d00fd55e1e12794ca483\output\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Alex\.android\build-cache\c40482fa8c984eea08ab54ea8b487d8405088cfc\output\AndroidManifest.xml:21:5-23:63
@@ -118,6 +119,7 @@ MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Alex\
 MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Alex\.android\build-cache\4c71b9ffa8b145ad1b79b6f56afbbba1ec3e7c98\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Alex\.android\build-cache\c9bc6817813947ba6ccae5758220f301f986babd\output\AndroidManifest.xml:22:5-20
 MERGED from [com.echo:holographlibrary:1.0] C:\Users\Alex\.android\build-cache\9d4e9f9be799506c8215d38b1d857f52484031c9\output\AndroidManifest.xml:10:5-15:19
+MERGED from [com.android.support:percent:22.2.0] C:\Users\Alex\.android\build-cache\1bbd1c4ecafe0f42ab8723572e4be0c88c24354a\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Alex\.android\build-cache\ba38de623a95cf6d31d56457e85d2b09f617adce\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Alex\.android\build-cache\8894b879548765818078d00fd55e1e12794ca483\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Alex\.android\build-cache\c40482fa8c984eea08ab54ea8b487d8405088cfc\output\AndroidManifest.xml:25:5-20
