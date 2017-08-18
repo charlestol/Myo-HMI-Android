@@ -9,7 +9,7 @@
     android:checkMark="?android:attr/listChoiceIndicatorSingle"
     android:paddingTop="12.5dp"
     android:paddingBottom="12.5dp"
-    android:paddingStart="10dp"
-    android:paddingEnd="10dp"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
     android:textColor="#000000"
     />
