@@ -140,7 +140,7 @@ public class Plotter extends Activity {
         if (data.length == 16 && (currentTab == 0||currentTab==1)) {
 //        if ((data.length == 16 && currentTab == 0)||startup) {
 
-            Log.d("tag", String.valueOf(startup));
+//            Log.d("tag", String.valueOf(startup));
 
             mHandler.post(new Runnable() {
                 @Override

@@ -1,18 +1,24 @@
 package example.ASPIRE.MyoHMI_Android;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.tv.TvContract;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -74,13 +80,17 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private Handler mHandler;
 
     private Plotter plotter;
+    private ProgressBar progress;
+    private View v;
 
     private FeatureCalculator fcalc;//maybe needs to be later in process
 
-    public MyoGattCallback(Handler handler, TextView view, Plotter plot) {
+    public MyoGattCallback(Handler handler, TextView view, ProgressBar prog, Plotter plot, View v) {
         mHandler = handler;
         textView = view;
         plotter = plot;
+        progress = prog;
+        this.v = v;
         fcalc = new FeatureCalculator(plotter);
     }
 
@@ -91,6 +101,14 @@ public class MyoGattCallback extends BluetoothGattCallback {
         if (newState == BluetoothProfile.STATE_CONNECTED) {
             // GATT Connected
             // Searching GATT Service
+//            mHandler.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    progress.setVisibility(View.VISIBLE);
+//                    textView.setText("");
+//                }
+//            });
+
             gatt.discoverServices();
 
         } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
@@ -102,12 +120,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
     @Override
     public void onServicesDiscovered(BluetoothGatt gatt, int status) {
-//        mHandler.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                textView.setText("Myo Connected");
-//            }
-//        });
+
         super.onServicesDiscovered(gatt, status);
         Log.d(TAG, "onServicesDiscovered received: " + status);
         if (status == BluetoothGatt.GATT_SUCCESS) {
@@ -229,8 +242,11 @@ public class MyoGattCallback extends BluetoothGattCallback {
                 @Override
                 public void run() {
                     textView.setText("Myo Connected");
+                    progress.setVisibility(View.INVISIBLE);
                 }
             });
+//            EmgFragment emgFrag = new EmgFragment();
+//            emgFrag.clickedemg(v);
         } else {
             Log.d(TAG, "onCharacteristicRead error: " + status);
         }
@@ -325,4 +341,5 @@ public class MyoGattCallback extends BluetoothGattCallback {
             mBluetoothGatt = null;
         }
     }
+
 }

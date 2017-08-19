@@ -26,13 +26,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static example.ASPIRE.MyoHMI_Android.R.id.conncectionProgress;
+import static example.ASPIRE.MyoHMI_Android.R.id.progressBar2;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -62,11 +67,18 @@ public class ListActivity extends AppCompatActivity {
     private ScanSettings settings;
     private List<ScanFilter> filters;
 
+    private ProgressBar prog;
+    private Button scan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         showPhoneStatePermission();
         setContentView(R.layout.activity_list);
+
+        prog = (ProgressBar) findViewById(R.id.progressBar2);
+        scan = (Button) findViewById(R.id.scanButton);
+
         mHandler = new Handler();
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             Toast.makeText(this, "BLE Not Supported", Toast.LENGTH_SHORT).show();
@@ -138,6 +150,9 @@ public class ListActivity extends AppCompatActivity {
 
     public void onClickScan(View v) {
         scanDevice();
+        prog.setVisibility(View.VISIBLE);
+        scan.setVisibility(View.INVISIBLE);
+        //////////////////////////////////////////////hey
     }
 
     @Override
@@ -162,6 +177,8 @@ public class ListActivity extends AppCompatActivity {
                     mLEScanner.stopScan(mScanCallback);
                     adapter.notifyDataSetChanged();
                     Toast.makeText(getApplicationContext(), "Scan Stopped", Toast.LENGTH_SHORT).show();
+                    prog.setVisibility(View.INVISIBLE);
+                    scan.setVisibility(View.VISIBLE);
                 }
             }, SCAN_PERIOD);
             mLEScanner.startScan(filters, settings, mScanCallback);

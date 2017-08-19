@@ -12,58 +12,78 @@
     tools:context=".MainActivity">
     <!--Updated by Ricardo Colin 07/28/17-->
 
-    <ImageButton
-        android:id="@+id/iVibrate"
-        android:layout_width="60dp"
-        android:layout_height="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@drawable/vibrate_icon" />
-
-    <ToggleButton
-        android:id="@+id/iEMG"
-        android:layout_width="60dp"
-        android:layout_height="43dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/iVibrate"
-        android:adjustViewBounds="true"
-        android:background="@drawable/toggleselector"
-        android:checked="false"
-        android:cropToPadding="false"
-        android:scaleType="fitXY"
-        android:text=""
-        android:textOff=""
-        android:textOn="" />
-
-    <TextView
-        android:id="@+id/gestureTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        app:layout_marginTopPercent="1%"
-        android:text="Myo Not Connected"
-        android:textSize="25dp" />
-
-    <com.echo.holographlibrary.LineGraph
-        android:id="@+id/holo_graph_view"
-        android:layout_width="249dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/iVibrate"
-        android:layout_below="@+id/gestureTextView"
-        android:layout_centerHorizontal="true"
-        />
-
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/iVibrate"
-        android:layout_below="@+id/gestureTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        app:srcCompat="@mipmap/myocolors" />
+        app:layout_heightPercent="87%">
+
+        <TextView
+            android:id="@+id/gestureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Myo Not Connected"
+            android:textSize="25dp"
+            android:layout_centerInParent="true"
+            />
+
+        <ProgressBar
+            android:id="@+id/conncectionProgress"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            />
+
+        <com.echo.holographlibrary.LineGraph
+            android:id="@+id/holo_graph_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/myocolors"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_heightPercent="8%"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeLayout2">
+
+        <ImageButton
+            android:id="@+id/iVibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/vibrate_icon" />
+
+        <ToggleButton
+            android:id="@+id/iEMG"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:background="@drawable/toggleselector"
+            android:checked="false"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
 
 </android.support.percent.PercentRelativeLayout>
