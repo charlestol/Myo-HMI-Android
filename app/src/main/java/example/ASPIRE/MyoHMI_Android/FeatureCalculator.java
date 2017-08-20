@@ -329,6 +329,7 @@ public class FeatureCalculator {
                 if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
                     setTrain(false);
                     currentClass++;
+//                    Log.d("$$$", String.valueOf(currentClass) + "**********************");
                 }
             } else if (classify) {
                 pushClassifier(aux[0]);

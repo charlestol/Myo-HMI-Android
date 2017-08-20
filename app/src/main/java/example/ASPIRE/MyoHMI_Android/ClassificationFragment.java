@@ -365,9 +365,7 @@ public class ClassificationFragment extends Fragment {
             @Override
             public void run() {
                 if (selectedItems.size() > 1) {
-//                    or_text.setVisibility(View.GONE);
                     trainButton.setVisibility(View.GONE);
-//                    loadButton.setVisibility(View.GONE);
 
                     if ((--count != -1) && (gestureCounter != selectedItems.size())) {
                         mHandler.postDelayed(this, 1000);
@@ -383,10 +381,14 @@ public class ClassificationFragment extends Fragment {
                         count = 4;//3 seconds + 1
                         mHandler.post(this);
                         fcalc.setTrain(true);
-                        while (fcalc.getTrain()) {
-                            //wait till trainig is done
+                        while (fcalc.getTrain()) {//wait till trainig is done
+
+                            /* For some reason we must print something here or else it gets stuck */
+                            System.out.print("");
                         }
+                        //bad ble never makes it here
                         gestureCounter++;
+//                        System.out.println("heythere " + String.valueOf(gestureCounter));
                     } else {
                         liveView.setText("");
                         fcalc.Train();

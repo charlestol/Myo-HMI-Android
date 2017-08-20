@@ -267,11 +267,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
     long last_send_never_sleep_time_ms = System.currentTimeMillis();
     final static long NEVER_SLEEP_SEND_TIME = 10000;  // Milli Second
 
-    //Return Feature Calculator Object to perform operations on it
-    public FeatureCalculator getFeatCalc() {
-        return fcalc;
-    }
-
     @Override
     public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
         if (EMG_0_ID.equals(characteristic.getUuid().toString()) || EMG_1_ID.equals(characteristic.getUuid().toString()) || EMG_2_ID.equals(characteristic.getUuid().toString()) || EMG_3_ID.equals(characteristic.getUuid().toString())) {
@@ -296,6 +291,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             if (systemTime_ms > last_send_never_sleep_time_ms + NEVER_SLEEP_SEND_TIME) {
                 // set Myo [Never Sleep Mode]
+                Log.d("trying", "to unsleep");
                 setMyoControlCommand(commandList.sendUnSleep());
                 last_send_never_sleep_time_ms = systemTime_ms;
             }
