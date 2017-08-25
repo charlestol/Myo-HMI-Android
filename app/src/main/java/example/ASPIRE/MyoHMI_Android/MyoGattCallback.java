@@ -81,7 +81,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
     private Plotter plotter;
     private ProgressBar progress;
-    private View v;
+    private emgConsumer consumer = new emgConsumer();
 
     private FeatureCalculator fcalc;//maybe needs to be later in process
 
@@ -90,7 +90,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
         textView = view;
         plotter = plot;
         progress = prog;
-        this.v = v;
         fcalc = new FeatureCalculator(plotter);
     }
 
@@ -287,6 +286,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             fcalc.pushFeatureBuffer(dvec1);
             fcalc.pushFeatureBuffer(dvec2);
+            consumer.consume(emg_data);
             plotter.pushPlotter(emg_data);
 
             if (systemTime_ms > last_send_never_sleep_time_ms + NEVER_SLEEP_SEND_TIME) {

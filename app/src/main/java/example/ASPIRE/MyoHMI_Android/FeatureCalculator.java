@@ -297,7 +297,6 @@ public class FeatureCalculator {
     public void printClassiferTrainer() {
         for (int i = 0; i < samplesClassifier.size(); i++) {
             samplesClassifier.get(i).printDataVector(TAG);
-
         }
     }
 

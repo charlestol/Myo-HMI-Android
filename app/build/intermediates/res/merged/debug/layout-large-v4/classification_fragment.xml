@@ -139,15 +139,15 @@
             android:text=""
             android:textSize="40sp" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/gesture_detected"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="29dp"
-            android:visibility="invisible" />
+        <!--<ProgressBar-->
+            <!--android:id="@+id/progressBar"-->
+            <!--style="?android:attr/progressBarStyle"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/gesture_detected"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="29dp"-->
+            <!--android:visibility="invisible" />-->
 
     </RelativeLayout>
 

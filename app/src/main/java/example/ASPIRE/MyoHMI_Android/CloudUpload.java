@@ -85,6 +85,8 @@ public class  CloudUpload {
     // The TransferUtility is the primary class for managing transfer to S3
     private TransferUtility transferUtility;
 
+    public long time;
+
     public CloudUpload(){
 
     }
@@ -92,36 +94,7 @@ public class  CloudUpload {
     public CloudUpload(Context context) {
         transferUtility = Util.getTransferUtility(context);
         this.context = context;
-//        activity = a;
-//        cloudButton =(Button)view.findViewById(R.id.bt_cloud);
     }
-
-//    public CloudUpload(){
-//        transferUtility = util.getTransferUtility();
-//    }
-
-//    cloudButton.setOnClickListener(new
-//
-//    OnClickListener() {
-//        @Override
-//        public void onClick (View v){
-//            Intent intent = new Intent();
-//            if (Build.VERSION.SDK_INT >= 19) {
-//                // For Android KitKat, we use a different intent to ensure
-//                // we can
-//                // get the file path from the returned intent URI
-//                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-//                intent.addCategory(Intent.CATEGORY_OPENABLE);
-//                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-//                intent.setType("*/*");
-//            } else {
-//                intent.setAction(Intent.ACTION_GET_CONTENT);
-//                intent.setType("file/*");
-//            }
-//
-//            startActivityForResult(intent, 0);
-//        }
-//    });
 
     /*
       * Begins to upload the file specified by the file path.
@@ -130,6 +103,8 @@ public class  CloudUpload {
 
         this.file = file;
         TransferObserver observer = transferUtility.upload(Credentials.BUCKET_NAME, file.getName(), file);
+        time =  System.currentTimeMillis();
+        System.out.println(String.valueOf(time));
         TransferState state = observer.getState();
         TransferListener listener = new UploadListener();
 
@@ -147,6 +122,10 @@ public class  CloudUpload {
     public boolean getDelete(){
         return delete;
     }
+
+    public long getTime() {return time;}
+
+    public File getFile() {return file;}
 }
 
 class UploadListener implements TransferListener {
@@ -168,7 +147,9 @@ class UploadListener implements TransferListener {
     public void onStateChanged(int id, TransferState newState) {
         Log.d("", "onStateChanged: " + id + ", " + newState);
         if (newState.name() == "COMPLETED"){
-            Log.d("COMPLETED ", String.valueOf(cloudUpload.getDelete()));
+//            Log.d("COMPLETED ", String.valueOf(cloudUpload.getDelete()));
+            Log.d("Upload Time: ", String.valueOf(System.currentTimeMillis()-cloudUpload.getTime()) + " miliseconds");
+            Log.d("File Size: ", String.valueOf(cloudUpload.getFile().length()) + " bytes");
             if (cloudUpload.getDelete())
                 cloudUpload.delete();
         }

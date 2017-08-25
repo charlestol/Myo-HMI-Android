@@ -147,7 +147,7 @@ public class ClassificationFragment extends Fragment {
 //        listview = (ListView) v.findViewById(R.id.listView);
         listview = (ListView) v.findViewById(R.id.listView);
         listview_Classifier = (ListView) v.findViewById(R.id.listView1);
-        progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
+//        progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
 
         listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -206,41 +206,7 @@ public class ClassificationFragment extends Fragment {
 
             Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
 
-
         });
-
-//        clearButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-//
-//                builder.setTitle("Clear All?");
-//                builder.setMessage("Do you want to clear all gestures? ");
-//
-//                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//
-//                    }
-//                });
-//                builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        int sizeOfArray = ListElementsArrayList.size();
-//
-//                        for (int x = 0; x < sizeOfArray; ++x) {
-//                            listview.setItemChecked(x, false);
-//                        }
-//
-//                        selectedItems.clear();
-//                        adapter.clear();
-//                        adapter.notifyDataSetChanged();
-//                    }
-//                });
-//                builder.show();
-//
-//            }
-//        });
-
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -370,10 +336,10 @@ public class ClassificationFragment extends Fragment {
                     if ((--count != -1) && (gestureCounter != selectedItems.size())) {
                         mHandler.postDelayed(this, 1000);
                         liveView.setText("Do " + selectedItems.get(gestureCounter) + " in " + String.valueOf(count));
-                        progressBar.setVisibility(View.VISIBLE);
+//                        progressBar.setVisibility(View.VISIBLE);
 
                         if (count == 0) {
-                            progressBar.setVisibility(View.INVISIBLE);
+//                            progressBar.setVisibility(View.INVISIBLE);
                             liveView.setText("Hold " + selectedItems.get(gestureCounter));
                             //status.getText(featureCalculator.sampleClassifier);
                         }
@@ -388,12 +354,10 @@ public class ClassificationFragment extends Fragment {
                         }
                         //bad ble never makes it here
                         gestureCounter++;
-//                        System.out.println("heythere " + String.valueOf(gestureCounter));
                     } else {
                         liveView.setText("");
                         fcalc.Train();
                         fcalc.setClassify(true);
-
                     }
                 } else if (selectedItems.size() == 1) {
                     Toast.makeText(getActivity(), "at least 2 gestures must be selected!", Toast.LENGTH_SHORT).show();
