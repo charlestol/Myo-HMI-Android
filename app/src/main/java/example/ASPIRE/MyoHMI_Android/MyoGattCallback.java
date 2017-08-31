@@ -300,10 +300,16 @@ public class MyoGattCallback extends BluetoothGattCallback {
             byte[] imu_data = characteristic.getValue();
             plotter.pushPlotter(imu_data);
             Number[] emg_dataObj = ArrayUtils.toObject(imu_data);
-            ArrayList<Number> imu_data_list = new ArrayList<>(Arrays.asList(emg_dataObj));
-            DataVector dvec = new DataVector(false, 0, 20, imu_data_list, systemTime_ms);
-            dvec.printDataVector("IMU");
-            fcalc.pushIMUFeatureBuffer(dvec);
+//            ArrayList<Number> imu_data_list = new ArrayList<>(Arrays.asList(emg_dataObj));
+//            DataVector dvec = new DataVector(false, 0, 20, imu_data_list, systemTime_ms);
+            ArrayList<Number> imu_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 10)));
+            ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 10, 20)));
+            DataVector dvec1 = new DataVector(true, 1, 10, imu_data_list1, systemTime_ms);
+            DataVector dvec2 = new DataVector(true, 2, 10, imu_data_list2, systemTime_ms);
+//            dvec1.printDataVector("IMU1");
+//            dvec2.printDataVector("IMU2");
+            fcalc.pushIMUFeatureBuffer(dvec1);
+            fcalc.pushIMUFeatureBuffer(dvec2);
         }
     }
 

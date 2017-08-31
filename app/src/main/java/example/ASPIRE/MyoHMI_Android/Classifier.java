@@ -85,9 +85,9 @@ public class Classifier {
 
         classSize = Classes.size();
         classes = new int[classSize];
-        trainVectorP = new double[trainVector.size()][numFeatures * 8];
+        trainVectorP = new double[trainVector.size()][numFeatures * 8 + 10];//make this dynamic yo
         for (int i = 0; i < trainVector.size(); i++) {
-            for (int j = 0; j < numFeatures * 8; j++) {
+            for (int j = 0; j < numFeatures * 8 + 10; j++) {
                 trainVectorP[i][j] = trainVector.get(i).getValue(j).doubleValue();//invalid index 8 size is 8
             }
         }

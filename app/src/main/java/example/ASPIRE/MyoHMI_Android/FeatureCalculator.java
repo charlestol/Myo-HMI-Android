@@ -31,6 +31,7 @@ public class FeatureCalculator {
     int threshold = 3; //According to Ian using 3 gives better results
     int nFeatures = 6;
     int nIMUFeatures = 1;
+    int nIMUSensors = 10;
     int nSensors = 8;
     int bufsize = 128;
     private ArrayList<DataVector> samplebuffer = new ArrayList<>(bufsize);
@@ -43,6 +44,7 @@ public class FeatureCalculator {
     static int imuCount = 0;
     static int emgCount = 0;
     private twoDimArray featureVector;
+    private twoDimArray imuFeatureVector;
     public static Activity classAct;
     public static TextView liveView, status;
     public static ProgressBar progressBar;
@@ -54,6 +56,7 @@ public class FeatureCalculator {
     private Plotter plotter;
     FeatureFragment featureFragment = new FeatureFragment();
     boolean[] featSelected = new boolean[nFeatures];
+    boolean[] imuSelected = new boolean[nIMUSensors];
     int numFeatSelected = 6;
     private static Classifier classifier = new Classifier();
     private int currentClass = 0;
@@ -272,9 +275,11 @@ public class FeatureCalculator {
             lastCall = winnext;
             firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
             featureVector = featCalc(samplebuffer);
-            featCalcIMU();
-            aux = buildDataVector(featureVector);
+            imuFeatureVector = featCalcIMU(imusamplebuffer);
+            aux = buildDataVector(featureVector, imuFeatureVector);
             aux[0].setTimestamp(data.getTimestamp());
+
+//            aux[0].printDataVector("Features with IMU!!!");
 
             if (getTrain()) {
                 aux[0].setFlag(currentClass);
@@ -295,7 +300,7 @@ public class FeatureCalculator {
         classifier.Train(samplesClassifier, classes);
     }
 
-    private DataVector[] buildDataVector(twoDimArray featureVector)//ignoring grid and imu for now, assuming all features are selected
+    private DataVector[] buildDataVector(twoDimArray featureVector, twoDimArray imuFeatureVector)//ignoring grid and imu for now, assuming all features are selected
     {
         // Count total EMG features to send
 
@@ -312,18 +317,30 @@ public class FeatureCalculator {
 
         for (int i = 0; i < nFeatures; i++) {
         //group features per sensor
-            if (featSelected[i] == true) {
+            if (featSelected[i]) {
                 for (int j = 0; j < nSensors; j++) {
                     temp.add(n, featureVector.getMatrixValue(tempIndex, j));
                     n++;
+//                    Log.d("templength", String.valueOf(temp.size()));
                 }
             }
             tempIndex++;
         }
 
-        if(getTrain()) {
+        for (int j=0;j<nIMUSensors;j++){
+            //if(imuSelected[j]){
+            for (int i = 0;i < nIMUFeatures; i++){
+//                System.out.println(String.valueOf(i) + "     " + String.valueOf(j));
+                temp.add(n, imuFeatureVector.getMatrixValue(i, j));
+                n++;
+//                Log.d("templengthIMU", String.valueOf(temp.size()));
+            }
+//            tempIndex++;
+        }
+
+        if(getTrain()) {//during training we wan to save all 8 sensor data
             ArrayList<Number> temp1 = new ArrayList<Number>(emgct);
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < nFeatures; i++) {
                 //group features per sensor
                 for (int j = 0; j < nSensors; j++) {
                     temp1.add(k, featureVector.getMatrixValue(temp1Index, j));
@@ -331,12 +348,17 @@ public class FeatureCalculator {
                 }
                 temp1Index++;
             }
-            dvec1 = new DataVector(true, 0, 48, temp1, 0000000);
+            for (int i = 0;i < nIMUFeatures; i++){
+                for (int j=0;j<nIMUSensors;j++){
+                    temp1.add(k, imuFeatureVector.getMatrixValue(i, j));
+                    k++;
+                }
+            }
+            dvec1 = new DataVector(true, 0, emgct + nIMUSensors, temp1, 0000000);
         }
 
-        DataVector dvec = new DataVector(true, 0, emgct, temp, 0000000);
+        DataVector dvec = new DataVector(true, 0, emgct + nIMUSensors, temp, 0000000);//nIMUSensdfd must become dynamic with UI
 
-//        dvec1.printDataVector("Hey there: ");
         DataVector dvecArr[] = {dvec, dvec1};
         return dvecArr;
     }
@@ -378,27 +400,27 @@ public class FeatureCalculator {
         imuibuf = ++imuibuf % (bufsize);
     }
 
-    public void featCalcIMU() {
+    public twoDimArray featCalcIMU(ArrayList<DataVector> imusamplebuf) {
         int i;
         float sum;
         featimu = new twoDimArray();
-        featimu.createMatrix(nFeatures, nSensors);
+        featimu.createMatrix(nIMUFeatures, nIMUSensors);
         for (int ft = 0; ft < nIMUFeatures; ft++) {
-            for (int d = 0; d < nDimensions; d++) {
+            for (int d = 0; d < nIMUSensors; d++) {
                 i = (imuibuf + bufsize - (winsize / 4)) % bufsize;
                 sum = 0;
                 while (i != imuibuf) {
 //                    sum += imusamplebuf[i].data[d];
-                    sum += imusamplebuffer.get(i).getValue(d).floatValue();
+                    sum += imusamplebuf.get(i).getValue(d).floatValue();
                     i = (i + bufsize + 1) % bufsize;
                 }
 //                FeatIMU[ft][d] = sum / (winsize / 4);
-                System.out.println(String.valueOf(ft) + "   " + String.valueOf(d));
-//                featimu.setMatrixValue(ft, d, sum/(winsize/4));
+                featimu.setMatrixValue(ft, d, sum/(winsize/4));
+//                System.out.println(sum/(winsize/4));
             }
         }
+        return featimu;
     }
-
 
     public void setSelectedFeatures() {
         for (int i = 0; i < 6; i++) {
@@ -410,6 +432,8 @@ public class FeatureCalculator {
             }
         }
     }
+
+//    public void setSelectedIMU
 }
 
 //Two dimensional array class made to help in the implementation of featEMG
