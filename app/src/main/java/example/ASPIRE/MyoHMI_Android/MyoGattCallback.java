@@ -286,7 +286,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             fcalc.pushFeatureBuffer(dvec1);
             fcalc.pushFeatureBuffer(dvec2);
-            consumer.consume(emg_data);
+//            consumer.consume(emg_data);
             plotter.pushPlotter(emg_data);
 
             if (systemTime_ms > last_send_never_sleep_time_ms + NEVER_SLEEP_SEND_TIME) {
@@ -302,6 +302,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
             Number[] emg_dataObj = ArrayUtils.toObject(imu_data);
             ArrayList<Number> imu_data_list = new ArrayList<>(Arrays.asList(emg_dataObj));
             DataVector dvec = new DataVector(false, 0, 20, imu_data_list, systemTime_ms);
+            dvec.printDataVector("IMU");
+            fcalc.pushIMUFeatureBuffer(dvec);
         }
     }
 

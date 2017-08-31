@@ -37,7 +37,7 @@ public class emgConsumer extends EmgFragment{
             String state;
             state = Environment.getExternalStorageState();
 
-            String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+            String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss").format(new Date());
 
             if(Environment.MEDIA_MOUNTED.equals(state)){
                 File Root = Environment.getExternalStorageDirectory();
@@ -89,7 +89,7 @@ public class emgConsumer extends EmgFragment{
 
 //            System.out.println(String.valueOf(file.length()));
 
-            if(file.length()>= 90000){//filesize > 1MB //must be large enough so that intervals are at least 1 minute apart or else we get duplicate filenames
+            if(file.length()>= 1000000){//filesize > 1MB //must be large enough so that intervals are at least 1 minute apart or else we get duplicate filenames
                 newfile = true;
                 cloudUpload.beginUpload(file);
             }

@@ -85,7 +85,8 @@ public class  CloudUpload {
     // The TransferUtility is the primary class for managing transfer to S3
     private TransferUtility transferUtility;
 
-    public long time;
+    public static long time;
+    public static long acutime;
 
     public CloudUpload(){
 
@@ -94,6 +95,7 @@ public class  CloudUpload {
     public CloudUpload(Context context) {
         transferUtility = Util.getTransferUtility(context);
         this.context = context;
+        acutime = System.currentTimeMillis();
     }
 
     /*
@@ -104,9 +106,12 @@ public class  CloudUpload {
         this.file = file;
         TransferObserver observer = transferUtility.upload(Credentials.BUCKET_NAME, file.getName(), file);
         time =  System.currentTimeMillis();
-        System.out.println(String.valueOf(time));
-        TransferState state = observer.getState();
-        TransferListener listener = new UploadListener();
+
+        Log.d("CloudUpload", "Time to gather data: " + String.valueOf(time-acutime) + " miliseconds");
+
+        acutime = System.currentTimeMillis();
+//        TransferState state = observer.getState();
+//        TransferListener listener = new UploadListener();
 
         observer.setTransferListener(new UploadListener());
     }
@@ -139,19 +144,22 @@ class UploadListener implements TransferListener {
 
     @Override
     public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
-        Log.d("", String.format("onProgressChanged: %d, total: %d, current: %d",
+        Log.d("UploadProgress", String.format("onProgressChanged: %d, total: %d, current: %d",
                 id, bytesTotal, bytesCurrent));
     }
 
     @Override
     public void onStateChanged(int id, TransferState newState) {
-        Log.d("", "onStateChanged: " + id + ", " + newState);
+//        Log.d("CloudUpload", "onStateChanged: " + id + ", " + newState);
         if (newState.name() == "COMPLETED"){
-//            Log.d("COMPLETED ", String.valueOf(cloudUpload.getDelete()));
-            Log.d("Upload Time: ", String.valueOf(System.currentTimeMillis()-cloudUpload.getTime()) + " miliseconds");
-            Log.d("File Size: ", String.valueOf(cloudUpload.getFile().length()) + " bytes");
+//            Log.d("CloudUpload", "Completed: "+String.valueOf(cloudUpload.getDelete()));
+            Log.d("CloudUpload", "Upload Time: "+String.valueOf(System.currentTimeMillis()-cloudUpload.getTime()) + " miliseconds");
+            Log.d("CloudUpload", "File Size: "+String.valueOf(cloudUpload.getFile().length()) + " bytes");
             if (cloudUpload.getDelete())
                 cloudUpload.delete();
+        }
+        else if(newState.name()=="FAILED"){
+            //retry?
         }
     }
 }
