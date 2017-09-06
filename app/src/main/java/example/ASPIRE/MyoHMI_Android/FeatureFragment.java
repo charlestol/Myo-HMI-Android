@@ -27,11 +27,19 @@ public class FeatureFragment extends Fragment {
     private Plotter plotter;
     ListView listview_Classifier;
     ListView listView_Features;
+    ListView listView_IMU;
 
     Classifier classifier = new Classifier();
 
     //create an ArrayList object to store selected items
     ArrayList<String> selectedItems = new ArrayList<String>();
+
+    ArrayList<String> selectedItemsIMU = new ArrayList<String>();
+
+    private int numIMU = 0;
+    private int numFeats = 6;
+
+    private FeatureCalculator fcalc = new FeatureCalculator();
 
     String[] featureNames = new String[]{
             "MAV",
@@ -42,10 +50,22 @@ public class FeatureFragment extends Fragment {
             "AdjUnique"
     };
 
-    /**
-     * Charles 7/18
-     **/
+    String[] IMUs = new String[]{
+            "Accelerometer X",
+            "Accelerometer Y",
+            "Accelerometer Z",
+            "Compass X",
+            "Compass Y",
+            "Compass Z",
+            "Compass W",
+            "Gyroscope X",
+            "Gyroscope Y",
+            "Gyroscope Z",
+    };
+
     private static boolean[] featSelected = new boolean[]{true, true, true, true, true, true};
+
+    private static boolean[] imuSelected = new boolean[]{false, false, false, false, false, false, false, false, false, false};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,32 +73,34 @@ public class FeatureFragment extends Fragment {
         assert v != null;
 
         listView_Features = (ListView) v.findViewById(R.id.listView);
-        //listview_Classifier = (ListView) v.findViewById(R.id.listView1);
-
 
         listView_Features.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        //listview_Classifier.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
+        listView_IMU = (ListView) v.findViewById(R.id.listViewIMU);
+
+        listView_IMU.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         final List<String> FeaturesArrayList = new ArrayList<String>(Arrays.asList(featureNames));
-        //final List<String> ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifierNames));
 
+        final List<String> IMUArrayList = new ArrayList<String>(Arrays.asList(IMUs));
 
         ArrayAdapter<String> adapter_features = new ArrayAdapter<String>(getActivity(), R.layout.mytextview, FeaturesArrayList);
 
-        /*ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>
-                (getActivity(), android.R.layout.simple_list_item_single_choice, ClassifierArrayList);
+        ArrayAdapter<String> adapter_IMU = new ArrayAdapter<String>(getActivity(), R.layout.mytextview, IMUArrayList);
 
-*/
         listView_Features.setAdapter(adapter_features);
+
+        listView_IMU.setAdapter(adapter_IMU);
+
         for (int i = 0; i < 6; i++) {
             listView_Features.setItemChecked(i, true);
             selectedItems.add(i, adapter_features.getItem(i));
         }
 
-        //listview_Classifier.setAdapter(adapter_classifier);
-        // listview_Classifier.setItemChecked(0,true);
-        //set OnItemClickListener
+        for (int i = 0; i < 10; i++) {
+            selectedItemsIMU.add(i, adapter_IMU.getItem(i));
+        }
+
         listView_Features.setOnItemClickListener((parent, view, position, id) -> {
 
             // selected item
@@ -88,30 +110,49 @@ public class FeatureFragment extends Fragment {
                 featureManager(Features_selectedItem, false);
                 selectedItems.remove(Features_selectedItem); //remove deselected item from the list of selected items
                 classifier.numFeatures--;
+                numFeats--;
                 Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             } else {
                 featureManager(Features_selectedItem, true);
                 selectedItems.add(Features_selectedItem); //add selected item to the list of selected items
                 classifier.numFeatures++;
+                numFeats++;
                 Log.d("NUM FEAT: ", "" + classifier.numFeatures);
             }
 
+            fcalc.setFeatSelected(featSelected);
+            fcalc.setNumFeatSelected(numFeats);
             plotter.setFeatures(featSelected);
 
-//            Toast.makeText(getActivity(), "selected: " + selectedItems, Toast.LENGTH_SHORT).show();
+        });
+
+        listView_IMU.setOnItemClickListener((parent, view, position, id) -> {
+
+            // selected item
+            String IMU_selectedItem = ((TextView) view).getText().toString();
+
+            if (selectedItemsIMU.contains(IMU_selectedItem)) {
+                IMUManager(IMU_selectedItem, true);
+                selectedItemsIMU.remove(IMU_selectedItem); //remove deselected item from the list of selected items
+                numIMU++;
+            } else {
+                IMUManager(IMU_selectedItem, false);
+                selectedItemsIMU.add(IMU_selectedItem); //add selected item to the list of selected items
+                numIMU--;
+            }
+
+            fcalc.setIMUSelected(imuSelected);
+            fcalc.setNumIMUSelected(numIMU);
+
         });
 
 
         mChart = (RadarChart) v.findViewById(R.id.chart);
         plotter = new Plotter(mChart);//must pass chart from this fragment
 
-
         return v;
     }
 
-    /**
-     * Charles 7/18
-     **/
     private void featureManager(String inFeature, boolean selected) {
         int index = 0;
         for (int i = 0; i < 6; i++) {
@@ -123,11 +164,26 @@ public class FeatureFragment extends Fragment {
         featSelected[index] = selected;
     }
 
+    private void IMUManager(String inFeature, boolean selected) {
+        int index = 0;
+        for (int i = 0; i < 10; i++) {
+            if (inFeature == IMUs[i]) {
+                index = i;
+            }
+        }
+
+        imuSelected[index] = selected;
+    }
+
     public String[] getFeatureNames() {
         return featureNames;
     }
 
     public static boolean[] getFeatSelected() {
         return featSelected;
+    }
+
+    public static boolean[] getIMUSelected() {
+        return imuSelected;
     }
 }

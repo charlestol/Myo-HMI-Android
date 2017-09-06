@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.tv.TvContract;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -84,6 +85,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private emgConsumer consumer = new emgConsumer();
 
     private FeatureCalculator fcalc;//maybe needs to be later in process
+
+    private TcpClient mTcpClient = new TcpClient();
 
     public MyoGattCallback(Handler handler, TextView view, ProgressBar prog, Plotter plot, View v) {
         mHandler = handler;
@@ -286,6 +289,9 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             fcalc.pushFeatureBuffer(dvec1);
             fcalc.pushFeatureBuffer(dvec2);
+
+//            new ConnectTask().execute(emg_data);
+
 //            consumer.consume(emg_data);
             plotter.pushPlotter(emg_data);
 
@@ -345,5 +351,23 @@ public class MyoGattCallback extends BluetoothGattCallback {
             mBluetoothGatt = null;
         }
     }
+
+//    public class ConnectTask extends AsyncTask<byte[], String, TcpClient> {
+//
+//        @Override
+//        protected TcpClient doInBackground(byte[]... message) {
+//
+//            mTcpClient.sendBytes(message[0]);
+//
+//            return null;
+//        }
+//        @Override
+//        protected void onProgressUpdate(String... values) {
+//            super.onProgressUpdate(values);
+//            //response received from server
+//            Log.d("test", "response " + values[0]);
+//            //process server response here....
+//        }
+//    }
 
 }
