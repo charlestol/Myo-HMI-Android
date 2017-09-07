@@ -51,13 +51,13 @@ public class FeatureFragment extends Fragment {
     };
 
     String[] IMUs = new String[]{
+            "Orientation W",
+            "Orientation X",
+            "Orientation Y",
+            "Orientation Z",
             "Accelerometer X",
             "Accelerometer Y",
             "Accelerometer Z",
-            "Compass X",
-            "Compass Y",
-            "Compass Z",
-            "Compass W",
             "Gyroscope X",
             "Gyroscope Y",
             "Gyroscope Z",
@@ -142,6 +142,7 @@ public class FeatureFragment extends Fragment {
             }
 
             fcalc.setIMUSelected(imuSelected);
+            classifier.setnIMUSensors(numIMU);
             fcalc.setNumIMUSelected(numIMU);
 
         });

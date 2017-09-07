@@ -218,6 +218,7 @@ public class FeatureCalculator {
     //Making the 100 x 40 matrix
     public void pushClassifyTrainer(DataVector[] inFeatemg) {
         featureData.add(inFeatemg[1]);
+//        System.out.println(inFeatemg[0].getLength());
         samplesClassifier.add(inFeatemg[0]);
         classes.add(currentClass);
         Log.d(TAG, String.valueOf(samplesClassifier.size()));
@@ -258,15 +259,8 @@ public class FeatureCalculator {
             aux[0].setFlag(currentClass);
         }
 
-//        Log.d("ibuf ", String.valueOf(ibuf)+" winnext "+ String.valueOf(winnext));
-//        System.out.println(String.valueOf(samplebuffer.size()));
-
         if (ibuf == winnext)//start calculating
         {
-
-//            Log.d("IMU Count ", String.valueOf(imuCount)+" EMG Count "+ String.valueOf(emgCount));
-//            imuCount=0;
-//            emgCount=0;
 
             lastCall = winnext;
             firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
@@ -322,7 +316,7 @@ public class FeatureCalculator {
             tempIndex++;
         }
 
-        for (int j=0;j<nIMUSensors;j++){
+        for (int j=0;j<nDimensions;j++){
             if(imuSelected[j]) {
                 for (int i = 0; i < nIMUFeatures; i++) {
                     temp.add(n, imuFeatureVector.getMatrixValue(i, j));
@@ -342,15 +336,13 @@ public class FeatureCalculator {
                 temp1Index++;
             }
             for (int i = 0;i < nIMUFeatures; i++){
-                for (int j=0;j<nIMUSensors;j++){
+                for (int j=0;j<nDimensions;j++){
                     temp1.add(k, imuFeatureVector.getMatrixValue(i, j));
                     k++;
                 }
             }
             dvec1 = new DataVector(true, 0, emgct + nIMUSensors, temp1, 0000000);
         }
-
-        System.out.println(nIMUSensors);
 
         DataVector dvec = new DataVector(true, 0, emgct + nIMUSensors, temp, 0000000);//nIMU must become dynamic with UI
 
@@ -393,9 +385,9 @@ public class FeatureCalculator {
         int i;
         float sum;
         featimu = new twoDimArray();
-        featimu.createMatrix(nIMUFeatures, nIMUSensors);
+        featimu.createMatrix(nIMUFeatures, nDimensions);
         for (int ft = 0; ft < nIMUFeatures; ft++) {
-            for (int d = 0; d < nIMUSensors; d++) {
+            for (int d = 0; d < nDimensions; d++) {
                 i = (imuibuf + bufsize - (winsize / 4)) % bufsize;
                 sum = 0;
                 while (i != imuibuf) {

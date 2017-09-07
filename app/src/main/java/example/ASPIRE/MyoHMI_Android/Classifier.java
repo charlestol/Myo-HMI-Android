@@ -69,9 +69,9 @@ public class Classifier {
 
     static boolean trained2 = false;
 
+    static int nIMUSensors = 0;
+
     static FeatureCalculator fcalc2 = new FeatureCalculator();
-
-
 
     public Classifier(Activity activity) {
         this.activity = activity;
@@ -81,13 +81,17 @@ public class Classifier {
 
     }
 
+    public void setnIMUSensors(int imus){
+        nIMUSensors = imus;
+    }
+
     public void Train(ArrayList<DataVector> trainVector, ArrayList<Integer> Classes) {
 
         classSize = Classes.size();
         classes = new int[classSize];
-        trainVectorP = new double[trainVector.size()][numFeatures * 8 + 10];//make this dynamic yo
+        trainVectorP = new double[trainVector.size()][numFeatures * 8 + nIMUSensors];//make this dynamic yo
         for (int i = 0; i < trainVector.size(); i++) {
-            for (int j = 0; j < numFeatures * 8 + 10; j++) {
+            for (int j = 0; j < numFeatures * 8 + nIMUSensors; j++) {
                 trainVectorP[i][j] = trainVector.get(i).getValue(j).doubleValue();//invalid index 8 size is 8
             }
         }
@@ -96,8 +100,6 @@ public class Classifier {
             classes[j] = Classes.get(j);
         }
 
-
-//        if (trainVector.size() > 0) {
         trained = true;
         trained2 = true;
         switch (choice) {
@@ -123,29 +125,12 @@ public class Classifier {
                 trainAdaBoost();
                 break;
         }
-//        } else{
-//            Toast.makeText(activity, "No Gestures Selected", Toast.LENGTH_SHORT);
-//        }
-/*
-        trainLDA();
-        //trainQDA();
-        //trainSVM();
-        trainLogit();
-        trainTree();
-        trainNet();
-        trainKNN();
-        trainAdaBoost();
-**/
     }
 
     public void setChoice(int newChoice) {
         trained2 = false;
 
         if (trained) {//must re train if the a new lda is chosen.. NEED feature that checks if one has already been trained so it doesnt train the same one twice!!!
-            //Log.d("ok well", "at least I made it here");
-            //if(newChoice == 0) { trainLDA(); }
-            //if(newChoice == 1) { trainSVM(); }
-            //if(newChoice == 2) { trainLogit(); }
 
             switch (newChoice) {
                 case 0:
