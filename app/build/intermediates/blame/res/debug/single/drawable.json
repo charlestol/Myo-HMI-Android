@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\emgdata_icon_grey.xml",
-        "source": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\src\\main\\res\\drawable\\emgdata_icon_grey.xml"
-    },
-    {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\emgdata_icon_grey.xml",
+        "source": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\src\\main\\res\\drawable\\emgdata_icon_grey.xml"
     },
     {
         "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\emgdata_icon.xml",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
-        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_add.png",
-        "source": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\src\\main\\res\\drawable\\icon_add.png"
-    },
-    {
         "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
         "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_add.png",
+        "source": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\src\\main\\res\\drawable\\icon_add.png"
     },
     {
         "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",

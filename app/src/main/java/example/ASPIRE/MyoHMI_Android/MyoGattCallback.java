@@ -16,6 +16,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.tv.TvContract;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -86,7 +88,9 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
     private FeatureCalculator fcalc;//maybe needs to be later in process
 
-    private TcpClient mTcpClient = new TcpClient();
+    ServerCommunicationThread thread;
+
+//    private TcpClient mTcpClient = new TcpClient();
 
     public MyoGattCallback(Handler handler, TextView view, ProgressBar prog, Plotter plot, View v) {
         mHandler = handler;
@@ -94,7 +98,12 @@ public class MyoGattCallback extends BluetoothGattCallback {
         plotter = plot;
         progress = prog;
         fcalc = new FeatureCalculator(plotter);
+        thread = new ServerCommunicationThread("hey");
+        thread.start();
     }
+
+//    public void serverThreadStuff() {
+//    }
 
     @Override
     public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
@@ -287,17 +296,22 @@ public class MyoGattCallback extends BluetoothGattCallback {
 //            dvec1.printDataVector("dvec");
 //            dvec2.printDataVector("dvec");
 
-            fcalc.pushFeatureBuffer(dvec1);
-            fcalc.pushFeatureBuffer(dvec2);
+//            fcalc.pushFeatureBuffer(dvec1);
+//            fcalc.pushFeatureBuffer(dvec2);
 
 //            new ConnectTask().execute(emg_data);
 
 //            consumer.consume(emg_data);
+
+//            ServerComm.sendDataToServer(emg_data);
+
+//            String dataString = Arrays.toString(emg_data);
+            thread.send(emg_data);
+
             plotter.pushPlotter(emg_data);
 
             if (systemTime_ms > last_send_never_sleep_time_ms + NEVER_SLEEP_SEND_TIME) {
                 // set Myo [Never Sleep Mode]
-                Log.d("trying", "to unsleep");
                 setMyoControlCommand(commandList.sendUnSleep());
                 last_send_never_sleep_time_ms = systemTime_ms;
             }
@@ -314,8 +328,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
             DataVector dvec2 = new DataVector(true, 2, 10, imu_data_list2, systemTime_ms);
 //            dvec1.printDataVector("IMU1");
 //            dvec2.printDataVector("IMU2");
-            fcalc.pushIMUFeatureBuffer(dvec1);
-            fcalc.pushIMUFeatureBuffer(dvec2);
+//            fcalc.pushIMUFeatureBuffer(dvec1);
+//            fcalc.pushIMUFeatureBuffer(dvec2);
         }
     }
 

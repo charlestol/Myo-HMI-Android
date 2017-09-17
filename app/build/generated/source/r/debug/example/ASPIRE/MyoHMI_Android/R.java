@@ -2827,7 +2827,7 @@ containing a value of this type.
         public static final int center=0x7f0d0027;
         public static final int center_horizontal=0x7f0d0028;
         public static final int center_vertical=0x7f0d0029;
-        public static final int chart=0x7f0d00a1;
+        public static final int chart=0x7f0d00a2;
         public static final int checkbox=0x7f0d005b;
         public static final int chronometer=0x7f0d00af;
         public static final int clip_horizontal=0x7f0d0032;
@@ -2884,7 +2884,7 @@ containing a value of this type.
         public static final int listMode=0x7f0d000f;
         public static final int listView=0x7f0d007e;
         public static final int listView1=0x7f0d0075;
-        public static final int listViewIMU=0x7f0d00a2;
+        public static final int listViewIMU=0x7f0d00a1;
         public static final int list_item=0x7f0d0048;
         public static final int live=0x7f0d0081;
         public static final int masked=0x7f0d00c3;
