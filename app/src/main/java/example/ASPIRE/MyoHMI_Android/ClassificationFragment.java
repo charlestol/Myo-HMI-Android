@@ -100,7 +100,8 @@ public class ClassificationFragment extends Fragment {
     ArrayList<String> selectedItems = new ArrayList<String>();
 
     Classifier classifier = new Classifier();
-    FeatureCalculator featureCalculator = new FeatureCalculator();
+
+    ServerCommunicationThread comm = new ServerCommunicationThread();
 
     String[] ListElements = new String[]{
             "Rest",
@@ -130,7 +131,7 @@ public class ClassificationFragment extends Fragment {
 
         assert v != null;
 
-        final Runnable r1, r2;
+//        final Runnable r1, r2;
 
         fcalc = new FeatureCalculator(v, getActivity());
         classifier = new Classifier(getActivity());

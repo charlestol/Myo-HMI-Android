@@ -52,7 +52,6 @@ public class FeatureCalculator {
     int winincr = 8;    //separation length between windows
     int winnext = winsize + 1;    //winsize + 2 samples until first feature
     private Plotter plotter;
-//    FeatureFragment featureFragment = new FeatureFragment();
     static boolean[] featSelected = {true, true, true, true, true, true};
     static boolean[] imuSelected = {false, false, false, false, false, false, false, false, false, false};
     int numFeatSelected = 6;
@@ -66,7 +65,24 @@ public class FeatureCalculator {
     public static boolean classify = false;
     static ArrayList<DataVector> samplesClassifier = new ArrayList<DataVector>();
     static ArrayList<DataVector> featureData = new ArrayList<DataVector>();
+    public static Context context;
+    private static View view;
+    private static List<String> gestures;
     public static DataVector[] aux;//does it have to be public?
+
+    public FeatureCalculator() {}
+
+    public FeatureCalculator(View v, Activity act) {
+        classAct = act;
+        view = v;
+        liveView = (TextView) view.findViewById(R.id.gesture_detected);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
+    }
+
+    public FeatureCalculator(Plotter plot) {
+        plotter = plot;
+    }
 
     public ArrayList<DataVector> getSamplesClassifier() {
         return samplesClassifier;
@@ -88,25 +104,7 @@ public class FeatureCalculator {
         return train;
     }
 
-    public FeatureCalculator() {
-    }
-
-    public static Context context;
-    private static View view;
-    private static List<String> gestures;
-
-    public FeatureCalculator(View v, Activity act) {
-        classAct = act;
-        view = v;
-        liveView = (TextView) view.findViewById(R.id.gesture_detected);
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
-        //status = (TextView) view.findViewById(R.id.txt_status);
-    }
-
-    public FeatureCalculator(Plotter plot) {
-        plotter = plot;
-    }
+    public boolean getClassify(){return classify;}
 
     private twoDimArray featCalc(ArrayList<DataVector> samplebuf) {
         ArrayList<ArrayList<Float>> AUMatrix = new ArrayList<>();
@@ -215,6 +213,43 @@ public class FeatureCalculator {
         return featemg;
     }
 
+    public void pushFeatureBuffer(DataVector data) { //actively accepts single EMG data vectors and runs calculations when window is reached
+
+        //push new dvec into circular buffer
+        samplebuffer.add(ibuf, data);
+        if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
+            samplebuffer.remove(samplebuffer.size() - 1);
+
+        if (train) {//don't need this?
+            aux[0].setFlag(currentClass);
+        }
+
+        if (ibuf == winnext)//start calculating
+        {
+
+            lastCall = winnext;
+            firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
+            featureVector = featCalc(samplebuffer);
+            imuFeatureVector = featCalcIMU(imusamplebuffer);
+            aux = buildDataVector(featureVector, imuFeatureVector);
+            aux[0].setTimestamp(data.getTimestamp());
+
+            if(train){
+                aux[0].setFlag(currentClass);//dont need this?
+                pushClassifyTrainer(aux);
+                if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
+                    setTrain(false);
+                    currentClass++;
+                }
+            }
+            else if(classify){//try just else
+                pushClassifier(aux[0]);
+            }
+            winnext = (winnext + winincr) % bufsize;
+        }
+        ibuf = ++ibuf & (bufsize - 1); //make buffer circular
+    }
+
     //Making the 100 x 40 matrix
     public void pushClassifyTrainer(DataVector[] inFeatemg) {
         featureData.add(inFeatemg[1]);
@@ -246,44 +281,6 @@ public class FeatureCalculator {
 
     public void sendClasses(List<String> classes) {
         gestures = classes;
-    }
-
-    public void pushFeatureBuffer(DataVector data) { //actively accepts single EMG data vectors and runs calculations when window is reached
-
-        //push new dvec into circular buffer
-        samplebuffer.add(ibuf, data);
-        if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
-            samplebuffer.remove(samplebuffer.size() - 1);
-
-        if (getTrain()) {
-            aux[0].setFlag(currentClass);
-        }
-
-        if (ibuf == winnext)//start calculating
-        {
-
-            lastCall = winnext;
-            firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
-            featureVector = featCalc(samplebuffer);
-            imuFeatureVector = featCalcIMU(imusamplebuffer);
-            aux = buildDataVector(featureVector, imuFeatureVector);
-            aux[0].setTimestamp(data.getTimestamp());
-
-//            aux[0].printDataVector("Features with IMU!!!");
-
-            if (getTrain()) {
-                aux[0].setFlag(currentClass);
-                pushClassifyTrainer(aux);
-                if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
-                    setTrain(false);
-                    currentClass++;
-                }
-            } else if (classify) {
-                pushClassifier(aux[0]);
-            }
-            winnext = (winnext + winincr) % bufsize;
-        }
-        ibuf = ++ibuf & (bufsize - 1); //make buffer circular
     }
 
     public static void Train() {

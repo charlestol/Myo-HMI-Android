@@ -74,9 +74,6 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
         final View v = inflater.inflate(R.layout.fragment_emg, container, false);
         assert v != null;
 
-        /////////////////////////////////////////////////////////
-//        ServerComm.connectToServer();
-
 //        emgDataText = (TextView)v.findViewById(R.id.emgDataTextView);
         gestureText = (TextView) v.findViewById(R.id.gestureTextView);
         gestureText.setTextColor(Color.rgb(38, 38, 38));

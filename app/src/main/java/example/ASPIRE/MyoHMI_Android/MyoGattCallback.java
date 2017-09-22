@@ -1,36 +1,22 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.media.tv.TvContract;
-import android.os.AsyncTask;
 import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.UUID;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -98,7 +84,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
         plotter = plot;
         progress = prog;
         fcalc = new FeatureCalculator(plotter);
-        thread = new ServerCommunicationThread("hey");
+        thread = new ServerCommunicationThread();
         thread.start();
     }
 
@@ -306,7 +292,20 @@ public class MyoGattCallback extends BluetoothGattCallback {
 //            ServerComm.sendDataToServer(emg_data);
 
 //            String dataString = Arrays.toString(emg_data);
-            thread.send(emg_data);
+
+            byte cloudControl = 127;
+
+            if (fcalc.getClassify()) {
+                cloudControl = 126;
+            } else if (fcalc.getTrain()) {
+                cloudControl = 125;
+            }
+
+            byte[] emg_data_controlled = ArrayUtils.add(emg_data, 0, cloudControl);
+
+            Log.d("hey there", Arrays.toString(emg_data_controlled));
+
+            thread.send(emg_data_controlled);
 
             plotter.pushPlotter(emg_data);
 
@@ -365,23 +364,5 @@ public class MyoGattCallback extends BluetoothGattCallback {
             mBluetoothGatt = null;
         }
     }
-
-//    public class ConnectTask extends AsyncTask<byte[], String, TcpClient> {
-//
-//        @Override
-//        protected TcpClient doInBackground(byte[]... message) {
-//
-//            mTcpClient.sendBytes(message[0]);
-//
-//            return null;
-//        }
-//        @Override
-//        protected void onProgressUpdate(String... values) {
-//            super.onProgressUpdate(values);
-//            //response received from server
-//            Log.d("test", "response " + values[0]);
-//            //process server response here....
-//        }
-//    }
 
 }

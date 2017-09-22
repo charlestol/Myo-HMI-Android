@@ -1,12 +1,7 @@
 package example.ASPIRE.MyoHMI_Android;
-
 import android.util.Log;
-
-import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -21,8 +16,13 @@ public class ServerCommunicationThread extends Thread {
 
     private boolean mRun = true;
 
-    public ServerCommunicationThread(String server) {
-        this.mServer = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
+    private final String ec2ip = "34.213.61.15";
+    private final String alexHomeip = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
+    private final String icelabip = "34.213.61.15";
+    private final String sfStateip = "10.143.132.221";
+
+    public ServerCommunicationThread() {
+        this.mServer = sfStateip;
     }
 
     @Override
@@ -31,19 +31,12 @@ public class ServerCommunicationThread extends Thread {
         while (mRun) {
             Socket s = null;
             try {
+
                 s = new Socket(mServer, TCP_SERVER_PORT);
-
-//                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
-
                 DataOutputStream output = new DataOutputStream(s.getOutputStream());
-
-//                ByteArrayOutputStream arrayOutputStream = (ByteArrayOutputStream)s.getOutputStream();
-
-//                ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
                 while (mRun) {
                     byte[] message;
-
                     // Wait for message
                     synchronized (mMessages) {
                         while (mMessages.isEmpty()) {
@@ -81,6 +74,7 @@ public class ServerCommunicationThread extends Thread {
 
     public void send(byte[] message) {
         synchronized (mMessages) {
+//            Log.d("Hello", Arrays.toString(message));
             mMessages.add(message);
             mMessages.notify();
         }
