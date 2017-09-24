@@ -21,8 +21,10 @@ public class ServerCommunicationThread extends Thread {
     private final String icelabip = "34.213.61.15";
     private final String sfStateip = "10.143.132.221";
 
+    int count = 0;
+
     public ServerCommunicationThread() {
-        this.mServer = sfStateip;
+        this.mServer = alexHomeip;
     }
 
     @Override
@@ -51,9 +53,15 @@ public class ServerCommunicationThread extends Thread {
                         mMessages.remove(0);
                     }
 
-                    Log.d("sent", Arrays.toString(message));
+//                    message = mMessages.get(0);
+                    Log.d("sent$$$", Arrays.toString(message));
                     output.write(message);
+//                    if (count == 100) {
+//                        output.flush();
+//                        count=0;
+//                    }
                 }
+
 
             } catch (UnknownHostException e) {
                 e.printStackTrace();

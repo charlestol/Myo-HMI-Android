@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 
@@ -69,6 +70,8 @@ public class FeatureCalculator {
     private static View view;
     private static List<String> gestures;
     public static DataVector[] aux;//does it have to be public?
+    private  byte[] sendBytes = new byte[0];
+    private static ServerCommunicationThread comm;
 
     public FeatureCalculator() {}
 
@@ -78,6 +81,7 @@ public class FeatureCalculator {
         liveView = (TextView) view.findViewById(R.id.gesture_detected);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
+//        comm.start();
     }
 
     public FeatureCalculator(Plotter plot) {
@@ -100,11 +104,16 @@ public class FeatureCalculator {
         classify = inClassify;
     }
 
-    public boolean getTrain() {
+    public static boolean getTrain() {
         return train;
     }
 
-    public boolean getClassify(){return classify;}
+    public static boolean getClassify(){return classify;}
+
+    public void startComm(){
+        comm = new ServerCommunicationThread();
+        comm.start();
+    }
 
     private twoDimArray featCalc(ArrayList<DataVector> samplebuf) {
         ArrayList<ArrayList<Float>> AUMatrix = new ArrayList<>();
@@ -213,9 +222,20 @@ public class FeatureCalculator {
         return featemg;
     }
 
-    public void pushFeatureBuffer(DataVector data) { //actively accepts single EMG data vectors and runs calculations when window is reached
+    ArrayList<Number> sendList = new ArrayList<Number>();
+
+    public void pushFeatureBuffer(byte[] dataBytes) { //actively accepts single EMG data vectors and runs calculations when window is reached
 
         //push new dvec into circular buffer
+
+//        sendBytes = ArrayUtils.addAll(sendBytes, dataBytes);
+
+//        System.out.println("hey there" + Arrays.toString(sendBytes));
+
+        Number[] dataObj = ArrayUtils.toObject(dataBytes);
+        ArrayList<Number> emg_data_list = new ArrayList<Number>(Arrays.asList(dataObj));
+        DataVector data = new DataVector(true, 1, 8, emg_data_list, System.currentTimeMillis());
+
         samplebuffer.add(ibuf, data);
         if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
             samplebuffer.remove(samplebuffer.size() - 1);
@@ -256,7 +276,7 @@ public class FeatureCalculator {
 //        System.out.println(inFeatemg[0].getLength());
         samplesClassifier.add(inFeatemg[0]);
         classes.add(currentClass);
-        Log.d(TAG, String.valueOf(samplesClassifier.size()));
+        Log.d("Hey There", String.valueOf(samplesClassifier.size()));
     }
 
     public static void pushClassifier(DataVector inFeatemg) {
@@ -276,6 +296,7 @@ public class FeatureCalculator {
                 }
             });
         }
+        Log.d("Regular Prediction: ", String.valueOf(prediction) + "  :  " + String.valueOf(System.currentTimeMillis()));
         //Log.d("Prediction: ", String.valueOf(prediction));//prediction
     }
 

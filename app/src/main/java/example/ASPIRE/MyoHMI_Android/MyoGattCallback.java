@@ -76,7 +76,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
     ServerCommunicationThread thread;
 
-//    private TcpClient mTcpClient = new TcpClient();
+    ClientCommunicationThread clientThread;
+
 
     public MyoGattCallback(Handler handler, TextView view, ProgressBar prog, Plotter plot, View v) {
         mHandler = handler;
@@ -84,12 +85,13 @@ public class MyoGattCallback extends BluetoothGattCallback {
         plotter = plot;
         progress = prog;
         fcalc = new FeatureCalculator(plotter);
+
         thread = new ServerCommunicationThread();
         thread.start();
-    }
 
-//    public void serverThreadStuff() {
-//    }
+        clientThread = new ClientCommunicationThread();
+        clientThread.start();
+    }
 
     @Override
     public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
@@ -272,18 +274,21 @@ public class MyoGattCallback extends BluetoothGattCallback {
             superTimeInitial = systemTime_ms;
             byte[] emg_data = characteristic.getValue();
 
-            Number[] emg_dataObj = ArrayUtils.toObject(emg_data);
-
-            ArrayList<Number> emg_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 8)));
-            ArrayList<Number> emg_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 8, 16)));
-            DataVector dvec1 = new DataVector(true, 1, 8, emg_data_list1, systemTime_ms);
-            DataVector dvec2 = new DataVector(true, 2, 8, emg_data_list2, systemTime_ms);
-
+//            Number[] emg_dataObj = ArrayUtils.toObject(emg_data);
+//
+//            ArrayList<Number> emg_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 8)));
+//            ArrayList<Number> emg_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 8, 16)));
+//            DataVector dvec1 = new DataVector(true, 1, 8, emg_data_list1, systemTime_ms);
+//            DataVector dvec2 = new DataVector(true, 2, 8, emg_data_list2, systemTime_ms);
+//
 //            dvec1.printDataVector("dvec");
 //            dvec2.printDataVector("dvec");
 
-//            fcalc.pushFeatureBuffer(dvec1);
-//            fcalc.pushFeatureBuffer(dvec2);
+            byte[] emg_data1 = Arrays.copyOfRange(emg_data,0,8);
+            byte[] emg_data2 = Arrays.copyOfRange(emg_data,8,16);
+
+            fcalc.pushFeatureBuffer(emg_data1);
+            fcalc.pushFeatureBuffer(emg_data2);
 
 //            new ConnectTask().execute(emg_data);
 
@@ -293,18 +298,19 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
 //            String dataString = Arrays.toString(emg_data);
 
-            byte cloudControl = 127;
-
+            byte cloudControl = 0;
             if (fcalc.getClassify()) {
-                cloudControl = 126;
+                cloudControl = 1;
             } else if (fcalc.getTrain()) {
-                cloudControl = 125;
+                cloudControl = 2;
             }
-
             byte[] emg_data_controlled = ArrayUtils.add(emg_data, 0, cloudControl);
 
-            Log.d("hey there", Arrays.toString(emg_data_controlled));
+//            Log.d("hey there", Arrays.toString(emg_data_controlled));
 
+//            byte[] numbers = {127,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+
+//            thread.send(numbers);
             thread.send(emg_data_controlled);
 
             plotter.pushPlotter(emg_data);
@@ -327,8 +333,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
             DataVector dvec2 = new DataVector(true, 2, 10, imu_data_list2, systemTime_ms);
 //            dvec1.printDataVector("IMU1");
 //            dvec2.printDataVector("IMU2");
-//            fcalc.pushIMUFeatureBuffer(dvec1);
-//            fcalc.pushIMUFeatureBuffer(dvec2);
+            fcalc.pushIMUFeatureBuffer(dvec1);
+            fcalc.pushIMUFeatureBuffer(dvec2);
         }
     }
 
