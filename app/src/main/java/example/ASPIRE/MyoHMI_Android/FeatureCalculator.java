@@ -110,11 +110,6 @@ public class FeatureCalculator {
 
     public static boolean getClassify(){return classify;}
 
-    public void startComm(){
-        comm = new ServerCommunicationThread();
-        comm.start();
-    }
-
     private twoDimArray featCalc(ArrayList<DataVector> samplebuf) {
         ArrayList<ArrayList<Float>> AUMatrix = new ArrayList<>();
         byte signLast;
@@ -125,7 +120,7 @@ public class FeatureCalculator {
         float MMAV = 0;
 
         featemg = new twoDimArray();
-        featemg.createMatrix(nFeatures, nSensors);
+        featemg.createMatrix(6, nSensors);
 
         //for each sensor calculate features
         for (int sensor = 0; sensor < nSensors; sensor++) {//loop through each EMG pod (8)
@@ -226,12 +221,6 @@ public class FeatureCalculator {
 
     public void pushFeatureBuffer(byte[] dataBytes) { //actively accepts single EMG data vectors and runs calculations when window is reached
 
-        //push new dvec into circular buffer
-
-//        sendBytes = ArrayUtils.addAll(sendBytes, dataBytes);
-
-//        System.out.println("hey there" + Arrays.toString(sendBytes));
-
         Number[] dataObj = ArrayUtils.toObject(dataBytes);
         ArrayList<Number> emg_data_list = new ArrayList<Number>(Arrays.asList(dataObj));
         DataVector data = new DataVector(true, 1, 8, emg_data_list, System.currentTimeMillis());
@@ -273,7 +262,6 @@ public class FeatureCalculator {
     //Making the 100 x 40 matrix
     public void pushClassifyTrainer(DataVector[] inFeatemg) {
         featureData.add(inFeatemg[1]);
-//        System.out.println(inFeatemg[0].getLength());
         samplesClassifier.add(inFeatemg[0]);
         classes.add(currentClass);
         Log.d("Hey There", String.valueOf(samplesClassifier.size()));
@@ -281,7 +269,6 @@ public class FeatureCalculator {
 
     public static void pushClassifier(DataVector inFeatemg) {
         prediction = classifier.predict(inFeatemg);
-        //inFeatemg.printDataVector("Predict Vector");
         if (liveView != null) {
             classAct.runOnUiThread(new Runnable() {
                 @Override
@@ -296,8 +283,7 @@ public class FeatureCalculator {
                 }
             });
         }
-        Log.d("Regular Prediction: ", String.valueOf(prediction) + "  :  " + String.valueOf(System.currentTimeMillis()));
-        //Log.d("Prediction: ", String.valueOf(prediction));//prediction
+        ClientCommunicationThread.calculateDiff(prediction, 1);
     }
 
     public void sendClasses(List<String> classes) {
@@ -313,7 +299,7 @@ public class FeatureCalculator {
         // Count total EMG features to send
 
         int emgct = numFeatSelected * 8;
-        numFeatSelected = 6; //Resets the number of features selected to 5
+        numFeatSelected = 6; //Resets the number of features selected to 6
 
         ArrayList<Number> temp = new ArrayList<Number>(emgct);
         DataVector dvec1 = null;
@@ -359,10 +345,11 @@ public class FeatureCalculator {
                     k++;
                 }
             }
-            dvec1 = new DataVector(true, 0, emgct + nIMUSensors, temp1, 0000000);
+
+            dvec1 = new DataVector(true, 0, temp.size(), temp1, 0000000);
         }
 
-        DataVector dvec = new DataVector(true, 0, emgct + nIMUSensors, temp, 0000000);//nIMU must become dynamic with UI
+        DataVector dvec = new DataVector(true, 0, temp.size(), temp, 0000000);//nIMU must become dynamic with UI
 
         DataVector dvecArr[] = {dvec, dvec1};
         return dvecArr;

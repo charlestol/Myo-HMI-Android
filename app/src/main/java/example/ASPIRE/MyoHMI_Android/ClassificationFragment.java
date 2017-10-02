@@ -9,9 +9,11 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -169,10 +171,8 @@ public class ClassificationFragment extends Fragment {
         listview.setAdapter(adapter);
         listview_Classifier.setAdapter(adapter_classifier);
 
-
         //selectes lda
         listview_Classifier.setItemChecked(0, true);
-
 
         //Kattia: Change 3 to 8 for experiments so that we don't need to select all gestures each time
         for (int i = 0; i < ListElements.length; i++) {
@@ -319,7 +319,16 @@ public class ClassificationFragment extends Fragment {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openFolder();
+
+//                openFolder();
+
+                IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+                Intent batteryStatus = getContext().registerReceiver(null, ifilter);
+                int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+                int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+                float batteryPct = level / (float)scale;
+                Log.d("Battery$$$ ", String.valueOf(batteryPct));
+                Toast.makeText(getActivity(), "Battery Level "+String.valueOf(batteryPct), Toast.LENGTH_SHORT).show();
             }
         });
         return v;

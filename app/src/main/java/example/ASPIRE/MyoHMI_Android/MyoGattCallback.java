@@ -1,11 +1,15 @@
 package example.ASPIRE.MyoHMI_Android;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -70,14 +74,12 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
     private Plotter plotter;
     private ProgressBar progress;
-    private emgConsumer consumer = new emgConsumer();
 
     private FeatureCalculator fcalc;//maybe needs to be later in process
 
     ServerCommunicationThread thread;
 
     ClientCommunicationThread clientThread;
-
 
     public MyoGattCallback(Handler handler, TextView view, ProgressBar prog, Plotter plot, View v) {
         mHandler = handler;
@@ -86,11 +88,12 @@ public class MyoGattCallback extends BluetoothGattCallback {
         progress = prog;
         fcalc = new FeatureCalculator(plotter);
 
-        thread = new ServerCommunicationThread();
-        thread.start();
+//        thread = new ServerCommunicationThread();
+//        thread.start();
+//
+//        clientThread = new ClientCommunicationThread();
+//        clientThread.start();
 
-        clientThread = new ClientCommunicationThread();
-        clientThread.start();
     }
 
     @Override
@@ -98,15 +101,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
         super.onConnectionStateChange(gatt, status, newState);
         Log.d(TAG, "onConnectionStateChange: " + status + " -> " + newState);
         if (newState == BluetoothProfile.STATE_CONNECTED) {
-            // GATT Connected
-            // Searching GATT Service
-//            mHandler.post(new Runnable() {
-//                @Override
-//                public void run() {
-//                    progress.setVisibility(View.VISIBLE);
-//                    textView.setText("");
-//                }
-//            });
 
             gatt.discoverServices();
 
@@ -274,29 +268,11 @@ public class MyoGattCallback extends BluetoothGattCallback {
             superTimeInitial = systemTime_ms;
             byte[] emg_data = characteristic.getValue();
 
-//            Number[] emg_dataObj = ArrayUtils.toObject(emg_data);
-//
-//            ArrayList<Number> emg_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 8)));
-//            ArrayList<Number> emg_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 8, 16)));
-//            DataVector dvec1 = new DataVector(true, 1, 8, emg_data_list1, systemTime_ms);
-//            DataVector dvec2 = new DataVector(true, 2, 8, emg_data_list2, systemTime_ms);
-//
-//            dvec1.printDataVector("dvec");
-//            dvec2.printDataVector("dvec");
-
             byte[] emg_data1 = Arrays.copyOfRange(emg_data,0,8);
             byte[] emg_data2 = Arrays.copyOfRange(emg_data,8,16);
 
             fcalc.pushFeatureBuffer(emg_data1);
             fcalc.pushFeatureBuffer(emg_data2);
-
-//            new ConnectTask().execute(emg_data);
-
-//            consumer.consume(emg_data);
-
-//            ServerComm.sendDataToServer(emg_data);
-
-//            String dataString = Arrays.toString(emg_data);
 
             byte cloudControl = 0;
             if (fcalc.getClassify()) {
@@ -306,12 +282,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
             }
             byte[] emg_data_controlled = ArrayUtils.add(emg_data, 0, cloudControl);
 
-//            Log.d("hey there", Arrays.toString(emg_data_controlled));
-
-//            byte[] numbers = {127,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-
-//            thread.send(numbers);
-            thread.send(emg_data_controlled);
+//            thread.send(emg_data_controlled);
 
             plotter.pushPlotter(emg_data);
 
@@ -325,8 +296,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
             byte[] imu_data = characteristic.getValue();
             plotter.pushPlotter(imu_data);
             Number[] emg_dataObj = ArrayUtils.toObject(imu_data);
-//            ArrayList<Number> imu_data_list = new ArrayList<>(Arrays.asList(emg_dataObj));
-//            DataVector dvec = new DataVector(false, 0, 20, imu_data_list, systemTime_ms);
             ArrayList<Number> imu_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 10)));
             ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 10, 20)));
             DataVector dvec1 = new DataVector(true, 1, 10, imu_data_list1, systemTime_ms);

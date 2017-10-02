@@ -147,7 +147,6 @@ public class FeatureFragment extends Fragment {
 
         });
 
-
         mChart = (RadarChart) v.findViewById(R.id.chart);
         plotter = new Plotter(mChart);//must pass chart from this fragment
 
@@ -161,7 +160,6 @@ public class FeatureFragment extends Fragment {
                 index = i;
             }
         }
-
         featSelected[index] = selected;
     }
 
