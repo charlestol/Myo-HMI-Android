@@ -16,12 +16,10 @@ public class ServerCommunicationThread extends Thread {
 
     private boolean mRun = true;
 
-    private final String ec2ip = "34.213.61.15";
+    private final String ec2ip = "35.166.162.28";
     private final String alexHomeip = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
     private final String icelabip = "192.168.0.100";//"34.213.61.15";
     private final String sfStateip = "10.143.132.221";
-
-    int count = 0;
 
     public ServerCommunicationThread() {
         this.mServer = alexHomeip;
@@ -29,14 +27,11 @@ public class ServerCommunicationThread extends Thread {
 
     @Override
     public void run() {
-
         while (mRun) {
             Socket s = null;
             try {
-
                 s = new Socket(mServer, TCP_SERVER_PORT);
                 DataOutputStream output = new DataOutputStream(s.getOutputStream());
-
                 while (mRun) {
                     byte[] message;
                     // Wait for message
@@ -52,7 +47,6 @@ public class ServerCommunicationThread extends Thread {
                         message = mMessages.get(0);
                         mMessages.remove(0);
                     }
-
 //                    message = mMessages.get(0);
 //                    Log.d("sent$$$", Arrays.toString(message));
                     output.write(message);

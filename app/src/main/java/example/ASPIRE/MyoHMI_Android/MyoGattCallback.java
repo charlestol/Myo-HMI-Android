@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -260,6 +261,15 @@ public class MyoGattCallback extends BluetoothGattCallback {
     long last_send_never_sleep_time_ms = System.currentTimeMillis();
     final static long NEVER_SLEEP_SEND_TIME = 10000;  // Milli Second
 
+    public static byte[] longToBytes(long l) {
+        byte[] result = new byte[8];
+        for (int i = 7; i >= 0; i--) {
+            result[i] = (byte)(l & 0xFF);
+            l >>= 8;
+        }
+        return result;
+    }
+
     @Override
     public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
         if (EMG_0_ID.equals(characteristic.getUuid().toString()) || EMG_1_ID.equals(characteristic.getUuid().toString()) || EMG_2_ID.equals(characteristic.getUuid().toString()) || EMG_3_ID.equals(characteristic.getUuid().toString())) {
@@ -281,6 +291,14 @@ public class MyoGattCallback extends BluetoothGattCallback {
                 cloudControl = 2;
             }
             byte[] emg_data_controlled = ArrayUtils.add(emg_data, 0, cloudControl);
+
+//            /*The following can test the tcp latency by sending a timestamp to the server DOES NOT WORK NEED TO IMPLEMENT LAMPORT TIMESTAMPS*/
+//            long currentTime = System.currentTimeMillis();
+//            byte[] bytetime = longToBytes(currentTime);
+//            byte[] guy = new byte[]{0,0,0,0,0,0,0,0,0};
+//            byte[] bytetime17 = ArrayUtils.addAll(bytetime, guy);
+//            System.out.println(currentTime);
+////            System.out.println(Arrays.toString(bytetime17));
 
 //            thread.send(emg_data_controlled);
 

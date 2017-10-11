@@ -71,7 +71,10 @@ public class FeatureCalculator {
     private static List<String> gestures;
     public static DataVector[] aux;//does it have to be public?
     private  byte[] sendBytes = new byte[0];
-    private static ServerCommunicationThread comm;
+    private static ServerCommunicationThread thread;
+    private static ClientCommunicationThread clientThread;
+
+    private ArrayList<byte[]> samplebufferbytes = new ArrayList<>(bufsize);
 
     public FeatureCalculator() {}
 
@@ -81,7 +84,12 @@ public class FeatureCalculator {
         liveView = (TextView) view.findViewById(R.id.gesture_detected);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
-//        comm.start();
+
+        thread = new ServerCommunicationThread();
+        thread.start(); //move this to next constructor???
+
+        clientThread = new ClientCommunicationThread();
+        clientThread.start();
     }
 
     public FeatureCalculator(Plotter plot) {
@@ -226,15 +234,38 @@ public class FeatureCalculator {
         DataVector data = new DataVector(true, 1, 8, emg_data_list, System.currentTimeMillis());
 
         samplebuffer.add(ibuf, data);
+
         if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
             samplebuffer.remove(samplebuffer.size() - 1);
 
-        if (train) {//don't need this?
+        samplebufferbytes.add(ibuf, dataBytes);
+
+        if (samplebufferbytes.size() > bufsize)//limit size of buffer to bufsize
+            samplebufferbytes.remove(samplebufferbytes.size()-1);
+
+        if (train) {
             aux[0].setFlag(currentClass);
         }
 
         if (ibuf == winnext)//start calculating
         {
+
+            byte[] sendWindow = new byte[1];
+
+            byte cloudControl = 0;
+            if (getClassify()) {
+                cloudControl = 1;
+            } else if (getTrain()) {
+                cloudControl = 2;
+            }
+
+            sendWindow[0] = cloudControl;
+
+            for(int i = 0; i < samplebufferbytes.size(); i++){
+                sendWindow = ArrayUtils.addAll(sendWindow, samplebufferbytes.get(i));
+            }
+
+            thread.send(sendWindow);
 
             lastCall = winnext;
             firstCall = (lastCall - winsize + bufsize + 1) % bufsize;

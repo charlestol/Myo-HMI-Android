@@ -18,12 +18,10 @@ public class ClientCommunicationThread extends Thread {
 
     private boolean mRun = true;
 
-    private final String ec2ip = "34.213.61.15";
+    private final String ec2ip = "35.166.162.28";
     private final String alexHomeip = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
     private final String icelabip = "192.168.0.100";//"34.213.61.15";
     private final String sfStateip = "10.143.132.221";
-
-    int count = 0;
 
     byte[] buffer = new byte[512];
 
