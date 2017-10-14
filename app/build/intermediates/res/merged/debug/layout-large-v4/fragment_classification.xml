@@ -57,7 +57,7 @@
                 />
             <!--android:layout_toEndOf="@+id/verticalLine"-->
 
-            a
+
 
         </android.support.percent.PercentRelativeLayout>
 
@@ -240,6 +240,20 @@
             android:visibility="invisible"
             android:layout_alignBottom="@+id/view"
             android:layout_toStartOf="@+id/bt_load"
+            android:layout_marginEnd="20dp"/>
+
+        <ImageButton
+            android:id="@+id/im_reset"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_reset"
+            android:visibility="invisible"
+            android:layout_alignBottom="@+id/view"
+            android:layout_toStartOf="@+id/im_upload"
             android:layout_marginEnd="20dp"/>
 
         <TextView

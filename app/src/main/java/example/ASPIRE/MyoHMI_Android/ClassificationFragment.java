@@ -94,6 +94,7 @@ public class ClassificationFragment extends Fragment {
     //Button showButton;
     ImageButton trainButton;
     ImageButton loadButton;
+    ImageButton resetButton;
     ListView listview_Classifier;
     ListView listview;
     ProgressBar progressBar;
@@ -147,6 +148,7 @@ public class ClassificationFragment extends Fragment {
         addButton = (ImageButton) v.findViewById(R.id.im_add);
         deleteButton = (ImageButton) v.findViewById(R.id.im_delete);
         uploadButton = (ImageButton) v.findViewById(R.id.im_upload);
+        resetButton = (ImageButton) v.findViewById(R.id.im_reset);
 //        listview = (ListView) v.findViewById(R.id.listView);
         listview = (ListView) v.findViewById(R.id.listView);
         listview_Classifier = (ListView) v.findViewById(R.id.listView1);
@@ -306,6 +308,16 @@ public class ClassificationFragment extends Fragment {
                 });
                 dialog.setView(view);
                 dialog.show();
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gestureCounter = 0;
+                liveView.setText("");
+                trainButton.setVisibility(View.VISIBLE);
+                fcalc.reset();
             }
         });
 

@@ -48,6 +48,7 @@ public class FeatureCalculator {
     public static TextView liveView, status;
     public static ProgressBar progressBar;
     public static ImageButton uploadButton;
+    public static ImageButton resetButton;
     public static int prediction;
     int winsize = 40;    //window size
     int winincr = 8;    //separation length between windows
@@ -84,6 +85,7 @@ public class FeatureCalculator {
         liveView = (TextView) view.findViewById(R.id.gesture_detected);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
+        resetButton =  (ImageButton) view.findViewById(R.id.im_reset);
 
         thread = new ServerCommunicationThread();
         thread.start(); //move this to next constructor???
@@ -282,7 +284,7 @@ public class FeatureCalculator {
                     currentClass++;
                 }
             }
-            else if(classify){//try just else
+            else if(classify){
                 pushClassifier(aux[0]);
             }
             winnext = (winnext + winincr) % bufsize;
@@ -308,6 +310,7 @@ public class FeatureCalculator {
                         liveView.setText(gestures.get(prediction));
                         progressBar.setVisibility(View.INVISIBLE);
                         uploadButton.setVisibility(View.VISIBLE);
+                        resetButton.setVisibility(View.VISIBLE);
                     } else {
                         liveView.setText("Training Classifier");
                     }
@@ -393,7 +396,8 @@ public class FeatureCalculator {
             samplebuffer = null;//delete[] samplebuf;
             samplebuffer = new ArrayList<DataVector>(bufsize); //samplebuf = new DataVector[bufsize]; //arraylist holding bufsize amount of datavectors
         }
-        reset();
+        ibuf = 0;
+        winnext = winsize + 1;
     }
 
     private void setWindowIncrement(int newWinincr) {
@@ -405,9 +409,11 @@ public class FeatureCalculator {
         winincr = newWinincr;
     }
 
-    private void reset() {
-        ibuf = 0;
-        winnext = winsize + 1;
+    public void reset() {
+        setClassify(false);
+        setTrain(false);
+        samplesClassifier = new ArrayList<>();
+        classes = new ArrayList<>();
     }
 
     public void pushIMUFeatureBuffer(DataVector data){
@@ -435,6 +441,7 @@ public class FeatureCalculator {
         }
         return featimu;
     }
+//reset
 
     public void setFeatSelected(boolean[] boos){
         featSelected = boos;
