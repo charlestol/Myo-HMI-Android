@@ -2,6 +2,7 @@ package example.ASPIRE.MyoHMI_Android;
 import android.util.Log;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -19,10 +20,11 @@ public class ServerCommunicationThread extends Thread {
     private final String ec2ip = "35.166.162.28";
     private final String alexHomeip = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
     private final String icelabip = "192.168.0.100";//"34.213.61.15";
+    private final String dragonip = "2601:645:c100:b669:0:2bff:feed:2e50";
     private final String sfStateip = "10.143.132.221";
 
     public ServerCommunicationThread() {
-        this.mServer = alexHomeip;
+        this.mServer = dragonip;
     }
 
     @Override
@@ -30,6 +32,7 @@ public class ServerCommunicationThread extends Thread {
         while (mRun) {
             Socket s = null;
             try {
+                //InetAddress localHost = InetAddress.getLocalHost();
                 s = new Socket(mServer, TCP_SERVER_PORT);
                 DataOutputStream output = new DataOutputStream(s.getOutputStream());
                 while (mRun) {
@@ -47,13 +50,7 @@ public class ServerCommunicationThread extends Thread {
                         message = mMessages.get(0);
                         mMessages.remove(0);
                     }
-//                    message = mMessages.get(0);
-//                    Log.d("sent$$$", Arrays.toString(message));
                     output.write(message);
-//                    if (count == 100) {
-//                        output.flush();
-//                        count=0;
-//                    }
                 }
 
             } catch (UnknownHostException e) {

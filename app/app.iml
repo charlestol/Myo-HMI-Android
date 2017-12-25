@@ -94,6 +94,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="aws-android-sdk-cognito-2.4.5" level="project" />
@@ -109,9 +110,11 @@
     <orderEntry type="library" exported="" name="transition-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="commons-lang3-3.6" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="aws-android-sdk-core-2.2.22" level="project" />
     <orderEntry type="library" exported="" name="smile-graph-1.0.4" level="project" />
     <orderEntry type="library" exported="" name="aws-android-sdk-s3-2.4.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="aws-android-sdk-lambda-2.2.22" level="project" />
     <orderEntry type="library" exported="" name="commons-lang3-3.6-javadoc" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-25.2.0" level="project" />

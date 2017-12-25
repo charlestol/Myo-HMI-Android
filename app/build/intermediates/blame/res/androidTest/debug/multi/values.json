@@ -70,5 +70,29 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "C:\\Users\\Alex\\.android\\build-cache\\ac8126e2901602ee0ad31e8e4f38b12c852b0f8f\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
     }
 ]

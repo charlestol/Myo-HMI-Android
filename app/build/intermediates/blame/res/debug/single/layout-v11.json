@@ -16,11 +16,11 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
@@ -28,7 +28,7 @@
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
@@ -44,16 +44,12 @@
         "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\layout-v11\\notification_template_big_media.xml"
     },
     {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
         "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
         "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
-        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_action.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
@@ -64,11 +60,39 @@
         "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
         "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\home\\angorakat\\Desktop\\august 1_working\\august 1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\home\\angorakat\\.android\\build-cache\\c9ead43295cc8e97d5aa132e92473951d748663b\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Desktop\\August 1 WorksEvenBetter\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Alex\\.android\\build-cache\\1b9cfd18c15bfac890f07e79a5d552003a21952b\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     }
 ]

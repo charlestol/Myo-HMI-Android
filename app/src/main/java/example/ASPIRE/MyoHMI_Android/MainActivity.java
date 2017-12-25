@@ -84,27 +84,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-///////////////////////////////////////////////////////////////
-
-
         mViewPager = (ViewPager) this.findViewById(R.id.view_pager);
         mViewPager.setOffscreenPageLimit(2);
-//        final ActionBar bar = this.getSupportActionBar();
-//        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 //
         EmgFragment emgFragment = new EmgFragment();
         FeatureFragment featureFragment = new FeatureFragment();
         classificationFragment = new ClassificationFragment();
-//
-//        mTabsAdapter = new TabsAdapter(this, mViewPager);
-//        mTabsAdapter.addTab(bar.newTab().setText("EMG"),
-//                EmgFragment.class, null, emgFragment);
-//        mTabsAdapter.addTab(bar.newTab().setText("Features"),
-//                FeatureFragment.class, null, featureFragment);
-//        mTabsAdapter.addTab(bar.newTab().setText("Classification"),
-//                ClassificationFragment.class, null, classificationFragment);
-
-///////////////////////////////////////////////////
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         TabLayout.Tab EMGTab = tabLayout.newTab();
@@ -119,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         mViewPager.setAdapter(adapter);
-// addOnPageChangeListener event change the tab on slide
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+        Lambda mLambda = new Lambda(this.getApplicationContext());//pass context to static variables for use in feature calculator
 
     }
 

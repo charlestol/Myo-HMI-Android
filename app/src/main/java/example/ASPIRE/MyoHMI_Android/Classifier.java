@@ -294,7 +294,7 @@ public class Classifier {
         if (!trainedLOGIT) {
             Toast.makeText(activity, "Training Logit", Toast.LENGTH_SHORT).show();
             Log.d("2", "222");
-            logit = new LogisticRegression(trainVectorP, classes);
+            logit = new LogisticRegression(trainVectorP, classes,  0.0, 1E-5, 5000);
             trainedLOGIT = true;
         }
         Log.d("3", "333");
@@ -310,7 +310,9 @@ public class Classifier {
 
     public void trainNet() {
         if (!trainedNET) {
-            net = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, numFeatures * 8, 30, classSize + 1); //100
+            net = new NeuralNetwork(NeuralNetwork.ErrorFunction.CROSS_ENTROPY, NeuralNetwork.ActivationFunction.SOFTMAX, trainVectorP[0].length, 50, classSize); //100
+            net.learn(trainVectorP, classes);
+            net.learn(trainVectorP, classes);
             net.learn(trainVectorP, classes);
             trainedNET = true;
         }

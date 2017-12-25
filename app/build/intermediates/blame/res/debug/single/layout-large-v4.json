@@ -1,7 +1,15 @@
 [
     {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\upload_dialog.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\upload_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\fragment_classification.xml",
         "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\fragment_classification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\fragment_feature.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\fragment_feature.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\fragment_feature.xml",
@@ -12,12 +20,28 @@
         "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\myradioview.xml"
     },
     {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\activity_list.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\activity_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\myradioview.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\myradioview.xml"
+    },
+    {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\activity_main.xml",
         "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\fragment_emg.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\fragment_emg.xml"
+    },
+    {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\classification_fragment.xml",
         "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\classification_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\mytextview.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\mytextview.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\fragment_emg.xml",
@@ -28,8 +52,28 @@
         "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\activity_list.xml"
     },
     {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\progress.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\classification_fragment.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\classification_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\fragment_classification.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\fragment_classification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\countdown.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\countdown.xml"
+    },
+    {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\upload_dialog.xml",
         "source": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\upload_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\activity_main.xml",
+        "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\MyoHMI_Android\\app\\src\\main\\res\\layout-large\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Alex\\Desktop\\MyoHMI_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\mytextview.xml",

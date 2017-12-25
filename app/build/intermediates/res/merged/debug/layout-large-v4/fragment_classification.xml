@@ -203,22 +203,11 @@
             android:layout_below="@+id/bt_train"
             android:layout_centerHorizontal="true" />
 
-        <!--<TextView-->
-        <!--android:id="@+id/live"-->
-        <!--android:layout_width="60dp"-->
-        <!--android:layout_height="60dp"-->
-        <!--android:layout_alignBottom="@+id/view"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:text="Live"-->
-        <!--android:layout_marginBottom="1dp"-->
-        <!--android:layout_marginStart="30dp"-->
-        <!--/>-->
-
         <ImageButton
             android:id="@+id/bt_load"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="70dp"
-            android:layout_height="60dp"
+            android:layout_width="68dp"
+            android:layout_height="39dp"
             android:src="@drawable/ic_open_file"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
@@ -230,22 +219,23 @@
 
         <ImageButton
             android:id="@+id/im_upload"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="74dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
             android:background="#00000000"
             android:cropToPadding="false"
             android:scaleType="fitXY"
-            android:src="@drawable/cloud_upload"
+            android:src="@drawable/ic_cloud"
             android:visibility="invisible"
             android:layout_alignBottom="@+id/view"
             android:layout_toStartOf="@+id/bt_load"
-            android:layout_marginEnd="20dp"/>
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="7dp"/>
 
         <ImageButton
             android:id="@+id/im_reset"
             android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_height="63dp"
             android:adjustViewBounds="true"
             android:background="#00000000"
             android:cropToPadding="false"
@@ -254,7 +244,8 @@
             android:visibility="invisible"
             android:layout_alignBottom="@+id/view"
             android:layout_toStartOf="@+id/im_upload"
-            android:layout_marginEnd="20dp"/>
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="6dp"/>
 
         <TextView
             android:id="@+id/textView3"

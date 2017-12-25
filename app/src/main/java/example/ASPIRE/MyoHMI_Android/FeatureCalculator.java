@@ -77,6 +77,17 @@ public class FeatureCalculator {
 
     private ArrayList<byte[]> samplebufferbytes = new ArrayList<>(bufsize);
 
+    static long startCalc = System.currentTimeMillis();
+    static long startClass = System.currentTimeMillis();
+    static long startFeature = System.currentTimeMillis();
+    static long time1 = 0;
+
+    //Lambda lambda = new Lambda();//need to feed context in mainactivity
+
+    Lambda.LTask ltask = new Lambda.LTask();
+
+    byte[] sendWindow = new byte[0];
+
     public FeatureCalculator() {}
 
     public FeatureCalculator(View v, Activity act) {
@@ -87,11 +98,7 @@ public class FeatureCalculator {
         uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
         resetButton =  (ImageButton) view.findViewById(R.id.im_reset);
 
-        thread = new ServerCommunicationThread();
-        thread.start(); //move this to next constructor???
-
-        clientThread = new ClientCommunicationThread();
-        clientThread.start();
+//        connect();
     }
 
     public FeatureCalculator(Plotter plot) {
@@ -119,6 +126,223 @@ public class FeatureCalculator {
     }
 
     public static boolean getClassify(){return classify;}
+
+    public static void getThing(long time){
+        time1 = time;
+//        System.out.println("GOT NEW TIME: " + time);
+    }
+
+    public void connect(){
+        thread = new ServerCommunicationThread();
+        thread.start();
+        clientThread = new ClientCommunicationThread();
+        clientThread.start();
+    }
+
+//    ArrayList<Number> sendList = new ArrayList<Number>();
+
+    public static byte[] longToBytes(long l) {
+        byte[] result = new byte[8];
+        for (int i = 7; i >= 0; i--) {
+            result[i] = (byte)(l & 0xFF);
+            l >>= 8;
+        }
+        return result;
+    }
+
+    public void pushFeatureBuffer(byte[] dataBytes) { //actively accepts single EMG data vectors and runs calculations when window is reached
+
+        Number[] dataObj = ArrayUtils.toObject(dataBytes);
+        ArrayList<Number> emg_data_list = new ArrayList<Number>(Arrays.asList(dataObj));
+        DataVector data = new DataVector(true, 1, 8, emg_data_list, System.currentTimeMillis());
+
+        samplebuffer.add(ibuf, data);
+
+        if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
+            samplebuffer.remove(samplebuffer.size() - 1);
+
+//        samplebufferbytes.add(ibuf, dataBytes);
+//
+//        if (samplebufferbytes.size() > bufsize)//limit size of buffer to bufsize
+//            samplebufferbytes.remove(samplebufferbytes.size()-1);
+
+        if (train) {
+            aux[0].setFlag(currentClass);
+        }
+
+        sendWindow = ArrayUtils.addAll(sendWindow, dataBytes);
+
+        if (ibuf == winnext)//start calculating
+        {
+
+            startCalc = System.nanoTime();
+
+//            byte[] sendWindow = new byte[1];
+
+            byte cloudControl = 0;
+            if (getClassify()) {
+                cloudControl = 1;
+            } else if (getTrain()) {
+                cloudControl = 2;
+            }
+
+//            sendWindow[0] = cloudControl;
+
+//            System.out.println("ibuf:" + ibuf + " winincr: " + winnext + " swSIZE: " + sendWindow.length);
+
+//            for(int i = (ibuf-winincr)&bufsize; i < ibuf; i++){//sending the window increment
+//                System.out.println(i);
+////                sendWindow = ArrayUtils.addAll(sendWindow, samplebufferbytes.get(i));//not whole samplebuffer!!! just send the window or even the increment
+//            }
+
+            long clientTime = (System.nanoTime() - time1);
+
+            sendWindow = ArrayUtils.addAll(sendWindow, longToBytes(clientTime));
+
+//            System.out.println("TIME: "+ clientTime);
+
+            thread.send(sendWindow);
+
+            //!!! trying out lambda stuff
+            ltask.execute(sendWindow);
+
+            sendWindow = new byte[1];
+
+            sendWindow[0] = cloudControl;
+
+            lastCall = winnext;
+            firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
+
+            startFeature = System.nanoTime();
+
+            featureVector = featCalc(samplebuffer);
+            imuFeatureVector = featCalcIMU(imusamplebuffer);
+            aux = buildDataVector(featureVector, imuFeatureVector);
+
+//            System.out.print(","+(System.nanoTime() - startFeature));
+
+            aux[0].setTimestamp(data.getTimestamp());
+
+            if(train){
+                aux[0].setFlag(currentClass);//dont need this?
+                pushClassifyTrainer(aux);
+                if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
+                    setTrain(false);
+                    currentClass++;
+                }
+            }
+            else if(classify){
+                pushClassifier(aux[0]);
+            }
+            winnext = (winnext + winincr) % bufsize;
+        }
+        ibuf = ++ibuf & (bufsize - 1); //make buffer circular
+    }
+
+    //Making the 100 x 40 matrix
+    public void pushClassifyTrainer(DataVector[] inFeatemg) {
+        featureData.add(inFeatemg[1]);
+        samplesClassifier.add(inFeatemg[0]);
+        classes.add(currentClass);
+        Log.d("Hey There", String.valueOf(samplesClassifier.size()));
+    }
+
+    public static void pushClassifier(DataVector inFeatemg) {
+
+        startClass = System.nanoTime();
+
+        prediction = classifier.predict(inFeatemg);
+
+//        System.out.print("," + (System.nanoTime() - startClass));
+        // System.out.println("Prediction: " + prediction);
+//        System.out.println("," + (System.nanoTime() - startCalc));
+
+        if (liveView != null) {
+            classAct.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (prediction != 1000) {
+                        liveView.setText(gestures.get(prediction));
+                        progressBar.setVisibility(View.INVISIBLE);
+                        uploadButton.setVisibility(View.VISIBLE);
+                        resetButton.setVisibility(View.VISIBLE);
+                    } else {
+                        liveView.setText("Training Classifier");
+                    }
+                }
+            });
+        }
+        ClientCommunicationThread.calculateDiff(prediction, 1);
+    }
+
+    public void sendClasses(List<String> classes) {
+        gestures = classes;
+    }
+
+    public static void Train() {
+        classifier.Train(samplesClassifier, classes);
+    }
+
+    private DataVector[] buildDataVector(twoDimArray featureVector, twoDimArray imuFeatureVector)//ignoring grid and imu for now, assuming all features are selected
+    {
+        // Count total EMG features to send
+
+        int emgct = numFeatSelected * 8;
+        numFeatSelected = 6; //Resets the number of features selected to 6
+
+        ArrayList<Number> temp = new ArrayList<Number>(emgct);
+        DataVector dvec1 = null;
+
+        int n = 0;
+        int k = 0;
+        int tempIndex = 0;
+        int temp1Index = 0;
+
+        for (int i = 0; i < nFeatures; i++) {
+        //group features per sensor
+            if (featSelected[i]) {
+                for (int j = 0; j < nSensors; j++) {
+                    temp.add(n, featureVector.getMatrixValue(tempIndex, j));
+                    n++;
+                }
+            }
+            tempIndex++;
+        }
+
+        for (int j=0;j<nDimensions;j++){
+            if(imuSelected[j]) {
+                for (int i = 0; i < nIMUFeatures; i++) {
+                    temp.add(n, imuFeatureVector.getMatrixValue(i, j));
+                    n++;
+                }
+            }
+        }
+
+        if(getTrain()) {//during training we wan to save all 8 sensor data
+            ArrayList<Number> temp1 = new ArrayList<Number>(emgct);
+            for (int i = 0; i < nFeatures; i++) {
+                //group features per sensor
+                for (int j = 0; j < nSensors; j++) {
+                    temp1.add(k, featureVector.getMatrixValue(temp1Index, j));
+                    k++;
+                }
+                temp1Index++;
+            }
+            for (int i = 0;i < nIMUFeatures; i++){
+                for (int j=0;j<nDimensions;j++){
+                    temp1.add(k, imuFeatureVector.getMatrixValue(i, j));
+                    k++;
+                }
+            }
+
+            dvec1 = new DataVector(true, 0, temp.size(), temp1, 0000000);
+        }
+
+        DataVector dvec = new DataVector(true, 0, temp.size(), temp, 0000000);//nIMU must become dynamic with UI
+
+        DataVector dvecArr[] = {dvec, dvec1};
+        return dvecArr;
+    }
 
     private twoDimArray featCalc(ArrayList<DataVector> samplebuf) {
         ArrayList<ArrayList<Float>> AUMatrix = new ArrayList<>();
@@ -227,168 +451,6 @@ public class FeatureCalculator {
         return featemg;
     }
 
-    ArrayList<Number> sendList = new ArrayList<Number>();
-
-    public void pushFeatureBuffer(byte[] dataBytes) { //actively accepts single EMG data vectors and runs calculations when window is reached
-
-        Number[] dataObj = ArrayUtils.toObject(dataBytes);
-        ArrayList<Number> emg_data_list = new ArrayList<Number>(Arrays.asList(dataObj));
-        DataVector data = new DataVector(true, 1, 8, emg_data_list, System.currentTimeMillis());
-
-        samplebuffer.add(ibuf, data);
-
-        if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
-            samplebuffer.remove(samplebuffer.size() - 1);
-
-        samplebufferbytes.add(ibuf, dataBytes);
-
-        if (samplebufferbytes.size() > bufsize)//limit size of buffer to bufsize
-            samplebufferbytes.remove(samplebufferbytes.size()-1);
-
-        if (train) {
-            aux[0].setFlag(currentClass);
-        }
-
-        if (ibuf == winnext)//start calculating
-        {
-
-            byte[] sendWindow = new byte[1];
-
-            byte cloudControl = 0;
-            if (getClassify()) {
-                cloudControl = 1;
-            } else if (getTrain()) {
-                cloudControl = 2;
-            }
-
-            sendWindow[0] = cloudControl;
-
-            for(int i = 0; i < samplebufferbytes.size(); i++){
-                sendWindow = ArrayUtils.addAll(sendWindow, samplebufferbytes.get(i));
-            }
-
-            thread.send(sendWindow);
-
-            lastCall = winnext;
-            firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
-            featureVector = featCalc(samplebuffer);
-            imuFeatureVector = featCalcIMU(imusamplebuffer);
-            aux = buildDataVector(featureVector, imuFeatureVector);
-            aux[0].setTimestamp(data.getTimestamp());
-
-            if(train){
-                aux[0].setFlag(currentClass);//dont need this?
-                pushClassifyTrainer(aux);
-                if (samplesClassifier.size() % (nSamples) == 0 && samplesClassifier.size() != 0) { //triggers
-                    setTrain(false);
-                    currentClass++;
-                }
-            }
-            else if(classify){
-                pushClassifier(aux[0]);
-            }
-            winnext = (winnext + winincr) % bufsize;
-        }
-        ibuf = ++ibuf & (bufsize - 1); //make buffer circular
-    }
-
-    //Making the 100 x 40 matrix
-    public void pushClassifyTrainer(DataVector[] inFeatemg) {
-        featureData.add(inFeatemg[1]);
-        samplesClassifier.add(inFeatemg[0]);
-        classes.add(currentClass);
-        Log.d("Hey There", String.valueOf(samplesClassifier.size()));
-    }
-
-    public static void pushClassifier(DataVector inFeatemg) {
-        prediction = classifier.predict(inFeatemg);
-        if (liveView != null) {
-            classAct.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (prediction != 1000) {
-                        liveView.setText(gestures.get(prediction));
-                        progressBar.setVisibility(View.INVISIBLE);
-                        uploadButton.setVisibility(View.VISIBLE);
-                        resetButton.setVisibility(View.VISIBLE);
-                    } else {
-                        liveView.setText("Training Classifier");
-                    }
-                }
-            });
-        }
-        ClientCommunicationThread.calculateDiff(prediction, 1);
-    }
-
-    public void sendClasses(List<String> classes) {
-        gestures = classes;
-    }
-
-    public static void Train() {
-        classifier.Train(samplesClassifier, classes);
-    }
-
-    private DataVector[] buildDataVector(twoDimArray featureVector, twoDimArray imuFeatureVector)//ignoring grid and imu for now, assuming all features are selected
-    {
-        // Count total EMG features to send
-
-        int emgct = numFeatSelected * 8;
-        numFeatSelected = 6; //Resets the number of features selected to 6
-
-        ArrayList<Number> temp = new ArrayList<Number>(emgct);
-        DataVector dvec1 = null;
-
-        int n = 0;
-        int k = 0;
-        int tempIndex = 0;
-        int temp1Index = 0;
-
-        for (int i = 0; i < nFeatures; i++) {
-        //group features per sensor
-            if (featSelected[i]) {
-                for (int j = 0; j < nSensors; j++) {
-                    temp.add(n, featureVector.getMatrixValue(tempIndex, j));
-                    n++;
-                }
-            }
-            tempIndex++;
-        }
-
-        for (int j=0;j<nDimensions;j++){
-            if(imuSelected[j]) {
-                for (int i = 0; i < nIMUFeatures; i++) {
-                    temp.add(n, imuFeatureVector.getMatrixValue(i, j));
-                    n++;
-                }
-            }
-        }
-
-        if(getTrain()) {//during training we wan to save all 8 sensor data
-            ArrayList<Number> temp1 = new ArrayList<Number>(emgct);
-            for (int i = 0; i < nFeatures; i++) {
-                //group features per sensor
-                for (int j = 0; j < nSensors; j++) {
-                    temp1.add(k, featureVector.getMatrixValue(temp1Index, j));
-                    k++;
-                }
-                temp1Index++;
-            }
-            for (int i = 0;i < nIMUFeatures; i++){
-                for (int j=0;j<nDimensions;j++){
-                    temp1.add(k, imuFeatureVector.getMatrixValue(i, j));
-                    k++;
-                }
-            }
-
-            dvec1 = new DataVector(true, 0, temp.size(), temp1, 0000000);
-        }
-
-        DataVector dvec = new DataVector(true, 0, temp.size(), temp, 0000000);//nIMU must become dynamic with UI
-
-        DataVector dvecArr[] = {dvec, dvec1};
-        return dvecArr;
-    }
-
     private void setWindowSize(int newWinsize) {
         winsize = newWinsize;
         if (winsize + 10 > bufsize) {
@@ -414,6 +476,11 @@ public class FeatureCalculator {
         setTrain(false);
         samplesClassifier = new ArrayList<>();
         classes = new ArrayList<>();
+        liveView.setText("");
+//        thread.close();
+//        clientThread.close();
+//        thread.start();
+//        clientThread.start();
     }
 
     public void pushIMUFeatureBuffer(DataVector data){
