@@ -5,6 +5,7 @@ package example.ASPIRE.MyoHMI_Android;
  */
 
 import com.amazonaws.mobileconnectors.lambdainvoker.LambdaFunction;
+
 public interface LambdaInterface {
 
     /**
@@ -12,7 +13,7 @@ public interface LambdaInterface {
      * The function name is the method name.
      */
     @LambdaFunction
-    int giveBytes(byte[] data);
+    int giveIncrement(byte[] data);
 
 }
 

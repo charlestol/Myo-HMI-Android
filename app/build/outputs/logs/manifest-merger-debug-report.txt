@@ -18,19 +18,19 @@ ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidMani
 uses-sdk
 ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:design:25.2.0] C:\Users\Alex\.android\build-cache\80516aa3e5fe1a805ed85330da937ba1316c12c4\output\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Alex\.android\build-cache\1b9cfd18c15bfac890f07e79a5d552003a21952b\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Alex\.android\build-cache\66fe31dfb145af607975f736501b9a43e3948839\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Alex\.android\build-cache\4c71b9ffa8b145ad1b79b6f56afbbba1ec3e7c98\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Alex\.android\build-cache\05e31da0a1f8126f878dd2607a3f6a74fab0b6e9\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Alex\.android\build-cache\d2c6a4fc383cced4470647a2adbe20c4e722d690\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Alex\.android\build-cache\abdba02ab4c8f557b1448ffcab0433967d8f026c\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Alex\.android\build-cache\d73ebc4d23457785b12747c29c6b75ef318ebe0d\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Alex\.android\build-cache\c9bc6817813947ba6ccae5758220f301f986babd\output\AndroidManifest.xml:20:5-44
 MERGED from [com.echo:holographlibrary:1.0] C:\Users\Alex\.android\build-cache\9d4e9f9be799506c8215d38b1d857f52484031c9\output\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:percent:22.2.0] C:\Users\Alex\.android\build-cache\1bbd1c4ecafe0f42ab8723572e4be0c88c24354a\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Alex\.android\build-cache\ba38de623a95cf6d31d56457e85d2b09f617adce\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Alex\.android\build-cache\8894b879548765818078d00fd55e1e12794ca483\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Alex\.android\build-cache\c40482fa8c984eea08ab54ea8b487d8405088cfc\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Alex\.android\build-cache\9bcb0c24a5e96c600125839430b15396fa1c39d7\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Alex\.android\build-cache\a6c725a2bcf6040439eb1d5110e3da910900bfc1\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Alex\.android\build-cache\d066b4cb7eb0cb2321a7fff60528a75472e589c3\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Alex\.android\build-cache\53fef0d374d38782d96f43e8d9bfe4820ed20bf6\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Alex\.android\build-cache\60f5727be62eae85a7b29ee860d3bb0f9d3b5069\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Alex\.android\build-cache\49171e2c51a5fe7ec2a774805d8c1cd000b208fc\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Alex\.android\build-cache\13556d1b1106b6f939ae2e3e25d83b35ed6eaa04\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Alex\.android\build-cache\c894524d701f86645be78ed70cfc8e264d6494e1\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Alex\.android\build-cache\e0b49d8d5745b3a3f2c94d108eae02d0c54c0cdb\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.2.0] C:\Users\Alex\.android\build-cache\80516aa3e5fe1a805ed85330da937ba1316c12c4\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -122,18 +122,18 @@ ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidMani
 application
 ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidManifest.xml:36:5-61:19
 MERGED from [com.android.support:design:25.2.0] C:\Users\Alex\.android\build-cache\80516aa3e5fe1a805ed85330da937ba1316c12c4\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Alex\.android\build-cache\1b9cfd18c15bfac890f07e79a5d552003a21952b\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Alex\.android\build-cache\66fe31dfb145af607975f736501b9a43e3948839\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Alex\.android\build-cache\4c71b9ffa8b145ad1b79b6f56afbbba1ec3e7c98\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Alex\.android\build-cache\05e31da0a1f8126f878dd2607a3f6a74fab0b6e9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Alex\.android\build-cache\d2c6a4fc383cced4470647a2adbe20c4e722d690\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Alex\.android\build-cache\abdba02ab4c8f557b1448ffcab0433967d8f026c\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Alex\.android\build-cache\c9bc6817813947ba6ccae5758220f301f986babd\output\AndroidManifest.xml:22:5-20
 MERGED from [com.echo:holographlibrary:1.0] C:\Users\Alex\.android\build-cache\9d4e9f9be799506c8215d38b1d857f52484031c9\output\AndroidManifest.xml:10:5-15:19
 MERGED from [com.android.support:percent:22.2.0] C:\Users\Alex\.android\build-cache\1bbd1c4ecafe0f42ab8723572e4be0c88c24354a\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Alex\.android\build-cache\ba38de623a95cf6d31d56457e85d2b09f617adce\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Alex\.android\build-cache\8894b879548765818078d00fd55e1e12794ca483\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Alex\.android\build-cache\c40482fa8c984eea08ab54ea8b487d8405088cfc\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Alex\.android\build-cache\9bcb0c24a5e96c600125839430b15396fa1c39d7\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Alex\.android\build-cache\a6c725a2bcf6040439eb1d5110e3da910900bfc1\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Alex\.android\build-cache\d066b4cb7eb0cb2321a7fff60528a75472e589c3\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Alex\.android\build-cache\53fef0d374d38782d96f43e8d9bfe4820ed20bf6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Alex\.android\build-cache\60f5727be62eae85a7b29ee860d3bb0f9d3b5069\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Alex\.android\build-cache\49171e2c51a5fe7ec2a774805d8c1cd000b208fc\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Alex\.android\build-cache\13556d1b1106b6f939ae2e3e25d83b35ed6eaa04\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Alex\.android\build-cache\c894524d701f86645be78ed70cfc8e264d6494e1\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Alex\.android\build-cache\e0b49d8d5745b3a3f2c94d108eae02d0c54c0cdb\output\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidManifest.xml:41:9-41
 	android:hardwareAccelerated
@@ -181,3 +181,17 @@ ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidMani
 		ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidManifest.xml:60:13-35
 	android:name
 		ADDED from C:\Users\Alex\Dropbox\Desktop\MyoHMI_Android\app\src\main\AndroidManifest.xml:59:13-93
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Alex\.android\build-cache\05e31da0a1f8126f878dd2607a3f6a74fab0b6e9\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Alex\.android\build-cache\d2c6a4fc383cced4470647a2adbe20c4e722d690\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Alex\.android\build-cache\abdba02ab4c8f557b1448ffcab0433967d8f026c\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Alex\.android\build-cache\53fef0d374d38782d96f43e8d9bfe4820ed20bf6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Alex\.android\build-cache\60f5727be62eae85a7b29ee860d3bb0f9d3b5069\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Alex\.android\build-cache\49171e2c51a5fe7ec2a774805d8c1cd000b208fc\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Alex\.android\build-cache\13556d1b1106b6f939ae2e3e25d83b35ed6eaa04\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Alex\.android\build-cache\c894524d701f86645be78ed70cfc8e264d6494e1\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Alex\.android\build-cache\e0b49d8d5745b3a3f2c94d108eae02d0c54c0cdb\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Alex\.android\build-cache\05e31da0a1f8126f878dd2607a3f6a74fab0b6e9\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Alex\.android\build-cache\05e31da0a1f8126f878dd2607a3f6a74fab0b6e9\output\AndroidManifest.xml:26:9-47

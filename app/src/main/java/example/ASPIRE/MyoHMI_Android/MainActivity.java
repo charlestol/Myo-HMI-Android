@@ -31,12 +31,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CheckBox;
 
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.mobileconnectors.lambdainvoker.LambdaInvokerFactory;
+import com.amazonaws.regions.Regions;
 import com.echo.holographlibrary.LineGraph;
 
 import java.util.ArrayList;
 import android.bluetooth.le.BluetoothLeScanner;
 import android.bluetooth.le.ScanCallback;
 
+import static example.ASPIRE.MyoHMI_Android.Lambda.factory;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -106,8 +110,19 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        Lambda mLambda = new Lambda(this.getApplicationContext());//pass context to static variables for use in feature calculator
+        // Create an instance of CognitoCachingCredentialsProvider
+        //CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(this.getApplicationContext(), "us-west-2:b547c9df-87e3-4a7a-b418-c5649f10c17b", Regions.US_WEST_2);
 
+        CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
+                getApplicationContext(),
+                "us-west-2:916f7fdd-9429-4d93-8606-b46efd049d9b", // Identity pool ID
+                Regions.US_WEST_2 // Region
+        );
+
+        // Create LambdaInvokerFactory, to be used to instantiate the Lambda proxy.
+        LambdaInvokerFactory factory = new LambdaInvokerFactory(this.getApplicationContext(), Regions.US_WEST_2, cognitoProvider);
+
+        Lambda mLambda = new Lambda(cognitoProvider, factory);//pass context to static variables for use in feature calculator
     }
 
     public static class TabsAdapter extends FragmentStatePagerAdapter implements ActionBar.TabListener, ViewPager.OnPageChangeListener {

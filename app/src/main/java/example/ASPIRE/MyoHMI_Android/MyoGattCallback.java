@@ -95,8 +95,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
 //        clientThread = new ClientCommunicationThread();
 //        clientThread.start();
 
-        fcalc.connect();
-
+//        fcalc.connect();
     }
 
     @Override

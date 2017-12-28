@@ -4,6 +4,7 @@ import java.util.*;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
@@ -83,8 +84,7 @@ public class FeatureCalculator {
     static long time1 = 0;
 
     //Lambda lambda = new Lambda();//need to feed context in mainactivity
-
-    Lambda.LTask ltask = new Lambda.LTask();
+    private Lambda.LTask ltask;
 
     byte[] sendWindow = new byte[0];
 
@@ -97,8 +97,6 @@ public class FeatureCalculator {
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         uploadButton = (ImageButton) view.findViewById(R.id.im_upload);
         resetButton =  (ImageButton) view.findViewById(R.id.im_reset);
-
-//        connect();
     }
 
     public FeatureCalculator(Plotter plot) {
@@ -161,11 +159,6 @@ public class FeatureCalculator {
         if (samplebuffer.size() > bufsize)//limit size of buffer to bufsize
             samplebuffer.remove(samplebuffer.size() - 1);
 
-//        samplebufferbytes.add(ibuf, dataBytes);
-//
-//        if (samplebufferbytes.size() > bufsize)//limit size of buffer to bufsize
-//            samplebufferbytes.remove(samplebufferbytes.size()-1);
-
         if (train) {
             aux[0].setFlag(currentClass);
         }
@@ -175,40 +168,32 @@ public class FeatureCalculator {
         if (ibuf == winnext)//start calculating
         {
 
+            /* Beginning of cloud stuff */
+
             startCalc = System.nanoTime();
-
-//            byte[] sendWindow = new byte[1];
-
             byte cloudControl = 0;
             if (getClassify()) {
                 cloudControl = 1;
             } else if (getTrain()) {
                 cloudControl = 2;
             }
-
-//            sendWindow[0] = cloudControl;
-
-//            System.out.println("ibuf:" + ibuf + " winincr: " + winnext + " swSIZE: " + sendWindow.length);
-
-//            for(int i = (ibuf-winincr)&bufsize; i < ibuf; i++){//sending the window increment
-//                System.out.println(i);
-////                sendWindow = ArrayUtils.addAll(sendWindow, samplebufferbytes.get(i));//not whole samplebuffer!!! just send the window or even the increment
-//            }
-
             long clientTime = (System.nanoTime() - time1);
-
             sendWindow = ArrayUtils.addAll(sendWindow, longToBytes(clientTime));
+            //thread.send(sendWindow);// TCP Connection
+//            System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!");System.out.println(ltask.getStatus());
+//            if(ltask.getStatus() == AsyncTask.Status.PENDING || ltask.getStatus() == AsyncTask.Status.FINISHED)
+//                ltask = new Lambda.LTask();
+//                ltask.execute(sendWindow);// Lambda Function Call
+//                System.out.println("!!!!!!!!executed async task");
+            new Lambda.LTask().execute(sendWindow);
 
-//            System.out.println("TIME: "+ clientTime);
-
-            thread.send(sendWindow);
-
-            //!!! trying out lambda stuff
-            ltask.execute(sendWindow);
-
+//            System.out.println(sendWindow.length);
+//            System.out.print("SENDWINDOW");
+//            System.out.println(Arrays.toString(sendWindow));
             sendWindow = new byte[1];
-
             sendWindow[0] = cloudControl;
+
+            /* End of cloud stuff */
 
             lastCall = winnext;
             firstCall = (lastCall - winsize + bufsize + 1) % bufsize;
