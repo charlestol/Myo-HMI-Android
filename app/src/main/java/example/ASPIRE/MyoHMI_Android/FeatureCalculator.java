@@ -150,6 +150,7 @@ public class FeatureCalculator {
 
     public void pushFeatureBuffer(byte[] dataBytes) { //actively accepts single EMG data vectors and runs calculations when window is reached
 
+       // System.out.println(samplesClassifier.size());
         Number[] dataObj = ArrayUtils.toObject(dataBytes);
         ArrayList<Number> emg_data_list = new ArrayList<Number>(Arrays.asList(dataObj));
         DataVector data = new DataVector(true, 1, 8, emg_data_list, System.currentTimeMillis());
@@ -180,16 +181,7 @@ public class FeatureCalculator {
             long clientTime = (System.nanoTime() - time1);
             sendWindow = ArrayUtils.addAll(sendWindow, longToBytes(clientTime));
             //thread.send(sendWindow);// TCP Connection
-//            System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!");System.out.println(ltask.getStatus());
-//            if(ltask.getStatus() == AsyncTask.Status.PENDING || ltask.getStatus() == AsyncTask.Status.FINISHED)
-//                ltask = new Lambda.LTask();
-//                ltask.execute(sendWindow);// Lambda Function Call
-//                System.out.println("!!!!!!!!executed async task");
-            new Lambda.LTask().execute(sendWindow);
-
-//            System.out.println(sendWindow.length);
-//            System.out.print("SENDWINDOW");
-//            System.out.println(Arrays.toString(sendWindow));
+            //new Lambda.LTask().execute(sendWindow);
             sendWindow = new byte[1];
             sendWindow[0] = cloudControl;
 
@@ -204,7 +196,7 @@ public class FeatureCalculator {
             imuFeatureVector = featCalcIMU(imusamplebuffer);
             aux = buildDataVector(featureVector, imuFeatureVector);
 
-//            System.out.print(","+(System.nanoTime() - startFeature));
+            System.out.print(","+(System.nanoTime() - startFeature));//feature extraction time, first column
 
             aux[0].setTimestamp(data.getTimestamp());
 
@@ -238,15 +230,15 @@ public class FeatureCalculator {
 
         prediction = classifier.predict(inFeatemg);
 
-//        System.out.print("," + (System.nanoTime() - startClass));
+        System.out.print("," + (System.nanoTime() - startClass)); //classification time, 2nd column
         // System.out.println("Prediction: " + prediction);
-//        System.out.println("," + (System.nanoTime() - startCalc));
+        System.out.println("," + (System.nanoTime() - startCalc)); //total calculation time, 3rd column
 
         if (liveView != null) {
             classAct.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (prediction != 1000) {
+                    if (prediction != 1000) {//why would prediction ever be 1000???
                         liveView.setText(gestures.get(prediction));
                         progressBar.setVisibility(View.INVISIBLE);
                         uploadButton.setVisibility(View.VISIBLE);

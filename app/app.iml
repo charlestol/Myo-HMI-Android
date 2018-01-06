@@ -108,10 +108,8 @@
     <orderEntry type="library" exported="" name="design-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="aws-android-sdk-core-2.4.4" level="project" />
     <orderEntry type="library" exported="" name="transition-25.2.0" level="project" />
-    <orderEntry type="library" exported="" name="org.eclipse.paho.client.mqttv3-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="commons-lang3-3.6" level="project" />
-    <orderEntry type="library" exported="" name="aws-android-sdk-iot-2.2.22" level="project" />
     <orderEntry type="library" exported="" name="smile-graph-1.0.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="aws-android-sdk-lambda-2.2.22" level="project" />
