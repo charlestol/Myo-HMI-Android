@@ -1,0 +1,46 @@
+mvn package
+
+aws lambda delete-function --function-name giveIncrement
+
+aws lambda create-function \
+--region us-west-2 \
+--function-name giveIncrement  \
+--zip-file fileb:///vagrant/HMI_Lambda/target/lambda-java-example-1.0-SNAPSHOT.jar \
+--role arn:aws:iam::602604815652:role/lambda-android-execution-role   \
+--handler example.Pojo::giveIncrement \
+--runtime java8 \
+--profile "ICELAB"
+
+aws lambda invoke \
+--invocation-type RequestResponse \
+--function-name giveBytes \
+--region us-west-2 \
+--payload file:///vagrant/HMI_Lambda/input.txt \
+--profile ICELAB output.txt
+
+more output.txt
+
+{  
+   "Version":"2012-10-17",
+   "Statement":[  
+      {  
+         "Effect":"Allow",
+         "Action":[  
+            "mobileanalytics:PutEvents",
+            "cognito-sync:*"
+         ],
+         "Resource":[  
+            "*"
+         ]
+      },
+      {  
+         "Effect":"Allow",
+         "Action":[  
+            "lambda:invokefunction"
+         ],
+         "Resource":[  
+            "arn:aws:lambda:us-west-2:602604815652:function:giveIncrement"
+         ]
+      }
+   ]
+}

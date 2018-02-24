@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\.android\build-cache\a0bdab11ea038a3fc63d1ec9551bb8411a7bf5a0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="C:\Users\Alex\Dropbox\Desktop\ICE Lab\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\classes_323fc1e6234082990731afacc18dde908f30392b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\.android\build-cache\e08014b739e585b5e74547e2267bf06693a56886\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="C:\Users\Alex\Dropbox\Desktop\ICE Lab\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\classes_8a14f6db9d0a0fe84beb7b26373ddb4f0d3174fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\.android\build-cache\159cae5ea98c25b4394dc9ddaaa646774430a385\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="928b73afabcd116944e9487771d4121168eac1a4">
+        <dex dex="C:\Users\Alex\Dropbox\Desktop\ICE Lab\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\classes_ce803809e7fd79dbc76e7bf729656cf8bac861ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\Dropbox\Desktop\ICE Lab\MyoHMI_Android\app\libs\commons-lang3-3.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9d28a6b23650e8a7e9063c04588ace6cf7012c17">
+        <dex dex="C:\Users\Alex\Dropbox\Desktop\ICE Lab\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\commons-lang3-3.6_1ac9b33cc9d9be15402f4b9b8b256edd7c1bcaaa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Alex\.android\build-cache\b782fde18689d9fd9963003680d800eee0639089\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="C:\Users\Alex\Dropbox\Desktop\ICE Lab\MyoHMI_Android\app\build\intermediates\pre-dexed\debug\classes_9e40fc16be420dd270e1df5461d145678dd0bc73.jar" />
+    </item>
+
+</items>
